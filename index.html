@@ -1,45 +1,70 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Labbaik Ya Rasool Allah</title>
+<title>Tahaffuz Khatm-e-Nabuwwat App</title>
 <style>
-body{margin:0;font-family:Arial;background:#0b3d2e;color:white;text-align:center}
-.header{background:#083324;padding:20px;font-size:22px;font-weight:bold}
-.nav{display:flex;background:#0a4d39}
-.nav a{flex:1;color:white;text-decoration:none;padding:12px 0;font-size:14px}
-.box{background:white;color:black;margin:15px;border-radius:15px;padding:15px;text-align:left}
-.room{display:block;background:#f1f1f1;color:black;text-decoration:none;padding:15px;margin:10px 0;border-radius:10px;font-size:18px}
-.footer{background:#083324;padding:15px;margin-top:20px}
-.adbtn{width:90%;padding:15px;background:orange;color:black;border:none;border-radius:10px;font-size:20px;font-weight:bold;margin:15px}
+body{margin:0;background:#fdf6e3;font-family:Arial;text-align:center}
+img{width:100%;display:block}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
+.room{background:white;border:3px solid #0a4d2e;border-radius:15px;padding:15px;font-size:18px;color:#0a4d2e;font-weight:bold}
+.room span{display:block;font-size:16px;font-weight:normal}
+#adbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);color:white;flex-direction:column;justify-content:center;align-items:center;z-index:100;padding:20px}
+#adbox button{padding:12px 25px;background:orange;border:none;border-radius:10px;color:white;font-size:18px;margin-top:15px}
+#lock{position:fixed;top:0;left:0;right:0;bottom:0;background:#0a4d2e;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:99}
+#lock input{padding:12px;font-size:18px;text-align:center;border-radius:10px;border:none;margin:10px}
+#lock button{padding:12px 25px;background:orange;color:white;border:none;border-radius:10px;font-size:18px}
 </style>
 </head>
 <body>
 
-<div class="header">لبیک یا رسول اللہ ﷺ</div>
-
-<div class="nav">
-<a href="#">روم</a>
-<a href="#">لائیو</a>
-<a href="#">سیشن</a>
-<a href="#">سیٹنگ</a>
+<!-- PASSWORD -->
+<div id="lock">
+<h2>Labbaik Ya Rasool Allah ﷺ</h2>
+<p>Password likhein</p>
+<input type="password" id="pass" placeholder="Password">
+<button onclick="check()">App Kholein</button>
+<p id="msg"></p>
 </div>
 
-<div class="box">
-<h2>رومز</h2>
-<a class="room" href="room1.html">روم 1<br>نعت و بیان</a>
-<a class="room" href="room2.html">روم 2<br>تحفظ ختم نبوت</a>
-<a class="room" href="room3.html">روم 3<br>درود و سلام</a>
-<a class="room" href="room4.html">روم 4<br>لائیو محفل</a>
+<!-- MAIN PAGE YE WALA -->
+<img src="header.jpg">
+
+<h3 style="color:#0a4d2e">8 Rooms</h3>
+
+<div class="rooms">
+<div class="room">🎵 DJ Room<span>ڈی جے روم</span></div>
+<div class="room">💬 Chat Room<span>چیٹ روم</span></div>
+<div class="room">💵 Earning Room<span>ارننگ روم</span></div>
+<div class="room" onclick="showGoogleAd()" style="background:#fff3d6">🎮 Game Room<span>گیم روم - Google Ad</span></div>
+<div class="room">❓ Sawal Jawab Room<span>سوال جواب روم</span></div>
+<div class="room">🏢 Mera Office<span>میرا آفس</span></div>
+<div class="room">🎙️ Live Bayan<span>لائیو بیان</span></div>
+<div class="room">📦 Madad Box<span>مدد باکس</span></div>
 </div>
 
-<div class="box">
-<p>جو بھائی اس ایپ میں شامل ہونا چاہتا ہے، وہ اسی پیج پر رہے۔</p>
+<!-- GOOGLE AD BOX -->
+<div id="adbox">
+<h2>Google Ad</h2>
+<p id="adtext">Ad Loading...</p>
+<p style="font-size:13px">App ID: ca-app-pub-8425104052454331~3606579141<br>Ad Unit: ca-app-pub-8425104052454331/4573156397</p>
+<button onclick="closeAd()">Band Karein</button>
 </div>
 
-<button class="adbtn" onclick="alert('ایڈ مکمل ہو گئی')">ایڈ دیکھیں</button>
-
-<div class="footer">Labbaik Ya Rasool Allah ﷺ</div>
-
+<script>
+function check(){
+var p=document.getElementById('pass').value;
+if(p=='786786'){document.getElementById('lock').style.display='none';}
+else{document.getElementById('msg').innerText='Ghalat Password hai';}
+}
+function showGoogleAd(){
+document.getElementById('adbox').style.display='flex';
+document.getElementById('adtext').innerText='Google Interstitial Ad - Game Room';
+}
+function closeAd(){
+document.getElementById('adbox').style.display='none';
+}
+</script>
 </body>
 </html>
