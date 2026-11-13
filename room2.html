@@ -1,13 +1,42 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kamra 2</title>
-<style>body{margin:0;background:#0a3d2e;color:white;text-align:center;padding:10px;} .box{border:3px solid #d4af37;border-radius:12px;padding:5px;background:black;margin:15px 0;} a{background:#d4af37;color:#0a3d2e;padding:10px 20px;text-decoration:none;border-radius:8px;display:inline-block;margin-top:15px;font-weight:bold;}</style>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DJ Room - ڈی جے روم</title>
+<style>
+body{font-family:Arial;background:#1a1a2e;text-align:center;margin:0;padding:20px;color:white}
+h1{color:#ffcc00}
+.box{background:#222244;border:2px solid #ffcc00;border-radius:15px;padding:20px;max-width:500px;margin:auto}
+button{background:#ffcc00;color:black;padding:12px 20px;border:none;border-radius:10px;font-size:18px;margin:5px}
+input{width:90%;padding:12px;margin:8px;border-radius:10px;border:1px solid #ccc}
+a{color:#ffcc00}
+</style>
 </head>
 <body>
-<h1>تاجدارِ ختمِ نبوت ﷺ زندہ باد</h1>
-<h2>کمرہ نمبر 2 - محدثِ جلیل</h2>
-<div class="box"><iframe width="100%" height="315" src="https://www.youtube.com/embed/mTsGWKPGodg" frameborder="0" allowfullscreen></iframe></div>
-<a href="index.html">واپس مرکز پر</a>
+<h1>🎵 DJ Room</h1>
+<p>ڈی جے روم - نعت اور بیان سنیں</p>
+<div class="box">
+<p>Neeche apna pasandida Naat / Bayan ka YouTube link lagayein</p>
+<input id="link" placeholder="YouTube link yahan paste karein">
+<br>
+<button onclick="play()">▶ Chalayein</button>
+<br><br>
+<div id="player"></div>
+<br>
+<button onclick="document.getElementById('player').innerHTML=''">⏹ Band Karein</button>
+<br><br>
+<a href="index.html">⬅ Wapas 8 Rooms par jayein</a>
+</div>
+<script>
+function play(){
+var l=document.getElementById('link').value;
+if(l=="")return;
+var id="";
+if(l.includes("v=")){id=l.split("v=")[1].split("&")[0];}
+else{id=l.split("/").pop();}
+document.getElementById('player').innerHTML='<iframe width="100%" height="250" src="https://www.youtube.com/embed/'+id+'" frameborder="0" allowfullscreen></iframe>';
+}
+</script>
 </body>
 </html>
