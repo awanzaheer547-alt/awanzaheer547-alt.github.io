@@ -1,1 +1,32 @@
-<!DOCTYPE html><html lang="ur"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Earning Room</title><style>body{font-family:Arial;background:#fffbe6;text-align:center;padding:15px}.box{background:white;border:2px solid #0a6b2e;border-radius:15px;padding:20px;max-width:600px;margin:auto}a{color:#0a6b2e;font-weight:bold;display:block;margin-top:15px}</style></head><body><div class="box"><h1>💵 Earning Room</h1><h2>ارننگ روم</h2><p>Yahan earning wali maloomat hogi.</p><a href="index.html">← Wapas 8 Rooms par jayein</a></div></body></html>
+<!-- Room 3 - Earning Room - Website Wala -->
+
+<div id="room3">
+  <h2>Earning Room 3</h2>
+
+  <div style="border:2px solid blue; padding:20px; text-align:center;">
+    <p>Google Ad Yahan Chalega</p>
+    <p>Ad Dekhen, Phir Earning Shuru Hogi</p>
+    <p>15 Second Tak Ad Dekhen</p>
+  </div>
+
+  <br>
+  <button onclick="adDekha()">Ad Dekh Liya</button>
+  <button onclick="closeAd()">Close</button>
+
+  <p>Aapki Earning: <span id="earning">0</span></p>
+
+  <button onclick="goTo5000()">5000 Wala Room Mein Jayen</button>
+</div>
+
+<script>
+  function adDekha() {
+    document.getElementById("earning").innerText = "10";
+    alert("Mubarak Ho! Ad Dekh Liya, Earning Shuru Ho Gayi");
+  }
+  function closeAd() {
+    alert("Ad Band Ho Gaya");
+  }
+  function goTo5000() {
+    alert("5000 Wala Room Khul Raha Hai");
+  }
+</script>
