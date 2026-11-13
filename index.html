@@ -3,54 +3,39 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>کمرہ 1 - چیٹ روم</title>
+<title>Tahaffuz Khatm-e-Nabuwwat All World App</title>
 <style>
-body{margin:0;background:#0a3d2e;font-family:Arial;text-align:center;color:white;padding:15px}
+body{background:#0b3d2e;color:white;font-family:sans-serif;text-align:center;margin:0;padding:10px}
 h1{color:#ffeb3b}
-.box{background:white;color:black;border-radius:15px;padding:15px;max-width:500px;margin:auto}
-#chat{height:280px;overflow:auto;border:1px solid #ccc;border-radius:10px;padding:10px;background:#f9f9f9;text-align:right}
-input{width:65%;padding:12px;border-radius:10px;border:1px solid #ccc}
-button{padding:12px 10px;border:none;border-radius:10px;background:#0a3d2e;color:white;font-weight:bold;margin:3px}
-.call{background:#25D366}
-.video{background:#1877F2}
-.back{display:block;margin-top:15px;color:white;text-decoration:none}
+.box{background:white;color:black;border-radius:15px;padding:15px;margin:10px}
+a{display:block;background:#0b3d2e;color:white;text-decoration:none;padding:12px;margin:8px;border-radius:10px;font-size:18px}
+.social{background:#ffeb3b;color:black}
 </style>
 </head>
 <body>
-<h1>کمرہ 1 - TLP چیٹ روم</h1>
+<h1>Tahaffuz Khatm-e-Nabuwwat<br>All World App</h1>
 <p>تاجدارِ ختمِ نبوت ﷺ زندہ باد</p>
+
 <div class="box">
-<div id="chat"><p>خوش آمدید! یہاں سب بھائی چیٹ کریں گے۔</p></div>
-<br>
-<input id="msg" placeholder="پیغام لکھیں...">
-<button onclick="send()">بھیجیں</button>
-<br><br>
-<button onclick="voice()">🎤 وائس میسج</button>
-<button class="call" onclick="audioCall()">📞 آڈیو کال</button>
-<button class="video" onclick="videoCall()">📹 ویڈیو کال</button>
-<p id="info" style="color:green"></p>
+<h2>ہمارے لنکس</h2>
+<a class="social" href="https://youtube.com" target="_blank">YouTube ▶️</a>
+<a class="social" href="https://facebook.com" target="_blank">Facebook 👍</a>
+<a class="social" href="https://whatsapp.com" target="_blank">WhatsApp Channel 💬</a>
+<a class="social" href="https://likee.video" target="_blank">Likee ❤️</a>
 </div>
-<a class="back" href="index.html">⬅ واپس مرکز میں جائیں</a>
-<script>
-function send(){
-var m=document.getElementById("msg").value;
-if(m=="")return;
-var c=document.getElementById("chat");
-c.innerHTML+="<p><b>آپ:</b> "+m+"</p>";
-document.getElementById("msg").value="";
-c.scrollTop=c.scrollHeight;
-}
-function voice(){
-document.getElementById("info").innerHTML="وائس ریکارڈنگ شروع ہو گئی ہے، بولیں...";
-var c=document.getElementById("chat");
-c.innerHTML+="<p><b>آپ:</b> 🎤 وائس میسج بھیجا</p>";
-}
-function audioCall(){
-window.open("https://meet.jit.si/TLP-Room1-Audio","_blank");
-}
-function videoCall(){
-window.open("https://meet.jit.si/TLP-Room1-Video","_blank");
-}
-</script>
+
+<div class="box">
+<h2>8 Rooms - 8 کمرے</h2>
+<a href="room1.html">1. Chat Room - چیٹ روم</a>
+<a href="room2.html">2. DJ Room - ڈی جے روم</a>
+<a href="room3.html">3. Earning Room - ارننگ روم</a>
+<a href="room4.html">4. Game Room - گیم روم</a>
+<a href="room5.html">5. Sawal Jawab Room - سوال جواب روم</a>
+<a href="room6.html">6. Mera Office - میرا آفس</a>
+<a href="room7.html">7. Live Bayan - لائیو بیان</a>
+<a href="room8.html">8. Madad Box - مدد باکس</a>
+</div>
+
+<p>TLP WhatsApp</p>
 </body>
 </html>
