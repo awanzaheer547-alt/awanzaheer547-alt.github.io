@@ -1,13 +1,43 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kamra 4</title>
-<style>body{margin:0;background:#0a3d2e;color:white;text-align:center;padding:10px} .box{border:3px solid #d4af37;border-radius:12px;padding:5px;background:black;margin:15px 0} a{background:#d4af37;color:#0a3d2e;padding:10px 20px;text-decoration:none;border-radius:8px;display:inline-block;margin-top:15px;font-weight:bold}</style>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sawal Jawab Room</title>
+<style>
+body{font-family:Arial;background:#fff8e1;text-align:center;margin:0;padding:20px}
+h1{color:#6a1b9a}
+.box{background:white;border:2px solid #6a1b9a;border-radius:15px;padding:20px;max-width:500px;margin:auto}
+.q{background:#f3e5f5;border-radius:10px;padding:15px;margin:10px 0;text-align:left}
+button{background:#6a1b9a;color:white;padding:10px 18px;border:none;border-radius:10px;font-size:16px;margin:5px}
+input{width:90%;padding:12px;margin:8px;border-radius:10px;border:1px solid #ccc}
+a{color:#6a1b9a}
+</style>
 </head>
 <body>
-<h1>تاجدارِ ختمِ نبوت ﷺ زندہ باد</h1>
-<h2>کمرہ نمبر 4</h2>
-<div class="box"><iframe width="100%" height="315" src="https://www.youtube.com/embed/VIDEO4" frameborder="0" allowfullscreen></iframe></div>
-<a href="index.html">واپس مرکز پر</a>
+<h1>❓ Sawal Jawab Room</h1>
+<p>سوال جواب روم</p>
+<div class="box">
+<div class="q"><b>Sawal:</b> Namaz me kitni Rakaat hain?<br><button onclick="show('A: Fajr 2, Zuhar 4, Asar 4, Maghrib 3, Isha 4')">Jawab Dekhein</button></div>
+<div class="q"><b>Sawal:</b> Roza kab Farz hua?<br><button onclick="show('A: Ramzan ka Roza 2 Hijri me Farz hua')">Jawab Dekhein</button></div>
+<p id="ans" style="color:#6a1b9a;font-weight:bold"></p>
+<hr>
+<p>Apna Sawal Likhein:</p>
+<input id="s" placeholder="Apna sawal yahan likhein...">
+<br>
+<button onclick="ask()">Sawal Bhejein</button>
+<p id="thanks"></p>
+<br>
+<a href="index.html">⬅ Wapas 8 Rooms par jayein</a>
+</div>
+<script>
+function show(t){document.getElementById('ans').innerText=t;}
+function ask(){
+var s=document.getElementById('s').value;
+if(s=="")return;
+document.getElementById('thanks').innerText="JazakAllah! Aapka sawal mil gaya: "+s;
+document.getElementById('s').value="";
+}
+</script>
 </body>
 </html>
