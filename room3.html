@@ -1,15 +1,46 @@
 <!DOCTYPE html>
-<html lang="ur" dir="rtl">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width">
-<title>Kamra 3</title>
-<style>body{margin:0;background:#0a3d2e;color:white;text-align:center;padding:20px} .box{border:3px solid gold;border-radius:10px;padding:10px;max-width:800px;margin:20px auto}</style>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earning Room - ارننگ روم</title>
+<style>
+body{font-family:Arial;background:#eafaf1;text-align:center;margin:0;padding:20px}
+h1{color:#0b6e4f}
+.box{background:white;border:2px solid #0b6e4f;border-radius:15px;padding:20px;max-width:500px;margin:auto}
+.task{background:#f0fff4;border:1px solid #0b6e4f;border-radius:10px;padding:15px;margin:10px 0}
+button{background:#0b6e4f;color:white;padding:12px 20px;border:none;border-radius:10px;font-size:18px;margin:5px}
+a{color:#0b6e4f}
+</style>
 </head>
 <body>
-<h1>تاجدار ختم نبوت زندہ باد</h1>
-<h2>کمرہ نمبر 3</h2>
+<h1>💰 Earning Room</h1>
+<p>ارننگ روم - Rozana Task Mukammal Karein</p>
 <div class="box">
-<iframe width="100%" height="315" src="https://www.youtube.com/embed/swSiWqOu8SY" frameborder="0" allowfullscreen></iframe>
+<p>Aapke Points: <b id="points">0</b></p>
+<div class="task">
+<p>Task 1: Aaj 1 Naat Sunain</p>
+<button onclick="add(10)">Mukammal - 10 Points</button>
 </div>
-<a href="index.html" style="color:gold">واپس مرکز پر</a>
+<div class="task">
+<p>Task 2: 1 Dost ko Invite Karein</p>
+<button onclick="add(20)">Mukammal - 20 Points</button>
+</div>
+<div class="task">
+<p>Task 3: Aaj Ka Bayan Sunain</p>
+<button onclick="add(15)">Mukammal - 15 Points</button>
+</div>
+<p id="msg"></p>
+<br>
+<a href="index.html">⬅ Wapas 8 Rooms par jayein</a>
+</div>
+<script>
+var p=0;
+function add(n){
+p=p+n;
+document.getElementById('points').innerText=p;
+document.getElementById('msg').innerText="Mashallah! "+n+" Points Mil Gaye ❤️";
+}
+</script>
 </body>
 </html>
