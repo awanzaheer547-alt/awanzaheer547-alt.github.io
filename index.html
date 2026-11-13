@@ -1,46 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tahaffuz Khatm-e-Nabuwwat App</title>
+<title>کمرہ 1 - چیٹ روم</title>
 <style>
-body{margin:0;background:#fdf6e3;font-family:Arial;text-align:center}
-img{width:100%;display:block}
-.rooms{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px}
-.room{background:white;border:3px solid #0a4d2e;border-radius:15px;padding:15px;font-size:18px;color:#0a4d2e;font-weight:bold}
-.room span{display:block;font-size:16px;font-weight:normal}
-#adbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.9);color:white;flex-direction:column;justify-content:center;align-items:center;z-index:100;padding:20px}
-#adbox button{padding:12px 25px;background:orange;border:none;border-radius:10px;color:white;font-size:18px;margin-top:15px}
-#lock{position:fixed;top:0;left:0;right:0;bottom:0;background:#0a4d2e;color:white;display:flex;flex-direction:column;justify-content:center;align-items:center;z-index:99}
-#lock input{padding:12px;font-size:18px;text-align:center;border-radius:10px;border:none;margin:10px}
-#lock button{padding:12px 25px;background:orange;color:white;border:none;border-radius:10px;font-size:18px}
+body{margin:0;background:#0a3d2e;font-family:Arial;text-align:center;color:white;padding:15px}
+h1{color:#ffeb3b}
+.box{background:white;color:black;border-radius:15px;padding:15px;max-width:500px;margin:auto}
+#chat{height:280px;overflow:auto;border:1px solid #ccc;border-radius:10px;padding:10px;background:#f9f9f9;text-align:right}
+input{width:65%;padding:12px;border-radius:10px;border:1px solid #ccc}
+button{padding:12px 10px;border:none;border-radius:10px;background:#0a3d2e;color:white;font-weight:bold;margin:3px}
+.call{background:#25D366}
+.video{background:#1877F2}
+.back{display:block;margin-top:15px;color:white;text-decoration:none}
 </style>
 </head>
 <body>
-
-<!-- PASSWORD -->
-<div id="lock">
-<h2>Labbaik Ya Rasool Allah ﷺ</h2>
-<p>Password likhein</p>
-<input type="password" id="pass" placeholder="Password">
-<button onclick="check()">App Kholein</button>
-<p id="msg"></p>
+<h1>کمرہ 1 - TLP چیٹ روم</h1>
+<p>تاجدارِ ختمِ نبوت ﷺ زندہ باد</p>
+<div class="box">
+<div id="chat"><p>خوش آمدید! یہاں سب بھائی چیٹ کریں گے۔</p></div>
+<br>
+<input id="msg" placeholder="پیغام لکھیں...">
+<button onclick="send()">بھیجیں</button>
+<br><br>
+<button onclick="voice()">🎤 وائس میسج</button>
+<button class="call" onclick="audioCall()">📞 آڈیو کال</button>
+<button class="video" onclick="videoCall()">📹 ویڈیو کال</button>
+<p id="info" style="color:green"></p>
 </div>
-
-<!-- MAIN PAGE YE WALA -->
-<img src="IMG-20261112-WA4969.jpg">
-
-<h3 style="color:#0aRao>تاجدارِ ختمِ نبوت ﷺ زندہ باد</h3>
-<div class="rooms">
-<a class="room" href="room1.html"><span>کمرہ نمبر 1</span></a>
-<a class="room" href="room2.html"><span>کمرہ نمبر 2</span></a>
-<a class="room" href="room3.html"><span>کمرہ نمبر 3</span></a>
-<a class="room" href="room4.html"><span>کمرہ نمبر 4</span></a>
-<a class="room" href="room5.html"><span>کمرہ نمبر 5</span></a>
-<a class="room" href="room6.html"><span>کمرہ نمبر 6</span></a>
-<a class="room" href="room7.html"><span>کمرہ نمبر 7</span></a>
-<a class="room" href="room8.html"><span>کمرہ نمبر 8</span></a>
-</div>
+<a class="back" href="index.html">⬅ واپس مرکز میں جائیں</a>
+<script>
+function send(){
+var m=document.getElementById("msg").value;
+if(m=="")return;
+var c=document.getElementById("chat");
+c.innerHTML+="<p><b>آپ:</b> "+m+"</p>";
+document.getElementById("msg").value="";
+c.scrollTop=c.scrollHeight;
+}
+function voice(){
+document.getElementById("info").innerHTML="وائس ریکارڈنگ شروع ہو گئی ہے، بولیں...";
+var c=document.getElementById("chat");
+c.innerHTML+="<p><b>آپ:</b> 🎤 وائس میسج بھیجا</p>";
+}
+function audioCall(){
+window.open("https://meet.jit.si/TLP-Room1-Audio","_blank");
+}
+function videoCall(){
+window.open("https://meet.jit.si/TLP-Room1-Video","_blank");
+}
+</script>
 </body>
 </html>
