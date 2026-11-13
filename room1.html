@@ -3,37 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DJ Room</title>
+<title>DJ Room - Live</title>
 <style>
-body{font-family:Arial;background:#fffbe6;text-align:center;padding:10px}
-.box{background:white;border:2px solid #0a6b2e;border-radius:15px;padding:15px;max-width:700px;margin:auto}
-audio{width:100%}
-.btn{background:#ffd700;border:none;padding:14px;border-radius:25px;font-weight:bold;font-size:17px;margin:8px;width:92%;display:block}
-.back{color:#0a6b2e;font-weight:bold;display:block;margin-top:15px}
-iframe{width:100%;height:450px;border:2px solid #0a6b2e;border-radius:10px}
+body{font-family:Arial;text-align:center;background:#fffbe6;padding:20px}
+h1{color:#0a5c2e}
+.btn{display:block;background:#0a5c2e;color:white;padding:18px;margin:15px;border-radius:12px;font-size:22px;font-weight:bold;text-decoration:none}
+.btn2{background:#ffcc00;color:black}
+.box{background:white;border:2px solid #0a5c2e;border-radius:12px;padding:15px;margin-top:15px}
 </style>
 </head>
 <body>
+<h1>📻 DJ Room - Live Mehfil</h1>
+<p>Neechey button dabayein, Live alag page me khulega. Puri mehfil chalegi, 5 minute me band nahi hoga.</p>
+
+<a class="btn" href="https://meet.jit.si/Tahafuz-DJ-Room-AwanZaheer" target="_blank">🎤 Live Kholein - Yahan Dabain</a>
+
+<a class="btn btn2" href="index.html">← Wapas 8 Rooms par jayein</a>
+
 <div class="box">
-<h1>🎵 DJ Room</h1>
-<h2>ڈی جے روم</h2>
-<p><b>Aap Yahan Se Chalayein, Awaz 8 Rooms Me Jayegi</b></p>
-<audio id="player" controls></audio>
-<label class="btn" for="file">📱 Apne Mobile Se Naat / Tilawat / Bayan Chunein</label>
-<input type="file" id="file" accept="audio/*,video/*" style="display:none" onchange="playFile(this)">
-<p>Neechey Live khula hua hai. Is me apna Mic ON karein, phir apni awaz sab ko jayegi.</p>
-<iframe src="https://meet.jit.si/AwanZaheer-DJ-Live-8Rooms" allow="camera;microphone;fullscreen;display-capture"></iframe>
-<a class="back" href="index.html">← Wapas 8 Rooms par jayein</a>
+<b>Tareeqa:</b><br>
+1. Upar wala sabz button dabayein<br>
+2. Apna Naam likhein<br>
+3. Mic ON karein<br>
+4. Join meeting dabayein<br>
+5. Bas! Aapki awaz sab ko jayegi
 </div>
-<script>
-function playFile(i){
-let f=i.files[0];
-if(f){
-let p=document.getElementById('player');
-p.src=URL.createObjectURL(f);
-p.play();
-}
-}
-</script>
+
 </body>
 </html>
