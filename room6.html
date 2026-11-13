@@ -3,29 +3,46 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kamra 6</title>
+<title>کمرہ 6 - اسٹیٹس روم</title>
 <style>
-body{margin:0;background:#0a3d2e;font-family:Arial;text-align:center;color:white;padding:20px}
-h1{color:#ffeb3b;font-size:28px}
-h2{color:white}
-.box{background:white;color:black;border-radius:15px;padding:20px;max-width:500px;margin:auto}
-button{background:#0a3d2e;color:white;padding:12px 20px;border:none;border-radius:10px;font-size:16px;margin:5px}
-a{color:#0a3d2e;font-weight:bold;text-decoration:none}
+body{margin:0;background:#0a3d2e;font-family:Arial;text-align:center;color:white;padding:15px}
+h1{color:#ffeb3b}
+.box{background:white;color:black;border-radius:15px;padding:15px;max-width:500px;margin:auto}
+.status{border:2px solid #25D366;border-radius:15px;padding:10px;margin:10px 0;text-align:right}
+input{width:90%;padding:12px;border-radius:10px;border:1px solid #ccc;margin:5px}
+button{padding:12px 15px;border:none;border-radius:10px;background:#0a3d2e;color:white;font-weight:bold;margin:3px}
+.back{display:block;margin-top:15px;color:white;text-decoration:none}
+img{width:100%;border-radius:10px}
 </style>
 </head>
 <body>
-<h1>تاجدارِ ختمِ نبوت ﷺ زندہ باد</h1>
-<h2>کمرہ نمبر 6</h2>
+<h1>کمرہ 6 - اسٹیٹس روم</h1>
+<p>تاجدارِ ختمِ نبوت ﷺ زندہ باد</p>
 <div class="box">
-<p>Naat / Bayan Sunain:</p>
-<button onclick="document.getElementById('a1').play()">▶ Play</button>
-<button onclick="document.getElementById('a1').pause()">⏸ Pause</button>
-<br><br>
-<audio id="a1" controls style="width:100%">
-<source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg">
-</audio>
-<br><br>
-<a href="index.html">⬅ واپس مرکز پر</a>
+<h3>اپنا اسٹیٹس لگائیں</h3>
+<input id="name" placeholder="اپنا نام لکھیں...">
+<input id="text" placeholder="اسٹیٹس لکھیں...">
+<input type="file" id="pic" accept="image/*">
+<button onclick="addStatus()">اسٹیٹس لگائیں</button>
+<hr>
+<h3>دوستوں کے اسٹیٹس</h3>
+<div id="list">
+<div class="status"><b>احمد بھائی</b><p>تاجدارِ ختمِ نبوت ﷺ زندہ باد</p><button onclick="like(this)">❤️ پسند</button></div>
+<div class="status"><b>علی بھائی</b><p>اللہ ہمارا حامی و ناصر ہو</p><button onclick="like(this)">❤️ پسند</button></div>
 </div>
+</div>
+<a class="back" href="index.html">⬅ واپس مرکز میں جائیں</a>
+<script>
+function addStatus(){
+var n=document.getElementById("name").value;
+var t=document.getElementById("text").value;
+if(n==""||t=="")return alert("نام اور اسٹیٹس لکھیں");
+var l=document.getElementById("list");
+l.innerHTML="<div class='status'><b>"+n+"</b><p>"+t+"</p><button onclick='like(this)'>❤️ پسند</button></div>"+l.innerHTML;
+document.getElementById("text").value="";
+alert("آپ کا اسٹیٹس لگ گیا!");
+}
+function like(b){b.innerHTML="❤️ پسند ہو گیا"; b.style.background="#25D366";}
+</script>
 </body>
 </html>
