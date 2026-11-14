@@ -1,1 +1,60 @@
-<!DOCTYPE html><html lang="ur"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sawal Jawab Room</title><style>body{font-family:Arial;background:#fffbe6;text-align:center;padding:15px}.box{background:white;border:2px solid #0a6b2e;border-radius:15px;padding:20px;max-width:600px;margin:auto}a{color:#0a6b2e;font-weight:bold;display:block;margin-top:15px}</style></head><body><div class="box"><h1>❓ Sawal Jawab Room</h1><h2>سوال جواب روم</h2><p>Yahan sawal jawab hoga.</p><a href="index.html">← Wapas 8 Rooms par jayein</a></div></body></html>
+<!-- Room 5 - Chat + Tehreek Room -->
+
+<div id="room5">
+  <h2>Room 5 - Chat Aur Tehreek Room</h2>
+
+  <div style="border:2px solid green; padding:20px; text-align:center;">
+    <p>Google Ad Yahan Chalega</p>
+    <p>Ad Dekhen, Phir Chat Shuru Hogi</p>
+  </div>
+
+  <br>
+  <button onclick="adDekha()">Ad Dekh Liya</button>
+
+  <hr>
+
+  <h3>Tehreek Ka Paigham</h3>
+  <p id="paigham">Yahan Tehreek Ka Paigham Aayega</p>
+  <button onclick="paighamDikhao()">Paigham Dekhen</button>
+
+  <br><br>
+  <video controls width="100%">
+    <source src="tehreek-video.mp4" type="video/mp4">
+    Aapka Video Yahan Chalega
+  </video>
+
+  <br><br>
+  <img src="tehreek-photo.jpg" width="100%">
+  <p>Tehreek Ki Tasveer Yahan Aayegi</p>
+
+  <hr>
+
+  <h3>Do Doston Ki Chat</h3>
+  <div id="chatBox" style="border:1px solid black; height:150px; padding:10px;">
+    <p><b>Bhai 1:</b> Assalam-o-Alaikum</p>
+    <p><b>Bhai 2:</b> Walaikum Assalam</p>
+  </div>
+
+  <br>
+  <input type="text" id="msg" placeholder="Apna Paigham Likhen">
+  <button onclick="sendMsg()">Bhejen</button>
+
+  <p>Aapki Earning: <span id="earning5">0</span></p>
+</div>
+
+<script>
+  function adDekha() {
+    alert("Mubarak Ho! Ad Dekh Liya");
+  }
+  function paighamDikhao() {
+    document.getElementById("paigham").innerText = "Tehreek Ka Paigham: Mehnat Karo, Iman Mazboot Rakho";
+    alert("Paigham Aa Gaya");
+  }
+  function sendMsg() {
+    var m = document.getElementById("msg").value;
+    var box = document.getElementById("chatBox");
+    box.innerHTML += "<p><b>Aap:</b> " + m + "</p>";
+    document.getElementById("earning5").innerText = "10";
+    document.getElementById("msg").value = "";
+  }
+</script>
