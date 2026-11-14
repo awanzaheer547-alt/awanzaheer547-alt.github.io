@@ -1,1 +1,81 @@
-<!DOCTYPE html><html lang="ur"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Madad Box</title><style>body{font-family:Arial;background:#fffbe6;text-align:center;padding:15px}.box{background:white;border:2px solid #0a6b2e;border-radius:15px;padding:20px;max-width:600px;margin:auto}a{color:#0a6b2e;font-weight:bold;display:block;margin-top:15px}</style></head><body><div class="box"><h1>📦 Madad Box</h1><h2>مدد باکس</h2><p>Yahan madad mangi jayegi.</p><a href="index.html">← Wapas 8 Rooms par jayein</a></div></body></html>
+<!-- Room 8 - Islamic Sawal Jawab Room -->
+
+<div id="room8">
+  <h2>Room 8 - Islamic Sawal Jawab Room</h2>
+  <p>Jangon Aur Islam Ke Hawale Se Sawal</p>
+
+  <div style="border:2px solid green; padding:15px; text-align:center;">
+    <p>Google Ad Yahan Chalega</p>
+  </div>
+  <br>
+  <button onclick="adDekha()">Ad Dekh Liya</button>
+
+  <hr>
+
+  <h3>Sawal 1 - Jang-e-Badr</h3>
+  <p><b>Sawal:</b> Jang-e-Badr Mein Musalman Kitne The?</p>
+  <input type="text" id="j1" placeholder="Jawab Likhen - 313">
+  <button onclick="check1()">Jawab Bhejen</button>
+  <p id="r1"></p>
+
+  <hr>
+
+  <h3>Sawal 2 - Jang-e-Uhud</h3>
+  <p><b>Sawal:</b> Jang-e-Uhud Kahan Lari Gayi?</p>
+  <input type="text" id="j2" placeholder="Jawab Likhen">
+  <button onclick="check2()">Jawab Bhejen</button>
+  <p id="r2"></p>
+
+  <hr>
+
+  <h3>Sawal 3 - Islam</h3>
+  <p><b>Sawal:</b> Pehli Wahi Kahan Nazil Hui?</p>
+  <input type="text" id="j3" placeholder="Jawab Likhen - Ghar-e-Hira">
+  <button onclick="check3()">Jawab Bhejen</button>
+  <p id="r3"></p>
+
+  <hr>
+
+  <h3>Apna Sawal Poochhen</h3>
+  <input type="text" id="apnaSawal" placeholder="Apna Sawal Likhen...">
+  <button onclick="sawalBhejo()">Sawal Bhejen</button>
+  <p id="sawalResult"></p>
+
+  <p>Aapka Inaam: <span id="inaam8">0</span></p>
+</div>
+
+<script>
+  function adDekha() {
+    alert("Ad Dekh Liya");
+  }
+  function check1() {
+    var j = document.getElementById("j1").value;
+    if (j == "313") {
+      document.getElementById("r1").innerText = "Mubarak Ho! Jawab Sahi Hai, Inaam 20 Rs";
+      document.getElementById("inaam8").innerText = "20";
+    } else {
+      document.getElementById("r1").innerText = "Ghalat Hai, Dobara Koshish Karen";
+    }
+  }
+  function check2() {
+    var j = document.getElementById("j2").value.toLowerCase();
+    if (j.includes("uhud") || j.includes("madina")) {
+      document.getElementById("r2").innerText = "Mubarak Ho! Jawab Sahi Hai, Inaam 20 Rs";
+    } else {
+      document.getElementById("r2").innerText = "Ghalat Hai, Dobara Koshish Karen";
+    }
+  }
+  function check3() {
+    var j = document.getElementById("j3").value.toLowerCase();
+    if (j.includes("hira")) {
+      document.getElementById("r3").innerText = "Mubarak Ho! Jawab Sahi Hai, Inaam 20 Rs";
+    } else {
+      document.getElementById("r3").innerText = "Ghalat Hai, Dobara Koshish Karen";
+    }
+  }
+  function sawalBhejo() {
+    var s = document.getElementById("apnaSawal").value;
+    document.getElementById("sawalResult").innerText = "Aapka Sawal Office Ko Chala Gaya: " + s;
+    alert("Sawal Bhej Diya Gaya");
+  }
+</script>
