@@ -1,1 +1,42 @@
-<!DOCTYPE html><html lang="ur"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Game Room</title><style>body{font-family:Arial;background:#fffbe6;text-align:center;padding:15px}.box{background:white;border:2px solid #0a6b2e;border-radius:15px;padding:20px;max-width:600px;margin:auto}a{color:#0a6b2e;font-weight:bold;display:block;margin-top:15px}</style></head><body><div class="box"><h1>🎮 Game Room</h1><h2>گیم روم - Google Ad</h2><p>Yahan game hoga.</p><a href="index.html">← Wapas 8 Rooms par jayein</a></div></body></html>
+<!-- Room 4 - Follower Room - Website Wala -->
+
+<div id="room4">
+  <h2>Follower Room 4</h2>
+
+  <div style="border:2px solid green; padding:20px; text-align:center;">
+    <p>Google Ad Yahan Chalega</p>
+    <p>Ad Dekhen, Phir Follow Karen</p>
+    <p>15 Second Tak Ad Dekhen</p>
+  </div>
+
+  <br>
+  <button onclick="adDekha()">Ad Dekh Liya</button>
+  <button onclick="closeAd()">Close</button>
+
+  <hr>
+
+  <p><b>Kaam:</b> Neeche Diye Gaye Page Ko Follow Karen</p>
+  <p>Follow Karne Ke Baad Earning Milegi</p>
+
+  <button onclick="followKiya()" style="background:blue; color:white; padding:10px;">Follow Karen</button>
+
+  <p>Aapki Earning: <span id="earning4">0</span></p>
+
+  <button onclick="goToNext()">Agla Room Mein Jayen</button>
+</div>
+
+<script>
+  function adDekha() {
+    alert("Mubarak Ho! Ad Dekh Liya, Ab Follow Karen");
+  }
+  function closeAd() {
+    alert("Ad Band Ho Gaya");
+  }
+  function followKiya() {
+    document.getElementById("earning4").innerText = "15";
+    alert("Mubarak Ho! Follow Ho Gaya, Earning Mil Gayi");
+  }
+  function goToNext() {
+    alert("Agla Room Khul Raha Hai");
+  }
+</script>
