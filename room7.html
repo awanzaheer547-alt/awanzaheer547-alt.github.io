@@ -1,1 +1,76 @@
-<!DOCTYPE html><html lang="ur"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Live Bayan</title><style>body{font-family:Arial;background:#fffbe6;text-align:center;padding:15px}.box{background:white;border:2px solid #0a6b2e;border-radius:15px;padding:20px;max-width:600px;margin:auto}a{color:#0a6b2e;font-weight:bold;display:block;margin-top:15px}</style></head><body><div class="box"><h1>🎙️ Live Bayan</h1><h2>لائیو بیان</h2><p>Yahan live bayan hoga.</p><a href="index.html">← Wapas 8 Rooms par jayein</a></div></body></html>
+<!-- Room 7 - Admin + Security Room -->
+
+<div id="room7">
+  <h2>Room 7 - Admin Room</h2>
+  <p>Yahan Sirf Admin Dekhega</p>
+
+  <!-- BOX 1 - AD -->
+  <div style="border:2px solid green; padding:15px; text-align:center;">
+    <h3>Box 1 - Google Ad</h3>
+    <p>Google Ad Yahan Chalega</p>
+    <button onclick="adDekha()">Ad Dekh Liya</button>
+  </div>
+
+  <br>
+
+  <!-- BOX 2 - MADAD -->
+  <div style="border:2px solid blue; padding:15px; text-align:center;">
+    <h3>Box 2 - Madad Wala</h3>
+    <p>Kisi Bhai Ko Madad Chahiye To Yahan Likhen</p>
+    <input type="text" id="madadMsg" placeholder="Mujhe Madad Chahiye...">
+    <button onclick="madadMango()">Madad Mango</button>
+    <p id="madadResult"></p>
+  </div>
+
+  <br>
+
+  <!-- BOX 3 - SAWAL JAWAB -->
+  <div style="border:2px solid orange; padding:15px; text-align:center;">
+    <h3>Box 3 - Sawal Jawab - Inaam Wala</h3>
+    <p><b>Sawal:</b> Pakistan Ka Capital Kya Hai?</p>
+    <input type="text" id="jawab" placeholder="Jawab Likhen">
+    <button onclick="checkJawab()">Jawab Bhejen</button>
+    <p id="inaam"></p>
+  </div>
+
+  <br>
+
+  <!-- SECURITY SYSTEM -->
+  <div style="border:3px solid red; padding:15px; text-align:center; background:#ffe6e6;">
+    <h3>Security System - Alarm</h3>
+    <p>Agar Koi Ganda Banda Aaye To Alarm Bajega</p>
+    <button onclick="alarmBajao()" style="background:red; color:white; padding:10px;">Alarm Check Karen</button>
+    <p id="alarmMsg"></p>
+    <button onclick="baharPhenko()" style="background:black; color:white; padding:10px;">Gande Bande Ko Bahar Phenken</button>
+    <p id="securityResult"></p>
+  </div>
+
+</div>
+
+<script>
+  function adDekha() {
+    alert("Ad Dekh Liya");
+  }
+  function madadMango() {
+    var m = document.getElementById("madadMsg").value;
+    document.getElementById("madadResult").innerText = "Aapki Madad Ki Arzi Admin Ko Chali Gayi: " + m;
+    alert("Madad Ki Arzi Bhej Di Gayi");
+  }
+  function checkJawab() {
+    var j = document.getElementById("jawab").value;
+    if (j.toLowerCase() == "islamabad") {
+      document.getElementById("inaam").innerText = "Mubarak Ho! Jawab Sahi Hai, Aapko Inaam Milega 20 Rs";
+      alert("Mubarak Ho! Inaam Mil Gaya");
+    } else {
+      document.getElementById("inaam").innerText = "Jawab Ghalat Hai, Dobara Koshish Karen";
+    }
+  }
+  function alarmBajao() {
+    document.getElementById("alarmMsg").innerText = "ALARM! ALARM! Ganda Banda App Mein Aa Gaya Hai!";
+    alert("ALARM! Ganda Banda Aa Gaya Hai, Admin Ko Khabar Ho Gayi");
+  }
+  function baharPhenko() {
+    document.getElementById("securityResult").innerText = "Ganda Banda Bahar Phenk Diya Gaya, App Saaf Ho Gaya";
+    alert("Ganda Banda Bahar Kar Diya Gaya");
+  }
+</script>
