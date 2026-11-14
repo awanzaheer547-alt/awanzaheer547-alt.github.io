@@ -1,1 +1,75 @@
-<!DOCTYPE html><html lang="ur"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mera Office</title><style>body{font-family:Arial;background:#fffbe6;text-align:center;padding:15px}.box{background:white;border:2px solid #0a6b2e;border-radius:15px;padding:20px;max-width:600px;margin:auto}a{color:#0a6b2e;font-weight:bold;display:block;margin-top:15px}</style></head><body><div class="box"><h1>🏢 Mera Office</h1><h2>میرا آفس</h2><p>Yahan aap ka office hoga.</p><a href="index.html">← Wapas 8 Rooms par jayein</a></div></body></html>
+<!-- Room 6 - Shehron Wale Group Room -->
+
+<div id="room6">
+  <h2>Room 6 - Shehron Wale Group</h2>
+  <p>Apne Sheher Ka Group Chunen</p>
+
+  <div style="border:2px solid green; padding:15px; text-align:center;">
+    <p>Google Ad Yahan Chalega</p>
+  </div>
+  <br>
+  <button onclick="adDekha()">Ad Dekh Liya</button>
+
+  <hr>
+
+  <h3>Pakistan Ke Group</h3>
+  <button onclick="openGroup('Lahore')">Lahore Group</button>
+  <button onclick="openGroup('Karachi')">Karachi Group</button>
+  <button onclick="openGroup('Hafizabad')">Hafizabad Group</button>
+  <button onclick="openGroup('Gujranwala')">Gujranwala Group</button>
+  <button onclick="openGroup('Faisalabad')">Faisalabad Group</button>
+  <button onclick="openGroup('Islamabad')">Islamabad Group</button>
+  <button onclick="openGroup('Rawalpindi')">Rawalpindi Group</button>
+  <button onclick="openGroup('Multan')">Multan Group</button>
+  <button onclick="openGroup('Hyderabad')">Hyderabad Group</button>
+
+  <hr>
+
+  <h3>Duniya Ke Group</h3>
+  <button onclick="openGroup('Dubai')">Dubai Group</button>
+  <button onclick="openGroup('Saudi Arabia')">Saudi Arabia Group</button>
+  <button onclick="openGroup('UK')">UK Group</button>
+  <button onclick="openGroup('USA')">USA Group</button>
+  <button onclick="openGroup('Canada')">Canada Group</button>
+
+  <hr>
+
+  <div id="groupChat" style="border:1px solid black; padding:15px;">
+    <h3 id="groupName">Koi Group Chunen</h3>
+    <div id="msgs">
+      <p>Yahan Is Sheher Ke Bhai Baat Karenge</p>
+    </div>
+    <input type="text" id="msg6" placeholder="Apna Paigham Likhen">
+    <button onclick="sendMsg6()">Bhejen</button>
+  </div>
+
+  <br>
+  <button onclick="personalChat()" style="background:blue; color:white; padding:10px;">Personal Chat - Bhai Se Baat Karen</button>
+  <button onclick="liveCall()" style="background:green; color:white; padding:10px;">Live Video / Audio Call</button>
+
+</div>
+
+<script>
+  var currentGroup = "";
+  function adDekha() {
+    alert("Ad Dekh Liya, Ab Group Join Karen");
+  }
+  function openGroup(city) {
+    currentGroup = city;
+    document.getElementById("groupName").innerText = city + " Group";
+    document.getElementById("msgs").innerHTML = "<p><b>" + city + " Group</b> Mein Khush Aamdeed</p>";
+    alert(city + " Group Khul Gaya");
+  }
+  function sendMsg6() {
+    var m = document.getElementById("msg6").value;
+    var box = document.getElementById("msgs");
+    box.innerHTML += "<p><b>Aap:</b> " + m + "</p>";
+    document.getElementById("msg6").value = "";
+  }
+  function personalChat() {
+    alert("Personal Chat Khul Rahi Hai, Bhai Se Baat Karen");
+  }
+  function liveCall() {
+    alert("Live Video / Audio Call Shuru Ho Rahi Hai");
+  }
+</script>
