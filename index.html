@@ -1,23 +1,48 @@
-<!-- ===== INDEX.HTML - SIRF YAHAN SE NECHE WALA HISSA ===== -->
-<!-- UPAR WALA NAAM + TASVEER WALA HISSA JAISE HAI WAISE HI REHNE DEN -->
-<!-- ALAG AD ROOM NAHI HAI - AD ROOM 8 ROOMON ME SE EK HAI -->
-
-<!-- POORI WHATSAPP - BILKUL ASLI WHATSAPP JAISI -->
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All World WhatsApp</title>
 <style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0b141a;color:#fff}
+.banner{background:linear-gradient(90deg,#043d1a,#0b6a2e,#043d1a);text-align:center;padding:16px 10px;border:2px solid #d4af37}
+.banner b{font-size:22px}
+.banner div{font-size:19px;margin-top:4px}
+.appname{background:#075e54;text-align:center;padding:13px}
+.appname h1{font-size:24px}
+.pic-card{background:#202c33;border-radius:15px;overflow:hidden;margin:10px}
+.pic-card img{width:100%;display:block}
+.pic-card div{padding:12px;text-align:center}
 .tabs{display:flex;background:#202c33;position:sticky;top:0;z-index:10}
 .tabs button{flex:1;padding:12px 2px;background:none;border:none;color:#aebac1;font-weight:bold;font-size:14px}
 .tabs button.active{color:#25d366;border-bottom:3px solid #25d366}
 .section{display:none;padding:10px}
 .section.active{display:block}
 .rooms{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.room{background:#111b21;padding:14px;border-radius:12px;text-align:center;border:1px solid #333;color:white}
+.room{background:#111b21;padding:16px;border-radius:12px;text-align:center;border:1px solid #333;color:white}
 .chat{display:flex;gap:10px;padding:10px;background:#111b21;margin:8px 0;border-radius:10px;align-items:center;color:white}
 .dp{width:46px;height:46px;background:#00a884;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
 .btn2{width:100%;background:#25d366;border:none;padding:12px;border-radius:20px;font-weight:bold;color:#fff;margin-top:10px}
 input{width:100%;padding:12px;border-radius:8px;border:none;margin-top:8px;color:#000}
 .box2{background:#202c33;margin:10px;padding:14px;border-radius:15px;color:white}
+.links{display:flex;flex-wrap:wrap;gap:6px;padding:10px;background:#111b21;margin:10px;border-radius:12px}
+.links a{flex:1;min-width:30%;text-align:center;text-decoration:none;color:#fff;padding:11px 2px;border-radius:20px;font-weight:bold;font-size:13px}
 </style>
+</head>
+<body>
 
+<!-- UPAR - BANNER -->
+<div class="banner"><b>Tahaffuz Khatm-e-Nabuwwat</b><div>All World WhatsApp</div><small>Markaz Rehmatul Lil Alameen</small></div>
+
+<!-- APP NAAM -->
+<div class="appname"><h1>All World WhatsApp</h1><small>Salam Ghaazi Malik Zaheer Awan - Founder</small></div>
+
+<!-- SIRF 1 BARI TASVEER - 1 BAAR -->
+<div class="pic-card"><img src="IMG-20261112-WA4969.jpg"><div><b>Ameer ul Mujhideen Hazrat Allama Molana Hafiz Khadim Hussain Rizvi<br>Murshid Zaheer ul Hassan Shah G.<br>Mufti Hafiz Muhammad Anas Hussain Rizvi<br>Ashiq e Rasool Malik Muhammad Ilyas Awan<br>Ameer Tip Hafiz Saad Hussain Rizvi</b></div></div>
+
+<!-- WHATSAPP -->
 <div class="tabs">
 <button class="active" onclick="showTab('home',this)">Home</button>
 <button onclick="showTab('chats',this)">Chats</button>
@@ -27,8 +52,77 @@ input{width:100%;padding:12px;border-radius:8px;border:none;margin-top:8px;color
 </div>
 
 <div id="home" class="section active">
-<h3 style="color:white;padding:5px 0">🏠 Hamare 8 Rooms</h3>
+<h3 style="padding:5px 0">🏠 Hamare 8 Rooms</h3>
 <div class="rooms" id="roomGrid"></div>
 <div style="margin-top:12px">
 <input id="newMsg" placeholder="Message likhen...">
-<button class="btn2" onclick
+<button class="btn2" onclick="sendHomeMsg()">Bhejen</button>
+<div id="homeMsgs"></div>
+</div>
+</div>
+
+<div id="chats" class="section">
+<h3>💬 Chats</h3>
+<div id="chatList">
+<div class="chat"><div class="dp">👤</div><div><b>Malik Zaheer Awan</b><br><small>Salam Bhai</small></div><small style="margin-left:auto">3:50</small></div>
+<div class="chat"><div class="dp">👤</div><div><b>Group - Tahaffuz</b><br><small>Paigham aa gaya</small></div><small style="margin-left:auto">3:40</small></div>
+</div>
+<button class="btn2" onclick="newChat()">➕ Nayi Chat</button>
+</div>
+
+<div id="status" class="section">
+<h3>📸 Status</h3>
+<div class="chat"><div class="dp">📸</div><div><b>Mera Status</b><br><small>Tap kar ke Status lagayen</small></div></div>
+<input type="file" id="statusFile" accept="image/*,video/*">
+<button class="btn2" onclick="addStatus()">Status Lagayen</button>
+<div id="statusList"></div>
+</div>
+
+<div id="calls" class="section">
+<h3>📞 Calls</h3>
+<button class="btn2" onclick="startCall('audio')">🎤 Audio Call</button>
+<button class="btn2" onclick="startCall('video')">📹 Video Call</button>
+<video id="myVideo" autoplay muted playsinline style="width:100%;margin-top:10px;background:#000;border-radius:12px"></video>
+<div id="callList"></div>
+</div>
+
+<div id="setting" class="section">
+<h3>⋮ Setting - A to Z</h3>
+<div class="box2">
+<div style="padding:12px;border-bottom:1px solid #333">👤 Profile - Naam, Photo, About</div>
+<div style="padding:12px;border-bottom:1px solid #333">👥 New Group</div>
+<div style="padding:12px;border-bottom:1px solid #333">📣 New Broadcast</div>
+<div style="padding:12px;border-bottom:1px solid #333">💻 Linked Devices</div>
+<div style="padding:12px;border-bottom:1px solid #333">⭐ Starred Messages</div>
+<div style="padding:12px">⚙️ Settings - Privacy, Chat, Storage</div>
+</div>
+</div>
+
+<!-- SAB SE NECHE - LINK BOX -->
+<div class="links">
+<a href="https://youtube.com/@awanzaheer547" target="_blank" style="background:#ff0000">▶ YouTube</a>
+<a href="https://facebook.com" target="_blank" style="background:#1877f2">f Facebook</a>
+<a href="https://wa.me/923000000000" target="_blank" style="background:#25d366">WhatsApp</a>
+<a href="https://likee.video" target="_blank" style="background:#fe2c55">♥ Likee</a>
+<a href="https://tiktok.com" target="_blank" style="background:#000;border:1px solid #fff">🎵 TikTok</a>
+</div>
+
+<script>
+let rooms=[
+{name:"DJ Room",icon:"🎧",file:"room1.html"},
+{name:"Chat Room",icon:"💬",file:"room2.html"},
+{name:"Ad Room",icon:"💰",file:"room3.html"},
+{name:"Sawal Jawab",icon:"❓",file:"room4.html"},
+{name:"Game",icon:"🎮",file:"room5.html"},
+{name:"Mera Office",icon:"🏢",file:"room6.html"},
+{name:"Live Bayan",icon:"📢",file:"room7.html"},
+{name:"Madad Box",icon:"🤲",file:"room8.html"}];
+document.getElementById('roomGrid').innerHTML=rooms.map(r=>'<div class="room" onclick="location.href=\''+r.file+'\'"><span style="font-size:26px">'+r.icon+'</span><br><b>'+r.name+'</b><br><small style="color:#25d366">● Khula Hai - Kholo</small></div>').join('');
+function showTab(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
+function sendHomeMsg(){let t=document.getElementById('newMsg').value;if(!t)return;document.getElementById('homeMsgs').innerHTML+='<div class="chat"><div class="dp">👤</div><div><b>Aap</b><br>'+t+'</div></div>';document.getElementById('newMsg').value='';}
+function newChat(){let n=prompt("Kis se Chat karni hai?");if(n)document.getElementById('chatList').innerHTML+='<div class="chat"><div class="dp">👤</div><div><b>'+n+'</b><br><small>Salam</small></div><small style="margin-left:auto">Abhi</small></div>';}
+function addStatus(){let f=document.getElementById('statusFile').files[0];if(!f)return alert("Photo chunen");let u=URL.createObjectURL(f);document.getElementById('statusList').innerHTML+='<div class="chat"><div class="dp">📸</div><div><b>Mera Status</b><br><img src="'+u+'" style="width:100px;border-radius:8px"></div></div>';}
+async function startCall(t){try{let s=await navigator.mediaDevices.getUserMedia({video:t==='video',audio:true});document.getElementById('myVideo').srcObject=s;document.getElementById('callList').innerHTML+='<div class="chat"><div class="dp">📞</div><div><b>'+t+' Call</b><br><small>Abhi - Chal rahi hai</small></div></div>';}catch(e){alert("Camera/Mic ki ijazat den");}}
+</script>
+</body>
+</html>
