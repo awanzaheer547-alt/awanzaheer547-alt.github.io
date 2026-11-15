@@ -7,10 +7,14 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#0b141a;color:#fff;padding-bottom:70px}
-.header{background:#075e54;padding:12px;display:flex;justify-content:space-between;align-items:center}
+.header{background:#075e54;padding:12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
 .header h1{font-size:20px}
-.main-pic{width:100%;display:block}
-.tabs{display:flex;background:#202c33}
+.top-name{background:#1a5c2a;text-align:center;padding:8px;font-weight:bold;font-size:18px}
+.main-pic{width:100%;display:block;max-height:380px;object-fit:cover;object-position:top}
+.social{display:flex;gap:6px;padding:10px;background:#111b21}
+.social a{flex:1;text-align:center;text-decoration:none;color:#fff;padding:10px 2px;border-radius:20px;font-weight:bold;font-size:13px}
+.yt{background:#ff0000}.fb{background:#1877f2}.wa{background:#25d366}.lk{background:#fe2c55}
+.tabs{display:flex;background:#202c33;position:sticky;top:48px;z-index:99}
 .tabs button{flex:1;padding:12px;background:none;border:none;color:#aebac1;font-weight:bold}
 .tabs button.active{color:#25d366;border-bottom:3px solid #25d366}
 .rooms{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
@@ -32,9 +36,17 @@ input{width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;color
 </head>
 <body>
 <div class="header"><h1>All World WhatsApp</h1><span onclick="showTab('setting')">⋮</span></div>
+<div class="top-name">All World WhatsApp - Tahaffuz Khatm-e-Nabuwwat</div>
 
-<!-- AAPKI WALI POORI TASVEER -->
 <img class="main-pic" src="IMG-20261112-WA4969.jpg" alt="All World WhatsApp">
+
+<!-- ASLI WALE BUTTON - YE DABANE SE KHULEN GE -->
+<div class="social">
+<a class="yt" href="https://youtube.com/@awanzaheer547" target="_blank">▶ YouTube</a>
+<a class="fb" href="https://facebook.com" target="_blank">f Facebook</a>
+<a class="wa" href="https://whatsapp.com/channel/" target="_blank">WhatsApp Channel</a>
+<a class="lk" href="https://likee.video" target="_blank">♥ Likee</a>
+</div>
 
 <div class="tabs">
 <button class="active" onclick="showTab('home',this)">Home</button>
@@ -55,4 +67,20 @@ input{width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;color
 <div class="room" onclick="openRoom('Madad Box')"><span>🤲</span><b>Madad Box</b><small>Madad</small></div>
 </div></div>
 
-<div id="chats" class="section"><div id="chatList"></div><input id="chatName" placeholder="
+<div id="chats" class="section"><div id="chatList"></div><input id="chatName" placeholder="Bhai ka naam"><input id="chatMsg" placeholder="Message likhen"><button class="btn" onclick="sendChat()">Message Bhejen</button></div>
+<div id="status" class="section"><h3>Status Updates</h3><input type="file" id="statusFile" accept="image/*,video/*"><button class="btn" onclick="addStatus()">Status Lagayen</button><div id="statusList"></div></div>
+<div id="calls" class="section"><h3>Calls</h3><button class="btn" onclick="startCall('audio')">🎤 Audio Call</button><button class="btn" onclick="startCall('video')">📹 Video Call</button><video id="myVideo" autoplay muted playsinline style="width:100%;margin-top:10px;background:#000;border-radius:12px"></video></div>
+<div id="channels" class="section"><h3>Channels</h3><div class="chat"><div class="dp">📢</div><div><b>All World WhatsApp Channel</b><small>Follow karen</small></div></div><a href="https://whatsapp.com/channel/" target="_blank" style="text-decoration:none"><button class="btn">WhatsApp Channel Follow Karen</button></a></div>
+<div id="setting" class="section"><h3>⋮ Setting - All World WhatsApp</h3><div class="three-dot"><div>👤 Profile - DP, Naam, About</div><div>👥 New Group</div><div>📣 New Broadcast</div><div>💻 Linked Devices</div><div>⭐ Starred Messages</div><div>💳 Payments</div><div>⚙️ Settings - Privacy, Chat, Notifications</div></div><input id="myName" placeholder="Apna Naam"><button class="btn" onclick="alert('Settings Save ho gayi')">Save Settings</button></div>
+
+<div class="bottom"><button onclick="showTab('chats')">Chats</button><button onclick="showTab('status')">Status</button><button onclick="showTab('calls')">Calls</button><button onclick="showTab('setting')">⋮ Setting</button></div>
+
+<script>
+function showTab(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
+function openRoom(n){alert(n+" khul gaya");showTab('chats');}
+function sendChat(){let n=document.getElementById('chatName').value||"Bhai";let m=document.getElementById('chatMsg').value;if(!m)return alert("Message likhen");document.getElementById('chatList').innerHTML='<div class="chat"><div class="dp">👤</div><div><b>'+n+'</b><small>'+m+'</small></div></div>'+document.getElementById('chatList').innerHTML;document.getElementById('chatMsg').value="";}
+function addStatus(){let f=document.getElementById('statusFile').files[0];if(!f)return alert("Photo chunen");let url=URL.createObjectURL(f);document.getElementById('statusList').innerHTML+='<div class="chat"><div class="dp">📸</div><div><b>Mera Status</b><br><img src="'+url+'" style="width:100px;border-radius:8px"><br><a href="'+url+'" download style="color:#25d366">Download Status</a></div></div>';alert("Status lag gaya");}
+async function startCall(t){try{let s=await navigator.mediaDevices.getUserMedia({video:t==='video',audio:true});document.getElementById('myVideo').srcObject=s;alert(t+" Call shuru");}catch(e){alert("Camera/Mic ki ijazat den");}}
+</script>
+</body>
+</html>
