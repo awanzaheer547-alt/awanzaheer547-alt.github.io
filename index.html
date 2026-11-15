@@ -1,2 +1,88 @@
-<h1>All World WhatsApp Chal Gaya</h1>
-<p>Labbaik Ya Rasool Allah</p>
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All World WhatsApp</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#0b141a;color:#fff;padding-bottom:70px}
+.header{background:#075e54;padding:12px;display:flex;justify-content:space-between}
+.header h1{font-size:20px}
+.main{background:#fdf6e3;color:#000;padding:12px;text-align:center}
+.green{background:#0b5a2e;color:#fff;padding:10px;border:3px solid #c9a227}
+.green h2{font-size:21px}
+.pics img{width:150px;height:150px;object-fit:cover;border:3px solid #fff;margin-top:10px}
+.pics .row{display:flex;gap:10px;margin-top:10px}
+.pics .row div{flex:1}
+.pics .row img{width:100%;height:110px}
+.tag{background:#fff8c5;border:1px solid #c9a227;font-size:10px;padding:3px;border-radius:10px;margin-top:3px}
+.links{display:flex;gap:5px;justify-content:center;margin-top:12px;flex-wrap:wrap}
+.links button{padding:8px 10px;border:none;border-radius:15px;font-weight:bold}
+.labbaik{font-size:28px;color:#8a6d00;margin-top:10px;font-weight:bold}
+.tabs{display:flex;background:#202c33}
+.tabs button{flex:1;padding:12px;background:none;border:none;color:#aebac1;font-weight:bold}
+.tabs button.active{color:#25d366;border-bottom:3px solid #25d366}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px}
+.room{background:#202c33;padding:16px;border-radius:12px;text-align:center}
+.room span{font-size:28px}
+.room b{display:block}
+.room small{color:#aebac1;font-size:11px}
+.section{display:none;padding:10px}
+.section.active{display:block}
+.chat{display:flex;gap:10px;padding:10px;background:#111b21;margin-bottom:6px;border-radius:10px;align-items:center}
+.dp{width:48px;height:48px;background:#00a884;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;overflow:hidden}
+.dp img{width:100%;height:100%;object-fit:cover}
+.btn{width:100%;background:#25d366;border:none;padding:12px;border-radius:20px;font-weight:bold;margin-top:10px}
+input,select{width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;color:#000}
+.three-dot{background:#202c33;padding:10px;border-radius:10px}
+.three-dot div{padding:12px;border-bottom:1px solid #333}
+.bottom{position:fixed;bottom:0;left:0;right:0;display:flex;background:#202c33;padding:10px;gap:5px}
+.bottom button{flex:1;background:#25d366;border:none;padding:10px;border-radius:20px;font-weight:bold}
+</style>
+</head>
+<body>
+<div class="header"><h1>All World WhatsApp</h1><span onclick="showTab('setting')">⋮</span></div>
+<div class="main">
+<div class="green"><h2>Tahaffuz Khatm-e-Nabuwwat</h2><b>All World WhatsApp</b><small>Markaz Rehmatul Lil Alameen</small></div>
+<div class="pics">
+<img src="pic1.jpg" onerror="this.src='https://via.placeholder.com/150'">
+<div class="tag">Ameer ul Mujahideen Hazrat Allama Molana Hafiz Khadim Hussain Rizvi</div>
+<div class="row"><div><img src="pic2.jpg" onerror="this.src='https://via.placeholder.com/150'"><div class="tag">Murshad Zaheer ul Hassan Shah G.</div></div><div><img src="pic3.jpg" onerror="this.src='https://via.placeholder.com/150'"><div class="tag">Mufti Hafiz Muhammad Anas Hussain Rizvi</div></div></div>
+<div class="row"><div><img src="pic4.jpg" onerror="this.src='https://via.placeholder.com/150'"><div class="tag">Ashiq e Rasool Malik Muhammad Ilyas Awan</div></div><div><img src="pic5.jpg" onerror="this.src='https://via.placeholder.com/150'"><div class="tag">Ameer Tlp Hafiz Saad Hussain Rizvi</div></div></div>
+</div>
+<div class="links"><button style="background:#ff0000;color:#fff">▶ YouTube</button><button style="background:#1877f2;color:#fff">f Facebook</button><button style="background:#25d366;color:#fff">WhatsApp Channel</button><button style="background:#ff2d55;color:#fff">Likee</button></div>
+<div class="labbaik">لبیک یا رسول اللہ ﷺ</div>
+</div>
+<div class="tabs">
+<button class="active" onclick="showTab('home',this)">Home</button>
+<button onclick="showTab('chats',this)">Chats</button>
+<button onclick="showTab('status',this)">Status</button>
+<button onclick="showTab('calls',this)">Calls</button>
+<button onclick="showTab('channels',this)">Channels</button>
+</div>
+<div id="home" class="section active"><div class="rooms">
+<div class="room" onclick="openRoom('DJ Room')"><span>🎧</span><b>DJ Room</b><small>Voice Chat Room</small></div>
+<div class="room" onclick="openRoom('Chat Room')"><span>💬</span><b>Chat Room</b><small>Sab Bhai Chat</small></div>
+<div class="room" onclick="openRoom('Add Room')"><span>➕</span><b>Add Room</b><small>Naya Room</small></div>
+<div class="room" onclick="openRoom('Sawal Jawab')"><span>❓</span><b>Sawal Jawab</b><small>Deeni Sawal</small></div>
+<div class="room" onclick="openRoom('Game')"><span>🎮</span><b>Game</b><small>Game Room</small></div>
+<div class="room" onclick="openRoom('Mera Office')"><span>🏢</span><b>Mera Office</b><small>Office</small></div>
+<div class="room" onclick="openRoom('Live Bayan')"><span>📢</span><b>Live Bayan</b><small>Live Bayan</small></div>
+<div class="room" onclick="openRoom('Madad Box')"><span>🤲</span><b>Madad Box</b><small>Madad</small></div>
+</div></div>
+<div id="chats" class="section"><div id="chatList"></div><input id="chatName" placeholder="Bhai ka naam"><input id="chatMsg" placeholder="Message likhen"><button class="btn" onclick="sendChat()">Message Bhejen</button></div>
+<div id="status" class="section"><h3>Status Updates</h3><input type="file" id="statusFile" accept="image/*,video/*"><button class="btn" onclick="addStatus()">Status Lagayen</button><div id="statusList"></div></div>
+<div id="calls" class="section"><h3>Calls</h3><button class="btn" onclick="startCall('audio')">🎤 Audio Call</button><button class="btn" onclick="startCall('video')">📹 Video Call</button><video id="myVideo" autoplay muted playsinline style="width:100%;margin-top:10px;background:#000;border-radius:12px"></video></div>
+<div id="channels" class="section"><h3>Channels</h3><div class="chat"><div class="dp">📢</div><div><b>Tahaffuz Khatm-e-Nabuwwat Channel</b><small>Follow karen</small></div></div><button class="btn" onclick="alert('Follow ho gaya')">Follow</button></div>
+<div id="setting" class="section"><h3>⋮ Setting - Same to Same WhatsApp</h3><div class="three-dot"><div>👤 Profile - DP, Naam, About</div><div>👥 New Group</div><div>📣 New Broadcast</div><div>💻 Linked Devices</div><div>⭐ Starred Messages</div><div>💳 Payments</div><div>⚙️ Settings - Privacy, Chat, Notifications</div></div><input id="myName" placeholder="Apna Naam"><input placeholder="About - Labbaik Ya Rasool Allah"><button class="btn" onclick="alert('Settings Save ho gayi')">Save Settings</button></div>
+<div class="bottom"><button onclick="showTab('chats')">Chats</button><button onclick="showTab('status')">Status</button><button onclick="showTab('calls')">Calls</button><button onclick="showTab('setting')">⋮ Setting</button></div>
+<script>
+function showTab(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
+function openRoom(n){alert(n+" khul gaya");showTab('chats');}
+function sendChat(){let n=document.getElementById('chatName').value||"Bhai";let m=document.getElementById('chatMsg').value;if(!m)return alert("Message likhen");document.getElementById('chatList').innerHTML='<div class="chat"><div class="dp">👤</div><div><b>'+n+'</b><small>'+m+'</small></div></div>'+document.getElementById('chatList').innerHTML;document.getElementById('chatMsg').value="";}
+function addStatus(){let f=document.getElementById('statusFile').files[0];if(!f)return alert("Photo chunen");let url=URL.createObjectURL(f);document.getElementById('statusList').innerHTML+='<div class="chat"><div class="dp">📸</div><div><b>Mera Status</b><br><img src="'+url+'" style="width:100px;border-radius:8px"><br><a href="'+url+'" download style="color:#25d366">Download Status</a></div></div>';alert("Status lag gaya");}
+async function startCall(t){try{let s=await navigator.mediaDevices.getUserMedia({video:t==='video',audio:true});document.getElementById('myVideo').srcObject=s;alert(t+" Call shuru");}catch(e){alert("Camera/Mic ki ijazat den");}}
+</script>
+</body>
+</html>
