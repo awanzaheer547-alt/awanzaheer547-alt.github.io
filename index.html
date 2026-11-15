@@ -1,47 +1,34 @@
-<!DOCTYPE html>
-<html lang="ur">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All World WhatsApp</title>
+<!-- ===== INDEX.HTML - SIRF YAHAN SE NECHE WALA HISSA ===== -->
+<!-- UPAR WALA NAAM + TASVEER WALA HISSA JAISE HAI WAISE HI REHNE DEN -->
+<!-- ALAG AD ROOM NAHI HAI - AD ROOM 8 ROOMON ME SE EK HAI -->
+
+<!-- POORI WHATSAPP - BILKUL ASLI WHATSAPP JAISI -->
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#0b141a;color:#fff;padding-bottom:20px}
-.banner{background:linear-gradient(90deg,#043d1a,#0b6a2e,#043d1a);text-align:center;padding:16px 10px;border:2px solid #d4af37}
-.banner b{font-size:22px}
-.banner div{font-size:19px;margin-top:4px}
-.appname{background:#075e54;text-align:center;padding:13px}
-.appname h1{font-size:24px}
-.appname small{font-size:13px}
-.pic-card{background:#202c33;border-radius:15px;overflow:hidden;margin:10px}
-.pic-card img{width:100%;height:320px;object-fit:cover;display:block}
-.pic-card div{padding:12px;text-align:center}
-.pic-card b{font-size:17px}
-.links{display:flex;flex-wrap:wrap;gap:6px;padding:10px;background:#111b21}
-.links a{flex:1;min-width:30%;text-align:center;text-decoration:none;color:#fff;padding:11px 2px;border-radius:20px;font-weight:bold;font-size:13px}
-.yt{background:#ff0000}.fb{background:#1877f2}.wa{background:#25d366}.lk{background:#fe2c55}.tk{background:#000;border:1px solid #fff}
-.box{background:#202c33;margin:10px;padding:14px;border-radius:15px}
-.btn{width:100%;background:#25d366;border:none;padding:12px;border-radius:20px;font-weight:bold;color:#fff;margin-top:10px;font-size:14px}
-.rooms{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.room{background:#111b21;padding:14px;border-radius:12px;text-align:center;border:1px solid #333}
-.chat{display:flex;gap:10px;padding:10px;background:#111b21;margin:10px;border-radius:10px;align-items:center}
-.dp{width:46px;height:46px;background:#00a884;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
-input{width:100%;padding:12px;border-radius:8px;border:none;margin-top:8px;color:#000}
-.tabs{display:flex;background:#202c33;position:sticky;top:0}
-.tabs button{flex:1;padding:11px 2px;background:none;border:none;color:#aebac1;font-weight:bold}
+.tabs{display:flex;background:#202c33;position:sticky;top:0;z-index:10}
+.tabs button{flex:1;padding:12px 2px;background:none;border:none;color:#aebac1;font-weight:bold;font-size:14px}
 .tabs button.active{color:#25d366;border-bottom:3px solid #25d366}
-.section{display:none;padding:0 10px 10px 10px}
+.section{display:none;padding:10px}
 .section.active{display:block}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.room{background:#111b21;padding:14px;border-radius:12px;text-align:center;border:1px solid #333;color:white}
+.chat{display:flex;gap:10px;padding:10px;background:#111b21;margin:8px 0;border-radius:10px;align-items:center;color:white}
+.dp{width:46px;height:46px;background:#00a884;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.btn2{width:100%;background:#25d366;border:none;padding:12px;border-radius:20px;font-weight:bold;color:#fff;margin-top:10px}
+input{width:100%;padding:12px;border-radius:8px;border:none;margin-top:8px;color:#000}
+.box2{background:#202c33;margin:10px;padding:14px;border-radius:15px;color:white}
 </style>
-</head>
-<body>
 
-<!-- 1. TAHAFFUZ KHATM-E-NABUWWAT WALA BANNER -->
-<div class="banner"><b>Tahaffuz Khatm-e-Nabuwwat</b><div>All World WhatsApp</div><small>Markaz Rehmatul Lil Alameen</small></div>
+<div class="tabs">
+<button class="active" onclick="showTab('home',this)">Home</button>
+<button onclick="showTab('chats',this)">Chats</button>
+<button onclick="showTab('status',this)">Status</button>
+<button onclick="showTab('calls',this)">Calls</button>
+<button onclick="showTab('setting',this)">⋮</button>
+</div>
 
-<!-- 2. APP KA NAAM -->
-<div class="appname"><h1>All World WhatsApp</h1><small>Salam Ghaazi Malik Zaheer Awan - Founder</small></div>
-
-<!-- 3. 5 TASVEEREIN -->
-<div class="pic-card"><img src="pic1.jpg"><div><b>1. Ameer ul Mujhideen Hazrat Allama Molana Hafiz Khadim Hussain Rizvi</b></div></div>
-<div class="pic-card"><img src="pic
+<div id="home" class="section active">
+<h3 style="color:white;padding:5px 0">🏠 Hamare 8 Rooms</h3>
+<div class="rooms" id="roomGrid"></div>
+<div style="margin-top:12px">
+<input id="newMsg" placeholder="Message likhen...">
+<button class="btn2" onclick
