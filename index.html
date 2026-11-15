@@ -8,11 +8,11 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
 body{background:#0b141a;color:#fff;padding-bottom:70px}
 .header{background:#075e54;padding:12px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.header h1{font-size:20px}
-.top-name{background:#1a5c2a;text-align:center;padding:8px;font-weight:bold;font-size:18px}
-.main-pic{width:100%;display:block;max-height:380px;object-fit:cover;object-position:top}
+.header h1{font-size:19px}
+.top-name{background:#1a5c2a;text-align:center;padding:8px;font-weight:bold;font-size:16px}
+.main-pic{width:100%;display:block;max-height:360px;object-fit:cover;object-position:top}
 .social{display:flex;gap:6px;padding:10px;background:#111b21}
-.social a{flex:1;text-align:center;text-decoration:none;color:#fff;padding:10px 2px;border-radius:20px;font-weight:bold;font-size:13px}
+.social a{flex:1;text-align:center;text-decoration:none;color:#fff;padding:11px 2px;border-radius:20px;font-weight:bold;font-size:13px}
 .yt{background:#ff0000}.fb{background:#1877f2}.wa{background:#25d366}.lk{background:#fe2c55}
 .tabs{display:flex;background:#202c33;position:sticky;top:48px;z-index:99}
 .tabs button{flex:1;padding:12px;background:none;border:none;color:#aebac1;font-weight:bold}
@@ -25,62 +25,22 @@ body{background:#0b141a;color:#fff;padding-bottom:70px}
 .section{display:none;padding:10px}
 .section.active{display:block}
 .chat{display:flex;gap:10px;padding:10px;background:#111b21;margin-bottom:6px;border-radius:10px;align-items:center}
-.dp{width:48px;height:48px;background:#00a884;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px}
-.btn{width:100%;background:#25d366;border:none;padding:12px;border-radius:20px;font-weight:bold;margin-top:10px}
-input{width:100%;padding:10px;border-radius:8px;border:none;margin-top:8px;color:#000}
+.dp{width:48px;height:48px;background:#00a884;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.btn{width:100%;background:#25d366;border:none;padding:12px;border-radius:20px;font-weight:bold;margin-top:10px;color:#fff}
+input{width:100%;padding:12px;border-radius:8px;border:none;margin-top:8px;color:#000}
+.msg-box{display:flex;gap:6px;margin-top:10px}
+.msg-box input{margin:0}
+.msg-box button{width:80px;background:#25d366;border:none;border-radius:20px;color:#fff;font-weight:bold}
+.room-header{background:#075e54;padding:12px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
+.room-header b{font-size:17px}
+.back{background:#fff;color:#000;border:none;padding:6px 12px;border-radius:20px;font-weight:bold}
 .three-dot{background:#202c33;padding:10px;border-radius:10px}
 .three-dot div{padding:12px;border-bottom:1px solid #333}
 .bottom{position:fixed;bottom:0;left:0;right:0;display:flex;background:#202c33;padding:10px;gap:5px}
-.bottom button{flex:1;background:#25d366;border:none;padding:10px;border-radius:20px;font-weight:bold}
+.bottom button{flex:1;background:#25d366;border:none;padding:10px;border-radius:20px;font-weight:bold;color:#fff}
 </style>
 </head>
 <body>
 <div class="header"><h1>All World WhatsApp</h1><span onclick="showTab('setting')">⋮</span></div>
 <div class="top-name">All World WhatsApp - Tahaffuz Khatm-e-Nabuwwat</div>
-
-<img class="main-pic" src="IMG-20261112-WA4969.jpg" alt="All World WhatsApp">
-
-<!-- ASLI WALE BUTTON - YE DABANE SE KHULEN GE -->
-<div class="social">
-<a class="yt" href="https://youtube.com/@awanzaheer547" target="_blank">▶ YouTube</a>
-<a class="fb" href="https://facebook.com" target="_blank">f Facebook</a>
-<a class="wa" href="https://whatsapp.com/channel/" target="_blank">WhatsApp Channel</a>
-<a class="lk" href="https://likee.video" target="_blank">♥ Likee</a>
-</div>
-
-<div class="tabs">
-<button class="active" onclick="showTab('home',this)">Home</button>
-<button onclick="showTab('chats',this)">Chats</button>
-<button onclick="showTab('status',this)">Status</button>
-<button onclick="showTab('calls',this)">Calls</button>
-<button onclick="showTab('channels',this)">Channels</button>
-</div>
-
-<div id="home" class="section active"><div class="rooms">
-<div class="room" onclick="openRoom('DJ Room')"><span>🎧</span><b>DJ Room</b><small>Voice Chat Room</small></div>
-<div class="room" onclick="openRoom('Chat Room')"><span>💬</span><b>Chat Room</b><small>Sab Bhai Chat</small></div>
-<div class="room" onclick="openRoom('Add Room')"><span>➕</span><b>Add Room</b><small>Naya Room</small></div>
-<div class="room" onclick="openRoom('Sawal Jawab')"><span>❓</span><b>Sawal Jawab</b><small>Deeni Sawal</small></div>
-<div class="room" onclick="openRoom('Game')"><span>🎮</span><b>Game</b><small>Game Room</small></div>
-<div class="room" onclick="openRoom('Mera Office')"><span>🏢</span><b>Mera Office</b><small>Office</small></div>
-<div class="room" onclick="openRoom('Live Bayan')"><span>📢</span><b>Live Bayan</b><small>Live Bayan</small></div>
-<div class="room" onclick="openRoom('Madad Box')"><span>🤲</span><b>Madad Box</b><small>Madad</small></div>
-</div></div>
-
-<div id="chats" class="section"><div id="chatList"></div><input id="chatName" placeholder="Bhai ka naam"><input id="chatMsg" placeholder="Message likhen"><button class="btn" onclick="sendChat()">Message Bhejen</button></div>
-<div id="status" class="section"><h3>Status Updates</h3><input type="file" id="statusFile" accept="image/*,video/*"><button class="btn" onclick="addStatus()">Status Lagayen</button><div id="statusList"></div></div>
-<div id="calls" class="section"><h3>Calls</h3><button class="btn" onclick="startCall('audio')">🎤 Audio Call</button><button class="btn" onclick="startCall('video')">📹 Video Call</button><video id="myVideo" autoplay muted playsinline style="width:100%;margin-top:10px;background:#000;border-radius:12px"></video></div>
-<div id="channels" class="section"><h3>Channels</h3><div class="chat"><div class="dp">📢</div><div><b>All World WhatsApp Channel</b><small>Follow karen</small></div></div><a href="https://whatsapp.com/channel/" target="_blank" style="text-decoration:none"><button class="btn">WhatsApp Channel Follow Karen</button></a></div>
-<div id="setting" class="section"><h3>⋮ Setting - All World WhatsApp</h3><div class="three-dot"><div>👤 Profile - DP, Naam, About</div><div>👥 New Group</div><div>📣 New Broadcast</div><div>💻 Linked Devices</div><div>⭐ Starred Messages</div><div>💳 Payments</div><div>⚙️ Settings - Privacy, Chat, Notifications</div></div><input id="myName" placeholder="Apna Naam"><button class="btn" onclick="alert('Settings Save ho gayi')">Save Settings</button></div>
-
-<div class="bottom"><button onclick="showTab('chats')">Chats</button><button onclick="showTab('status')">Status</button><button onclick="showTab('calls')">Calls</button><button onclick="showTab('setting')">⋮ Setting</button></div>
-
-<script>
-function showTab(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
-function openRoom(n){alert(n+" khul gaya");showTab('chats');}
-function sendChat(){let n=document.getElementById('chatName').value||"Bhai";let m=document.getElementById('chatMsg').value;if(!m)return alert("Message likhen");document.getElementById('chatList').innerHTML='<div class="chat"><div class="dp">👤</div><div><b>'+n+'</b><small>'+m+'</small></div></div>'+document.getElementById('chatList').innerHTML;document.getElementById('chatMsg').value="";}
-function addStatus(){let f=document.getElementById('statusFile').files[0];if(!f)return alert("Photo chunen");let url=URL.createObjectURL(f);document.getElementById('statusList').innerHTML+='<div class="chat"><div class="dp">📸</div><div><b>Mera Status</b><br><img src="'+url+'" style="width:100px;border-radius:8px"><br><a href="'+url+'" download style="color:#25d366">Download Status</a></div></div>';alert("Status lag gaya");}
-async function startCall(t){try{let s=await navigator.mediaDevices.getUserMedia({video:t==='video',audio:true});document.getElementById('myVideo').srcObject=s;alert(t+" Call shuru");}catch(e){alert("Camera/Mic ki ijazat den");}}
-</script>
-</body>
-</html>
+<img class="main-pic" src="IMG-20261112-WA4969bn
