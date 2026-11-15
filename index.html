@@ -10,24 +10,21 @@
 input{width:96%;padding:11px;margin:6px 0;border-radius:10px;border:1px solid #ccc}
 .btn{background:#0b5d2e;color:#fff;border:none;padding:12px;border-radius:10px;width:100%;font-weight:bold;margin-top:6px}
 .wa-top{background:#075E54;color:#fff;padding:12px;border-radius:12px 12px 0 0;display:flex;justify-content:space-between}
-.wa-tabs{display:flex;background:#075E54;color:#fff;height:48px;overflow:hidden;position:relative;z-index:2}
-.wa-tabs div{flex:1;padding:12px 2px;font-weight:bold;cursor:pointer;font-size:15px;text-align:center;white-space:nowrap}
+.wa-tabs{display:flex;background:#075E54;color:#fff}
+.wa-tabs div{flex:1;padding:12px 2px;font-weight:bold;cursor:pointer;font-size:15px;text-align:center}
 .wa-tabs .on{background:#128C7E}
-.chat{display:flex;align-items:center;gap:10px;padding:10px;border-bottom:1px solid #eee;cursor:pointer;overflow:hidden}
-.chat b{width:42px;height:42px;min-width:42px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
-.chat .txt{flex:1;min-width:0;text-align:left}
-.chat .txt b{width:auto;height:auto;min-width:0;background:none;color:#000;font-size:15px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.chat .txt span{font-size:13px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:block}
-.chat .time{font-size:12px;color:#888;min-width:35px}
+.chat{display:flex;align-items:center;gap:12px;padding:10px;border-bottom:1px solid #eee}
+.ava{width:44px;height:44px;min-width:44px;max-width:44px;background:#25D366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:22px;font-weight:bold}
+.nam{flex:1;min-width:0;text-align:left}
+.nam-name{display:block;font-weight:bold;font-size:16px;color:#000;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nam-msg{display:block;font-size:14px;color:#555;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-time{font-size:12px;color:#888}
 .msg{background:#DCF8C6;padding:10px;border-radius:10px;margin:8px 0;width:85%}
 .ad{background:#fff3cd;border:2px dashed #e6a800;padding:14px;border-radius:12px;text-align:center;margin:8px 0}
 .opt{background:#eef7f0;padding:11px;border-radius:10px;margin:6px 0;cursor:pointer;border:1px solid #0b5d2e}
 </style></head><body>
 <div class="top"><h1>Tahaffuz Khatm-e-Nabuwwat</h1><h2>All World WhatsApp</h2><p>Markaz Rehmatul Lil Alameen</p></div>
-
-<!-- AAP KI WOHI 5 TASVEERON WALI TASVEER - SIRF 1 DAFA -->
 <img class="poster" src="IMG-20261112-WA4969.jpg">
-
 <div class="menu">
 <button onclick="openP('whatsapp')">💬 WhatsApp</button>
 <button onclick="openP('dj')">🎧 DJ Room</button>
@@ -44,21 +41,21 @@ input{width:96%;padding:11px;margin:6px 0;border-radius:10px;border:1px solid #c
 <div class="wa-tabs"><div class="on" onclick="wtab('chats',this)">Chats</div><div onclick="wtab('status',this)">Status</div><div onclick="wtab('calls',this)">Calls</div><div onclick="wtab('setting',this)">Setting</div></div>
 
 <div id="w-chats">
-<div class="chat"><b>Z</b><div class="txt"><b>Ghazi Malik Zaheer Awan</b><span>السلام علیکم بھائی جان ❤️</span></div><span class="time">10:39</span></div>
-<div class="chat"><b>M</b><div class="txt"><b>Mufti Anas Hussain Rizvi</b><span>لبیک یا رسول اللہ ﷺ</span></div><span class="time">10:30</span></div>
-<div class="chat"><b>H</b><div class="txt"><b>Hafiz Saad Hussain Rizvi</b><span>Live Bayan shuru hai</span></div><span class="time">09:15</span></div>
+<div class="chat"><div class="ava">Z</div><div class="nam"><span class="nam-name">Ghazi Malik Zaheer Awan</span><span class="nam-msg">السلام علیکم بھائی جان ❤️</span></div><span class="chat-time">10:39</span></div>
+<div class="chat"><div class="ava">M</div><div class="nam"><span class="nam-name">Mufti Anas Hussain Rizvi</span><span class="nam-msg">لبیک یا رسول اللہ ﷺ</span></div><span class="chat-time">10:30</span></div>
+<div class="chat"><div class="ava">H</div><div class="nam"><span class="nam-name">Hafiz Saad Hussain Rizvi</span><span class="nam-msg">Live Bayan shuru hai</span></div><span class="chat-time">09:15</span></div>
 <div style="padding:10px"><input id="waMsg" placeholder="پیغام لکھیں..."><button class="btn" onclick="let t=document.getElementById('waMsg').value;let d=document.createElement('div');d.className='msg';d.innerText='آپ: '+t;document.getElementById('waChatBox').appendChild(d)">بھیجیں ➤</button><div id="waChatBox"><div class="msg">السلام علیکم بھائی جان! خوش آمدید ❤️</div></div></div>
 </div>
 
 <div id="w-status" style="display:none;padding:10px">
-<div class="chat"><b>◉</b><div class="txt"><b>My Status</b><span>Tap to add status</span></div></div>
-<div class="chat"><b>Z</b><div class="txt"><b>Zaheer Awan</b><span>Abhi abhi - Labbaik</span></div></div>
+<div class="chat"><div class="ava">◉</div><div class="nam"><span class="nam-name">My Status</span><span class="nam-msg">Tap to add status</span></div></div>
+<div class="chat"><div class="ava">Z</div><div class="nam"><span class="nam-name">Zaheer Awan</span><span class="nam-msg">Abhi abhi - Labbaik</span></div></div>
 <input type="file"><button class="btn">Status Lagayen</button>
 </div>
 
 <div id="w-calls" style="display:none;padding:10px">
-<div class="chat"><b>📞</b><div class="txt"><b>Zaheer Awan</b><span>Outgoing - 2 min</span></div></div>
-<div class="chat"><b>📹</b><div class="txt"><b>Anas Rizvi</b><span>Video Call - Missed</span></div></div>
+<div class="chat"><div class="ava">📞</div><div class="nam"><span class="nam-name">Zaheer Awan</span><span class="nam-msg">Outgoing - 2 min</span></div></div>
+<div class="chat"><div class="ava">📹</div><div class="nam"><span class="nam-name">Anas Rizvi</span><span class="nam-msg">Video Call - Missed</span></div></div>
 <button class="btn">📞 Call Karen</button>
 </div>
 
@@ -67,15 +64,14 @@ input{width:96%;padding:11px;margin:6px 0;border-radius:10px;border:1px solid #c
 </div>
 </div>
 
-<div id="dj" class="page"><h3>🎧 DJ Room</h3><p>Yahan DJ Naat / Bayan Chalega</p><button class="btn" onclick="alert('DJ Play Ho Raha Hai 🎧')">▶️ DJ Play Karen</button><br><br><button class="btn">🎵 Naat Lagayen</button></div>
-<div id="earning" class="page"><h3>💰 Earning Room</h3><p>Sirf Add Dekhen - 50% Aap Ka, 50% Dost Ka</p><div class="ad">📢 GOOGLE ADD 1<br><button class="btn" onclick="alert('Mubarak! Aap Ko 10 Rs Mil Gaye')">Add Dekha - 10 Rs Kamaye</button></div><div class="ad">📢 GOOGLE ADD 2<br><button class="btn">Add Dekha - 10 Rs Kamaye</button></div><b>Total Earning: 0 Rs</b></div>
-<div id="add" class="page"><h3>📢 Add Room - Google Add</h3><div class="ad">GOOGLE ADD - 1<br>Hum Ne Jo 2 Add Banaye Thay, Wo Yahan Lagain Ge</div><div class="ad">GOOGLE ADD - 2</div></div>
+<div id="dj" class="page"><h3>🎧 DJ Room</h3><button class="btn">▶️ DJ Play Karen</button></div>
+<div id="earning" class="page"><h3>💰 Earning Room</h3><p>Sirf Add Dekhen - 50% Aap Ka, 50% Dost Ka</p><div class="ad">📢 GOOGLE ADD 1<br><button class="btn">Add Dekha - 10 Rs Kamaye</button></div><div class="ad">📢 GOOGLE ADD 2<br><button class="btn">Add Dekha - 10 Rs Kamaye</button></div></div>
+<div id="add" class="page"><h3>📢 Add Room - Google Add</h3><div class="ad">GOOGLE ADD - 1</div><div class="ad">GOOGLE ADD - 2</div></div>
 <div id="sawal" class="page"><h3>❓ Sawal Jawab - Game - Inam Wala</h3><b>Sawal: Sab Se Pehle Wahi Kya Hai?</b>
 <div class="opt" onclick="alert('Galat Jawab ❌')">A) Duniya</div>
 <div class="opt" onclick="alert('MUBARAK! Sahi Jawab ✅ Aap Ko Inam Mile Ga')">B) Allah Pak Ki Zaat</div>
 <div class="opt" onclick="alert('Galat Jawab ❌')">C) Paisa</div>
-<div class="opt" onclick="alert('Galat Jawab ❌')">D) Shohrat</div>
-<p>Jo Sahi Jawab De Ga, Us Ko Inam Mile Ga</p></div>
+<div class="opt" onclick="alert('Galat Jawab ❌')">D) Shohrat</div></div>
 <div id="office" class="page"><h3>🏢 Mera Office</h3><p>Ghazi Malik Zaheer Awan - Hafizabad</p><input placeholder="Naam"><input placeholder="Kaam Kya Hai?"><button class="btn">Darkhwast Bhejen</button></div>
 <div id="live" class="page"><h3>📢 Live Bayan</h3><button class="btn">🔴 LIVE - Bayan Sunen</button></div>
 <div id="madad" class="page"><h3>🤲 Madad Box</h3><input placeholder="Kis Cheez Ki Madad Chahiye?"><button class="btn">Madad Mangain</button></div>
