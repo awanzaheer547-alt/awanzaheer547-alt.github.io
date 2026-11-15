@@ -6,150 +6,42 @@
 <title>All World WhatsApp</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#0b141a;color:#fff;padding-bottom:70px}
-.header{background:#075e54;padding:13px;text-align:center;position:sticky;top:0;z-index:100}
-.header h1{font-size:22px}
-.top-name{background:#1a5c2a;text-align:center;padding:7px;font-weight:bold;font-size:14px}
-/* 5 TASVEEREN - BARI BARI - NAAM KE SAATH */
-.five-pics{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px;background:#111b21}
-.pic-card{background:#202c33;border-radius:12px;overflow:hidden;text-align:center;padding-bottom:8px;border:1px solid #333}
-.pic-card img{width:100%;height:140px;object-fit:cover;display:block}
-.pic-card b{display:block;margin-top:6px;font-size:15px;color:#25d366}
-.pic-card small{color:#aebac1;font-size:12px}
-.pic-card:first-child{grid-column:span 2}
-.pic-card:first-child img{height:190px}
-.social{display:flex;gap:5px;padding:7px;background:#111b21}
-.social a{flex:1;text-align:center;text-decoration:none;color:#fff;padding:7px 1px;border-radius:15px;font-weight:bold;font-size:11px}
-.yt{background:#ff0000}.fb{background:#1877f2}.wa{background:#25d366}.lk{background:#fe2c55}
-.tabs{display:flex;background:#202c33;position:sticky;top:52px;z-index:99}
-.tabs button{flex:1;padding:11px 2px;background:none;border:none;color:#aebac1;font-weight:bold;font-size:13px}
-.tabs button.active{color:#25d366;border-bottom:3px solid #25d366}
-/* 8 ROOMS - WOHI PURANE NAAM */
-.rooms{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px}
-.room{background:#202c33;padding:15px;border-radius:12px;text-align:center;border:1px solid #333}
-.room span{font-size:26px}
-.room b{display:block;font-size:15px;margin-top:4px}
-.room small{color:#aebac1;font-size:11px}
-.section{display:none;padding:10px}
-.section.active{display:block}
-.chat{display:flex;gap:10px;padding:10px;background:#111b21;margin-bottom:6px;border-radius:10px;align-items:center}
-.dp{width:46px;height:46px;background:#00a884;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.btn{width:100%;background:#25d366;border:none;padding:12px;border-radius:20px;font-weight:bold;margin-top:10px;color:#fff;font-size:14px}
+body{background:#0b141a;color:#fff;padding-bottom:20px}
+.banner{background:linear-gradient(90deg,#043d1a,#0b6a2e,#043d1a);text-align:center;padding:16px 10px;border:2px solid #d4af37}
+.banner b{font-size:22px}
+.banner div{font-size:19px;margin-top:4px}
+.appname{background:#075e54;text-align:center;padding:13px}
+.appname h1{font-size:24px}
+.appname small{font-size:13px}
+.pic-card{background:#202c33;border-radius:15px;overflow:hidden;margin:10px}
+.pic-card img{width:100%;height:320px;object-fit:cover;display:block}
+.pic-card div{padding:12px;text-align:center}
+.pic-card b{font-size:17px}
+.links{display:flex;flex-wrap:wrap;gap:6px;padding:10px;background:#111b21}
+.links a{flex:1;min-width:30%;text-align:center;text-decoration:none;color:#fff;padding:11px 2px;border-radius:20px;font-weight:bold;font-size:13px}
+.yt{background:#ff0000}.fb{background:#1877f2}.wa{background:#25d366}.lk{background:#fe2c55}.tk{background:#000;border:1px solid #fff}
+.box{background:#202c33;margin:10px;padding:14px;border-radius:15px}
+.btn{width:100%;background:#25d366;border:none;padding:12px;border-radius:20px;font-weight:bold;color:#fff;margin-top:10px;font-size:14px}
+.rooms{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.room{background:#111b21;padding:14px;border-radius:12px;text-align:center;border:1px solid #333}
+.chat{display:flex;gap:10px;padding:10px;background:#111b21;margin:10px;border-radius:10px;align-items:center}
+.dp{width:46px;height:46px;background:#00a884;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px}
 input{width:100%;padding:12px;border-radius:8px;border:none;margin-top:8px;color:#000}
-.msg-box{display:flex;gap:6px;margin-top:10px}
-.msg-box input{margin:0}
-.msg-box button{width:85px;background:#25d366;border:none;border-radius:20px;color:#fff;font-weight:bold}
-.room-header{background:#075e54;padding:12px;border-radius:10px;display:flex;justify-content:space-between;align-items:center}
-.back{background:#fff;color:#000;border:none;padding:6px 12px;border-radius:20px;font-weight:bold}
-.bottom{position:fixed;bottom:0;left:0;right:0;display:flex;background:#202c33;padding:8px;gap:5px}
-.bottom button{flex:1;background:#25d366;border:none;padding:9px;border-radius:18px;font-weight:bold;color:#fff;font-size:13px}
-.login-box{background:#fff;color:#000;margin:12px;padding:18px;border-radius:15px}
-.login-box input{border:1px solid #ccc}
+.tabs{display:flex;background:#202c33;position:sticky;top:0}
+.tabs button{flex:1;padding:11px 2px;background:none;border:none;color:#aebac1;font-weight:bold}
+.tabs button.active{color:#25d366;border-bottom:3px solid #25d366}
+.section{display:none;padding:0 10px 10px 10px}
+.section.active{display:block}
 </style>
 </head>
 <body>
 
-<!-- LOGIN - PEHLE ENTRY -->
-<div id="loginScreen">
-<div class="header"><h1>All World WhatsApp</h1></div>
-<div class="login-box">
-<h2 style="text-align:center;color:#075e54">Welcome - خوش آمدید</h2>
-<p style="text-align:center;font-size:13px;color:#555;margin:5px 0 15px">Entry ke liye apni Detail likhen<br>Tahaffuz Khatm-e-Nabuwwat</p>
-<b>1. Apna Naam *</b><input id="uNaam" placeholder="Apna Poora Naam">
-<b>2. Apni ID *</b><input id="uID" placeholder="Misal: AWAN123">
-<b>3. Phone Number *</b><input id="uPhone" placeholder="0300-1234567">
-<b>4. Email Address *</b><input id="uEmail" placeholder="awan@gmail.com">
-<button class="btn" onclick="doLogin()">✅ Entry Karen - App me Dakhil Hon</button>
-<p id="loginMsg" style="text-align:center;color:green;margin-top:8px"></p>
-</div>
-</div>
+<!-- 1. TAHAFFUZ KHATM-E-NABUWWAT WALA BANNER -->
+<div class="banner"><b>Tahaffuz Khatm-e-Nabuwwat</b><div>All World WhatsApp</div><small>Markaz Rehmatul Lil Alameen</small></div>
 
-<!-- MAIN APP -->
-<div id="mainApp" style="display:none">
-<div class="header"><h1>All World WhatsApp</h1><small id="welcomeName"></small></div>
-<div class="top-name">All World WhatsApp - Tahaffuz Khatm-e-Nabuwwat</div>
+<!-- 2. APP KA NAAM -->
+<div class="appname"><h1>All World WhatsApp</h1><small>Salam Ghaazi Malik Zaheer Awan - Founder</small></div>
 
-<!-- 5 TASVEEREN WITH NAAM - BARI BARI -->
-<div class="five-pics">
-<div class="pic-card"><img src="IMG-20261112-WA4969.jpg"><b>Awan Zaheer</b><small>Founder - All World WhatsApp</small></div>
-<div class="pic-card"><img src="IMG-20261112-WA4969.jpg"><b>Bhai No 2</b><small>Admin</small></div>
-<div class="pic-card"><img src="IMG-20261112-WA4969.jpg"><b>Bhai No 3</b><small>Admin</small></div>
-<div class="pic-card"><img src="IMG-20261112-WA4969.jpg"><b>Bhai No 4</b><small>Admin</small></div>
-<div class="pic-card"><img src="IMG-20261112-WA4969.jpg"><b>Bhai No 5</b><small>Admin</small></div>
-</div>
-
-<div class="social">
-<a class="yt" href="https://youtube.com/@awanzaheer547" target="_blank">▶ YouTube</a>
-<a class="fb" href="https://facebook.com" target="_blank">f Facebook</a>
-<a class="wa" href="https://wa.me/923000000000" target="_blank">WhatsApp</a>
-<a class="lk" href="https://likee.video" target="_blank">♥ Likee</a>
-</div>
-
-<div class="tabs">
-<button class="active" onclick="showTab('home',this)">Home</button>
-<button onclick="showTab('chats',this)">Chats</button>
-<button onclick="showTab('status',this)">Status</button>
-<button onclick="showTab('calls',this)">Calls</button>
-<button onclick="showTab('channels',this)">Channels</button>
-</div>
-
-<!-- HOME - 8 ROOMS -->
-<div id="home" class="section active"><h3 style="padding:5px">🏠 Hamare 8 Rooms</h3><div class="rooms" id="roomGrid"></div></div>
-
-<!-- ROOM CHAT -->
-<div id="roomChat" class="section">
-<div class="room-header"><b id="roomTitle">Room</b><button class="back" onclick="showTab('home')">← Wapis</button></div>
-<div id="roomMessages" style="margin-top:10px"></div>
-<div class="msg-box"><input id="roomMsg" placeholder="Is Room me Message likhen..."><button onclick="sendRoomMsg()">Bhejen</button></div>
-<button class="btn" onclick="shareWhatsApp()">📲 Room ko WhatsApp par Share Karen</button>
-</div>
-
-<!-- POORI WHATSAPP FUNCTIONS -->
-<div id="chats" class="section"><h3>💬 Chats</h3><div id="chatList"></div><button class="btn" onclick="newChat()">➕ Nayi Chat</button></div>
-<div id="status" class="section"><h3>📸 Status</h3><input type="file" id="statusFile" accept="image/*,video/*"><button class="btn" onclick="addStatus()">Status Lagayen</button><div id="statusList"></div></div>
-<div id="calls" class="section"><h3>📞 Calls</h3><button class="btn" onclick="startCall('audio')">🎤 Audio Call</button><button class="btn" onclick="startCall('video')">📹 Video Call</button><video id="myVideo" autoplay muted playsinline style="width:100%;margin-top:10px;background:#000;border-radius:12px"></video></div>
-<div id="channels" class="section"><h3>📢 Channels</h3><div class="chat"><div class="dp">📢</div><div><b>All World WhatsApp Channel</b><br><small>Tahaffuz Khatm-e-Nabuwwat</small></div></div><a href="https://whatsapp.com/channel/" target="_blank" style="text-decoration:none"><button class="btn">Channel Follow Karen</button></a></div>
-<div id="setting" class="section"><h3>⋮ Setting</h3><div style="background:#202c33;padding:10px;border-radius:10px"><div style="padding:12px;border-bottom:1px solid #333">👤 Profile</div><div style="padding:12px;border-bottom:1px solid #333">👥 New Group</div><div style="padding:12px;border-bottom:1px solid #333">📣 New Broadcast</div><div style="padding:12px;border-bottom:1px solid #333">💻 Linked Devices</div><div style="padding:12px;border-bottom:1px solid #333">⭐ Starred Messages</div><div style="padding:12px;border-bottom:1px solid #333">⚙️ Settings</div></div></div>
-
-<div class="bottom"><button onclick="showTab('home')">Home</button><button onclick="showTab('chats')">Chats</button><button onclick="showTab('status')">Status</button><button onclick="showTab('calls')">Calls</button><button onclick="showTab('setting')">⋮</button></div>
-</div>
-
-<script>
-// ★★★★★ FIREBASE KI CHABI - YAHAN LAGE GI - ABHI KHALI HAI ★★★★★
-// Bhai jan jab aap chabi denge, main sirf is jagah paste kar dunga, baaki kuch nahi badlega
-let firebaseConfig = {
-  apiKey: "YAHAN_AAPKI_CHABI_AAYE_GI",
-  authDomain: "YAHAN_AAPKA_PROJECT",
-  projectId: "YAHAN_AAPKA_PROJECT",
-  storageBucket: "",
-  messagingSenderId: "",
-  appId: ""
-};
-// ★★★★★ CHABI KHATAM ★★★★★
-
-let rooms=[
-{name:"DJ Room",icon:"🎧",desc:"Voice Chat Room"},
-{name:"Chat Room",icon:"💬",desc:"Sab Bhai Chat"},
-{name:"Add Room",icon:"➕",desc:"Naya Room"},
-{name:"Sawal Jawab",icon:"❓",desc:"Deeni Sawal"},
-{name:"Game",icon:"🎮",desc:"Game Room"},
-{name:"Mera Office",icon:"🏢",desc:"Office"},
-{name:"Live Bayan",icon:"📢",desc:"Live Bayan"},
-{name:"Madad Box",icon:"🤲",desc:"Madad"}];
-let currentRoom="Chat Room";
-function renderRooms(){document.getElementById('roomGrid').innerHTML=rooms.map(r=>`<div class="room" onclick="openRoom('${r.name}')"><span>${r.icon}</span><b>${r.name}</b><br><small>${r.desc}</small><br><small style="color:#25d366">● Khula Hai</small></div>`).join('');}
-function showTab(id,btn){document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));document.getElementById(id).classList.add('active');document.querySelectorAll('.tabs button').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');}
-function openRoom(name){currentRoom=name;document.getElementById('roomTitle').innerText=name;showTab('roomChat');loadRoomMsgs();}
-function getMsgs(){return JSON.parse(localStorage.getItem('allworld_msgs')||'{}');}
-function loadRoomMsgs(){let all=getMsgs();let list=all[currentRoom]||[];document.getElementById('roomMessages').innerHTML=list.length?list.map(m=>`<div class="chat"><div class="dp">👤</div><div><b>${m.name}</b><br><small>${m.text}</small></div></div>`).join(''):`<p style="color:#aebac1">Is Room me abhi koi Message nahi.</p>`;}
-function sendRoomMsg(){let name=localStorage.getItem('aw_name')||"Bhai";let text=document.getElementById('roomMsg').value;if(!text)return alert("Pehle Message likhen");let all=getMsgs();if(!all[currentRoom])all[currentRoom]=[];all[currentRoom].push({name:name,text:text});localStorage.setItem('allworld_msgs',JSON.stringify(all));document.getElementById('roomMsg').value="";loadRoomMsgs();}
-function shareWhatsApp(){let t="Salam! Maine All World WhatsApp ka "+currentRoom+" Join kiya hai: "+location.href;window.open("https://wa.me/?text="+encodeURIComponent(t),"_blank");}
-function doLogin(){let naam=document.getElementById('uNaam').value.trim();let id=document.getElementById('uID').value.trim();let phone=document.getElementById('uPhone').value.trim();let email=document.getElementById('uEmail').value.trim();if(!naam||!id||!phone||!email){alert("Bhai jan, 4 cheezen poori likhen");return;}localStorage.setItem('aw_name',naam);localStorage.setItem('aw_id',id);localStorage.setItem('aw_phone',phone);localStorage.setItem('aw_email',email);document.getElementById('loginMsg').innerText="Mubarak ho! Entry ho gayi!";setTimeout(()=>{showMainApp();},600);}
-function showMainApp(){let naam=localStorage.getItem('aw_name');if(!naam)return;document.getElementById('loginScreen').style.display='none';document.getElementById('mainApp').style.display='block';document.getElementById('welcomeName').innerText="Salam "+naam;renderRooms();}
-if(localStorage.getItem('aw_name')){showMainApp();}
-function newChat(){let n=prompt("Kis se Chat karni hai? Naam likhen");if(n){document.getElementById('chatList').innerHTML+='<div class="chat"><div class="dp">👤</div><div><b>'+n+'</b><br><small>Salam Bhai</small></div></div>';}}
-function addStatus(){let f=document.getElementById('statusFile').files[0];if(!f)return alert("Photo chunen");let url=URL.createObjectURL(f);document.getElementById('statusList').innerHTML+='<div class="chat"><div class="dp">📸</div><div><b>Mera Status</b><br><img src="'+url+'" style="width:100px;border-radius:8px"></div></div>';}
-async function startCall(t){try{let s=await navigator.mediaDevices.getUserMedia({video:t==='video',audio:true});document.getElementById('myVideo').srcObject=s;alert(t+" Call shuru");}catch(e){alert("Camera/Mic ki ijazat den");}}
-</script>
-</body>
-</html>
+<!-- 3. 5 TASVEEREIN -->
+<div class="pic-card"><img src="pic1.jpg"><div><b>1. Ameer ul Mujhideen Hazrat Allama Molana Hafiz Khadim Hussain Rizvi</b></div></div>
+<div class="pic-card"><img src="pic
