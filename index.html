@@ -9,9 +9,9 @@
 body{background:#f7f3e8;text-align:center}
 .header{background:#0b5d2e;color:#fff;padding:16px;border:3px solid #c9a227}
 .header h1{font-size:22px}
-.header h2{font-size:22px;color:#ffe98a;margin:4px}
+.header h2{font-size:22px;color:#ffe98a}
 .header p{font-size:13px}
-.main-img{width:94%;max-width:560px;margin:12px auto;border:4px solid #fff;border-radius:12px;display:block;box-shadow:0 4px 12px #888}
+.main-img{width:94%;max-width:560px;margin:12px auto;border:4px solid #fff;border-radius:12px;display:block}
 .cap{background:#fff3c4;border:2px solid #c9a227;display:inline-block;padding:6px 12px;border-radius:20px;font-weight:bold;font-size:13px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:12px;max-width:560px;margin:auto}
 .card{background:#fff;border:2px solid #ddd;border-radius:12px;overflow:hidden}
@@ -21,18 +21,16 @@ body{background:#f7f3e8;text-align:center}
 .links a{background:#fff;border:1px solid #ddd;padding:10px 14px;border-radius:30px;text-decoration:none;color:#000;font-weight:bold}
 .labbik{font-size:28px;color:#8a6d00;font-weight:bold;padding:8px}
 .rooms{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:12px;max-width:560px;margin:auto}
-.room{background:#fff;border:3px solid #0b5d2e;border-radius:16px;padding:18px 8px;text-decoration:none;color:#000}
+.room{background:#fff;border:3px solid #0b5d2e;border-radius:16px;padding:16px 8px;cursor:pointer}
 .room b{font-size:18px;display:block}
 .room small{font-size:13px;color:#555}
-.room:first-child{background:#0b5d2e;color:#fff}
-.room:first-child small{color:#fff}
-#login{background:#fff;max-width:520px;margin:14px auto;padding:16px;border-radius:16px;border:2px solid #0b5d2e;text-align:right}
-#login input{width:100%;padding:13px;margin:6px 0;border:1px solid #ccc;border-radius:10px;font-size:16px}
+#login{background:#fff;max-width:520px;margin:14px auto;padding:16px;border-radius:16px;border:2px solid #0b5d2e}
+#login input{width:100%;padding:13px;margin:6px 0;border:1px solid #ccc;border-radius:10px}
 #login button{width:100%;padding:14px;background:#0b5d2e;color:#fff;border:none;border-radius:10px;font-size:18px;font-weight:bold}
 #app{display:none;max-width:560px;margin:auto}
 .box{background:#fff;border:2px solid #ddd;border-radius:14px;padding:14px;margin:12px;text-align:left}
 .box input{width:100%;padding:11px;margin:6px 0;border:1px solid #ccc;border-radius:10px}
-.btn{background:#0b5d2e;color:#fff;border:none;padding:12px;border-radius:10px;font-weight:bold;width:100%;cursor:pointer}
+.btn{background:#0b5d2e;color:#fff;border:none;padding:12px;border-radius:10px;font-weight:bold;width:100%}
 .msg{background:#eef7f0;padding:10px;border-radius:10px;margin:8px 0}
 .msg img{max-width:100%;border-radius:10px}
 .callRow{display:flex;gap:8px;margin:8px 0}
@@ -41,30 +39,25 @@ body{background:#f7f3e8;text-align:center}
 </head>
 <body>
 
-<div class="header">
-<h1>Tahaffuz Khatm-e-Nabuwwat</h1>
-<h2>All World WhatsApp</h2>
-<p>Markaz Rehmatul Lil Alameen</p>
-</div>
+<div class="header"><h1>Tahaffuz Khatm-e-Nabuwwat</h1><h2>All World WhatsApp</h2><p>Markaz Rehmatul Lil Alameen</p></div>
 
 <div id="login">
-<h2 style="text-align:center">Login کریں</h2>
-<input id="uName" placeholder="اپنا نام / ID">
+<h2>Login کریں</h2>
+<input id="uName" placeholder="اپنا نام - Ghazi Malik Zaheer Awan - Khadim">
 <input id="uNum" placeholder="اپنا موبائل نمبر">
 <input id="uCity" placeholder="اپنا شہر - Hafizabad">
 <button onclick="doLogin()">Login - اندر جائیں</button>
 </div>
 
 <div id="app">
-
-<img class="main-img" src="IMG-20261112-WA4969.jpg" onerror="this.src='https://via.placeholder.com/600x350?text=All+World+WhatsApp'">
+<!-- SIRF 1 DAF A 5 TASVEEREN -->
+<img class="main-img" src="IMG-20261112-WA4969.jpg">
 <div><span class="cap">Ameer ul Mujahideen Hazrat Allama Maulana Hafiz Khadim Hussain Rizvi</span></div>
-
 <div class="grid">
-<div class="card"><img src="IMG-20261112-WA4969.jpg"><span>Murshid Zaheer ul Hassan Shah Sahib</span></div>
-<div class="card"><img src="IMG-20261112-WA4969.jpg"><span>Mufti Hafiz Muhammad Anas Hussain Rizvi</span></div>
-<div class="card"><img src="IMG-20261112-WA4969.jpg"><span>Ashiq e Rasool Malik Muhammad Ilyas Awan</span></div>
-<div class="card"><img src="IMG-20261112-WA4969.jpg"><span>Ameer TLP Hafiz Saad Hussain Rizvi</span></div>
+<div class="card"><img src="murshid.jpg" onerror="this.src='IMG-20261112-WA4969.jpg'"><span>Murshid Zaheer ul Hassan Shah Sahib</span></div>
+<div class="card"><img src="mufti-anas.jpg" onerror="this.src='IMG-20261112-WA4969.jpg'"><span>Mufti Hafiz Muhammad Anas Hussain Rizvi</span></div>
+<div class="card"><img src="ilyas-awan.jpg" onerror="this.src='IMG-20261112-WA4969.jpg'"><span>Ashiq e Rasool Malik Muhammad Ilyas Awan</span></div>
+<div class="card"><img src="saad-rizvi.jpg" onerror="this.src='IMG-20261112-WA4969.jpg'"><span>Ameer TLP Hafiz Saad Hussain Rizvi</span></div>
 </div>
 
 <div class="links">
@@ -74,89 +67,74 @@ body{background:#f7f3e8;text-align:center}
 <a href="https://likee.video" target="_blank">💖 Likee</a>
 <a href="https://tiktok.com" target="_blank">🎵 TikTok</a>
 </div>
-
 <div class="labbik">لبیک یا رسول اللہ ﷺ</div>
 
-<h2>8 Rooms - 8 کمرے</h2>
+<h2>8 Rooms</h2>
 <div class="rooms">
-<a class="room" href="room1.html"><b>📸 Status Room</b><small>سٹیٹس - Download والا</small></a>
-<a class="room" href="room2.html"><b>💬 Chat Room</b><small>پورا WhatsApp اسی میں</small></a>
-<a class="room" href="room3.html"><b>💰 Earning Room</b><small>ارننگ روم</small></a>
-<a class="room" href="room4.html"><b>🎮 Game Room</b><small>گیم روم</small></a>
-<a class="room" href="room5.html"><b>❓ Sawal Jawab</b><small>سوال جواب روم</small></a>
-<a class="room" href="room6.html"><b>🏢 Mera Office</b><small>صرف Admin</small></a>
-<a class="room" href="room7.html"><b>📢 Live Bayan</b><small>لائیو بیان</small></a>
-<a class="room" href="room8.html"><b>🤲 Madad Box</b><small>مدد باکس</small></a>
+<div class="room" onclick="openRoom('status')"><b>📸 Status Room</b><small>Download والا</small></div>
+<div class="room" onclick="openRoom('chat')"><b>💬 Chat Room - WhatsApp</b><small>پورا WhatsApp</small></div>
+<div class="room" onclick="openRoom('earning')"><b>💰 Earning Room</b></div>
+<div class="room" onclick="openRoom('game')"><b>🎮 Game Room</b></div>
+<div class="room" onclick="openRoom('sawal')"><b>❓ Sawal Jawab</b></div>
+<div class="room" onclick="openRoom('office')"><b>🏢 Mera Office</b><small>صرف Admin</small></div>
+<div class="room" onclick="openRoom('bayan')"><b>📢 Live Bayan</b></div>
+<div class="room" onclick="openRoom('madad')"><b>🤲 Madad Box</b></div>
 </div>
 
-<!-- WHATSAPP POORA EK ROOM MEIN -->
-<div class="box">
-<h3>💬 Chat Room - پورا WhatsApp یہیں ہے</h3>
-<p>آپ کا شہر: <b id="myCity">-</b> | نام: <b id="myName">-</b></p>
-<div class="callRow">
-<button onclick="alert('Audio Call شروع ہو رہی ہے...')">📞 Audio Call</button>
-<button onclick="alert('Video Call شروع ہو رہی ہے...')">📹 Video Call</button>
-</div>
-<div id="chatFeed"><div class="msg">السلام علیکم بھائی جان! All World WhatsApp میں خوش آمدید ❤️</div></div>
+<!-- WHATSAPP POORA -->
+<div class="box" id="roomBox">
+<h3 id="roomTitle">💬 Chat Room - پورا WhatsApp</h3>
+<p id="roomDesc">چیٹ، وائس، تصویر، ویڈیو، آڈیو کال، ویڈیو کال سب یہیں</p>
+<p>نام: <b id="myName">-</b> | شہر: <b id="myCity">-</b></p>
+<div class="callRow"><button onclick="alert('Audio Call...')">📞 Audio Call</button><button onclick="alert('Video Call...')">📹 Video Call</button></div>
+<div id="chatFeed"><div class="msg">السلام علیکم بھائی جان! خوش آمدید ❤️</div></div>
 <input id="chatText" placeholder="پیغام لکھیں...">
 <input type="file" id="chatFile" accept="image/*,video/*,audio/*">
 <button class="btn" onclick="sendChat()">بھیجیں - Send</button>
-<button class="btn" style="background:#ff9800;margin-top:6px" onclick="alert('Voice Message ریکارڈ ہو رہا ہے...')">🎤 Voice Message</button>
-<p style="font-size:12px;margin-top:8px">کوئی میسج Delete نہیں ہوگا جب تک آپ خود نہ کریں۔ تصویر، ویڈیو، وائس سب یہیں رہے گا۔</p>
-</div>
-
-<!-- STATUS -->
-<div class="box">
-<h3>📸 Status Room - Download والا</h3>
+<button class="btn" style="background:#ff9800;margin-top:6px" onclick="alert('Voice ریکارڈ ہو رہا ہے...')">🎤 Voice Message</button>
+<hr style="margin:12px 0">
+<h3>📸 Status - Download والا</h3>
 <input type="file" id="statusFile" accept="image/*,video/*">
-<input id="statusText" placeholder="Status کے ساتھ لکھیں...">
+<input id="statusText" placeholder="Status لکھیں...">
 <button class="btn" onclick="postStatus()">Status لگائیں</button>
 <div id="feed"></div>
 </div>
-
 </div>
 
 <script>
-// ===== FIREBASE - tlp-status-app =====
-// آپ کی Firebase والی چابی یہاں لگائیں
-// const firebaseConfig = { apiKey:"APKI_KEY", authDomain:"tlp-status-app.firebaseapp.com", projectId:"tlp-status-app", storageBucket:"tlp-status-app.appspot.com" };
-
-let myName = localStorage.getItem('aww_name')||'';
-let myCity = localStorage.getItem('aww_city')||'';
+let myName=localStorage.getItem('aww_name')||'';
+let myCity=localStorage.getItem('aww_city')||'';
 function doLogin(){
-  let n=document.getElementById('uName').value;
-  let num=document.getElementById('uNum').value;
-  let c=document.getElementById('uCity').value;
-  if(!n||!num||!c){alert('بھائی جان، نام، نمبر اور شہر تینوں لکھیں');return;}
-  localStorage.setItem('aww_name',n); localStorage.setItem('aww_city',c);
-  myName=n; myCity=c; showApp();
+let n=document.getElementById('uName').value;
+let num=document.getElementById('uNum').value;
+let c=document.getElementById('uCity').value;
+if(!n||!num||!c){alert('نام، نمبر، شہر لکھیں');return;}
+localStorage.setItem('aww_name',n);localStorage.setItem('aww_city',c);
+myName=n;myCity=c;showApp();
 }
-function showApp(){
-  document.getElementById('login').style.display='none';
-  document.getElementById('app').style.display='block';
-  document.getElementById('myCity').innerText=myCity;
-  document.getElementById('myName').innerText=myName;
-}
+function showApp(){document.getElementById('login').style.display='none';document.getElementById('app').style.display='block';document.getElementById('myCity').innerText=myCity;document.getElementById('myName').innerText=myName;}
 if(myName) showApp();
-
+function openRoom(name){
+let t={status:'📸 Status Room',chat:'💬 Chat Room - پورا WhatsApp',earning:'💰 Earning Room',game:'🎮 Game Room',sawal:'❓ Sawal Jawab',office:'🏢 Mera Office - صرف Admin',bayan:'📢 Live Bayan',madad:'🤲 Madad Box'};
+document.getElementById('roomTitle').innerText=t[name];
+if(name=='office') alert('یہ Mera Office ہے - صرف Ghazi Malik Zaheer Awan - Khadim کے لیے');
+}
 function sendChat(){
-  let t=document.getElementById('chatText').value;
-  let f=document.getElementById('chatFile').files[0];
-  if(!t && !f) return;
-  let d=document.createElement('div'); d.className='msg';
-  d.innerHTML='<b>'+myName+':</b> '+t;
-  if(f){ let u=URL.createObjectURL(f); d.innerHTML+='<br><img src="'+u+'">'; }
-  document.getElementById('chatFeed').appendChild(d);
-  document.getElementById('chatText').value='';
+let t=document.getElementById('chatText').value;
+let f=document.getElementById('chatFile').files[0];
+if(!t&&!f) return;
+let d=document.createElement('div');d.className='msg';d.innerHTML='<b>'+myName+':</b> '+t;
+if(f){let u=URL.createObjectURL(f);d.innerHTML+='<br><img src="'+u+'">';}
+document.getElementById('chatFeed').appendChild(d);
+document.getElementById('chatText').value='';
 }
 function postStatus(){
-  let t=document.getElementById('statusText').value;
-  let f=document.getElementById('statusFile').files[0];
-  let div=document.createElement('div'); div.className='msg';
-  div.innerHTML='<b>'+myName+' - '+myCity+'</b><br>'+t;
-  if(f){ let u=URL.createObjectURL(f); div.innerHTML+='<br><img src="'+u+'"><br><a href="'+u+'" download><button class="btn">⬇️ Download Status</button></a>'; }
-  else{ div.innerHTML+='<br><button class="btn" style="margin-top:8px">⬇️ Download Status</button>'; }
-  document.getElementById('feed').prepend(div);
+let t=document.getElementById('statusText').value;
+let f=document.getElementById('statusFile').files[0];
+let div=document.createElement('div');div.className='msg';
+div.innerHTML='<b>'+myName+'</b><br>'+t;
+if(f){let u=URL.createObjectURL(f);div.innerHTML+='<br><img src="'+u+'"><br><a href="'+u+'" download><button class="btn">⬇️ Download</button></a>';}
+document.getElementById('feed').prepend(div);
 }
 </script>
 </body>
