@@ -30,4 +30,102 @@ h1{color:#0a5c2e}
 </div>
 
 </body>
-</html>
+</html><!-- DJ PANEL - Baba Ji Mehfil - Sirf Admin Ke Liye -->
+<div id="dj-panel" style="background:#0f3d1a; padding:15px; border-radius:15px; color:white; font-family:sans-serif; text-align:center; border:2px solid #FFD700; margin:10px;">
+  
+  <h2 style="color:#FFD700; margin:0;">🕌 DJ PANEL - Live Mehfil</h2>
+  <p style="font-size:13px;">Sirf Admin Ke Liye - Baba Ji Ke Bayan Aur Naat</p>
+
+  <!-- 1. Naat / Bayan Select Karne Ka Button -->
+  <label style="display:block; background:#FFD700; color:black; padding:12px; border-radius:10px; font-weight:bold; cursor:pointer;">
+    📁 Apni Naat / Bayan Select Karein
+    <input type="file" id="naatFile" accept="audio/*" multiple style="display:none;">
+  </label>
+  <p id="naatName" style="font-size:13px; color:#FFD700;">Abhi Koi Naat Select Nahi Hui</p>
+
+  <!-- 2. Audio Player -->
+  <audio id="naatPlayer" controls style="width:100%; margin:10px 0;"></audio>
+
+  <!-- 3. Volume Control -->
+  <div style="text-align:left;">
+    <label>🔊 Naat Ki Awaz: <span id="naatVolText">80</span></label>
+    <input type="range" id="naatVolume" min="0" max="100" value="80" style="width:100;">
+    <br><br>
+    <label>🎤 Meri Mic Ki Awaz: <span id="micVolText">80</span></label>
+    <input type="range" id="micVolume" min="0" max="100" value="80" style="width:100;">
+  </div>
+
+  <br>
+
+  <!-- 4. Buttons -->
+  <button id="playBtn" style="background:#25D366; color:white; border:none; padding:12px 20px; border-radius:10px; font-weight:bold; width:48%;">▶️ PLAY - Sab Ko Sunao</button>
+  <button id="micBtn" style="background:#ff3b30; color:white; border:none; padding:12px 20px; border-radius:10px; font-weight:bold; width:48%;">🎤 MIC ON</button>
+
+  <br><br>
+  <button id="stopBtn" style="background:#333; color:white; border:none; padding:10px; border-radius:10px; width:100%;">⏹️ STOP - Band Kar Dein</button>
+
+  <p id="djStatus" style="font-size:13px; color:#90EE90;">Status: DJ Panel Tayyar Hai</p>
+</div>
+
+<script>
+let naatPlayer = document.getElementById('naatPlayer');
+let naatFile = document.getElementById('naatFile');
+let micOn = false;
+let micStream = null;
+let audioCtx = null;
+
+// 1. File Select
+naatFile.addEventListener('change', function(){
+  if(this.files.length > 0){
+    let file = this.files[0];
+    naatPlayer.src = URL.createObjectURL(file);
+    document.getElementById('naatName').innerText = "Chal Rahi Hai: " + file.name;
+    document.getElementById('djStatus').innerText = "Status: Naat Tayyar Hai, PLAY Dabain";
+  }
+});
+
+// 2. Naat Volume
+document.getElementById('naatVolume').addEventListener('input', function(){
+  naatPlayer.volume = this.value / 100;
+  document.getElementById('naatVolText').innerText = this.value;
+});
+
+// 3. Play Button - Naat + Mic Dono Ek Sath
+document.getElementById('playBtn').addEventListener('click', async function(){
+  if(!naatPlayer.src){
+    alert("Pehle Apni Naat / Bayan Select Karein");
+    return;
+  }
+  // AudioContext Banayein Taa Ke Naat + Mic Mix Ho
+  if(!audioCtx){ audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+  await audioCtx.resume();
+  naatPlayer.play();
+  document.getElementById('djStatus').innerText = "Status: LIVE - Puri App Mein Naat Chal Rahi Hai";
+  this.innerText = "⏸️ PAUSE";
+});
+
+// 4. Mic Button
+document.getElementById('micBtn').addEventListener('click', async function(){
+  try{
+    if(!micOn){
+      micStream = await navigator.mediaDevices.getUserMedia({audio:true});
+      micOn = true;
+      this.innerText = "🎤 MIC OFF - Mic Band Karein";
+      this.style.background = "#007bff";
+      document.getElementById('djStatus').innerText = "Status: Mic ON Hai - Aap Bol Sakte Hain + Naat Chal Rahi Hai";
+    } else {
+      micStream.getTracks().forEach(t=>t.stop());
+      micOn = false;
+      this.innerText = "🎤 MIC ON";
+      this.style.background = "#ff3b30";
+    }
+  }catch(e){ alert("Mic Ki Ijazat Dein - Allow Karein"); }
+});
+
+// 5. Stop
+document.getElementById('stopBtn').addEventListener('click', function(){
+  naatPlayer.pause();
+  naatPlayer.currentTime = 0;
+  document.getElementById('djStatus').innerText = "Status: Band Ho Gaya";
+});
+</script>
