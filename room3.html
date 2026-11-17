@@ -1,32 +1,115 @@
-<!-- Room 3 - Earning Room - Website Wala -->
+<!-- Room 3 - Earning Room - NAYA WALA - BARA BARA NAZAR AAYEGA -->
 
-<div id="room3">
-  <h2>Earning Room 3</h2>
+<div id="room3" style="background:#E8F5E9; padding:20px; font-family:Arial; text-align:center; border:4px solid green; border-radius:15px;">
 
-  <div style="border:2px solid blue; padding:20px; text-align:center;">
-    <p>Google Ad Yahan Chalega</p>
-    <p>Ad Dekhen, Phir Earning Shuru Hogi</p>
-    <p>15 Second Tak Ad Dekhen</p>
+  <h1 style="font-size:32px; color:green; margin:0;">🌹 EARNING ROOM 3 🌹</h1>
+  <p style="font-size:20px; font-weight:bold; color:black;">تاجدارِ ختمِ نبوت زندہ باد</p>
+
+  <!-- OFFICE WALA HISSA - 3 BOX -->
+  <div style="background:white; padding:15px; border:3px solid black; border-radius:12px;">
+    <h2 style="font-size:26px; margin:5px;">🏢 MERA OFFICE</h2>
+
+    <div style="display:flex; gap:10px; justify-content:center; flex-wrap:wrap;">
+
+      <div style="background:#E3F2FD; border:2px solid blue; padding:15px; border-radius:10px; width:140px;">
+        <p style="font-size:22px; font-weight:bold; margin:0;">ONLINE BHAI</p>
+        <p id="onlineBhai" style="font-size:32px; font-weight:bold; color:green; margin:5px;">12</p>
+        <p style="font-size:16px;">بھائی آن لائن ہیں</p>
+      </div>
+
+      <div style="background:#FFEBEE; border:2px solid red; padding:15px; border-radius:10px; width:140px;">
+        <p style="font-size:22px; font-weight:bold; margin:0;">OFFLINE BHAI</p>
+        <p id="offlineBhai" style="font-size:32px; font-weight:bold; color:red; margin:5px;">5</p>
+        <p style="font-size:16px;">بھائی آف لائن ہیں</p>
+      </div>
+
+      <div style="background:#FFF8E1; border:2px solid orange; padding:15px; border-radius:10px; width:140px;">
+        <p style="font-size:22px; font-weight:bold; margin:0;">KAAM KAR RAHE</p>
+        <p id="kaamWale" style="font-size:32px; font-weight:bold; color:orange; margin:5px;">8</p>
+        <p style="font-size:16px;">بھائی کام کر رہے ہیں</p>
+      </div>
+
+    </div>
   </div>
 
   <br>
-  <button onclick="adDekha()">Ad Dekh Liya</button>
-  <button onclick="closeAd()">Close</button>
 
-  <p>Aapki Earning: <span id="earning">0</span></p>
+  <!-- AD WALA BOX - AB BARA BARA NAZAR AAYEGA -->
+  <div id="adBox" style="background:#000; color:white; padding:25px; border:4px solid yellow; border-radius:12px;">
+    <p style="font-size:28px; font-weight:bold; margin:5px;">📺 GOOGLE AD YAHAN CHALEGI</p>
+    <p style="font-size:22px; margin:5px;">Ad Dekhen, Phir Earning Shuru Hogi</p>
+    <p style="font-size:22px; margin:5px;">15 Second Tak Ad Dekhen</p>
+    <p id="adTimer" style="font-size:30px; color:yellow; font-weight:bold;">Ad Taiyar Hai...</p>
+    <div style="background:#333; height:25px; border-radius:10px; overflow:hidden; margin-top:10px;">
+      <div id="adBar" style="background:yellow; width:0%; height:100%;"></div>
+    </div>
+  </div>
 
-  <button onclick="goTo5000()">5000 Wala Room Mein Jayen</button>
+  <br>
+
+  <button onclick="adDekha()" style="font-size:24px; padding:15px 25px; background:green; color:white; border-radius:10px; border:none; font-weight:bold;">▶️ AD DEKH LIYA</button>
+  <button onclick="closeAd()" style="font-size:24px; padding:15px 25px; background:red; color:white; border-radius:10px; border:none; font-weight:bold;">❌ CLOSE</button>
+
+  <br><br>
+
+  <!-- EARNING + BANK ACCOUNT BOX -->
+  <div style="background:white; padding:20px; border:3px solid green; border-radius:12px;">
+    <p style="font-size:28px; font-weight:bold; margin:5px;">💰 Aapki Earning: <span id="earning" style="color:green;">0</span> Rupay</p>
+    <p style="font-size:20px; margin:5px;">Aaj Ki Total Earning: <span id="totalEarning">0</span> Rupay</p>
+    <hr>
+    <p style="font-size:24px; font-weight:bold; margin:5px;">🏦 BANK ACCOUNT</p>
+    <p style="font-size:22px; margin:5px;">Account Title: <b>TLP WHATSAPP</b></p>
+    <p style="font-size:22px; margin:5px;">Account Number: <b>APNA NUMBER YAHAN LIKHEN</b></p>
+    <p style="font-size:18px; color:red;">بھائی جان، آپ مجھے اپنا بینک اکاؤنٹ نمبر بھیج دیں، میں یہاں لگا دوں گا</p>
+  </div>
+
+  <br>
+
+  <button onclick="goTo5000()" style="font-size:24px; padding:15px 25px; background:blue; color:white; border-radius:10px; border:none; font-weight:bold;">➡️ 5000 WALA ROOM MEIN JAYEN</button>
+
+</div>
+
+<!-- Room 5000 Wala -->
+<div id="room5000" style="display:none; background:#E3F2FD; padding:25px; text-align:center; border:4px solid blue; border-radius:15px; margin-top:20px;">
+  <h1 style="font-size:32px;">Mubarak Ho! 5000 Wala Room</h1>
+  <p style="font-size:24px;">Aap 5000 Wale Room Mein Aa Gaye Hain</p>
+  <button onclick="wapisRoom3()" style="font-size:24px; padding:12px 20px; background:green; color:white; border-radius:10px; border:none;">⬅️ Wapis Room 3 Mein Jayen</button>
 </div>
 
 <script>
+  let totalEarning = 0;
+
   function adDekha() {
-    document.getElementById("earning").innerText = "10";
-    alert("Mubarak Ho! Ad Dekh Liya, Earning Shuru Ho Gayi");
+    document.getElementById("adTimer").innerText = "Ad Chal Rahi Hai... 15 Second";
+    let bar = document.getElementById("adBar");
+    let width = 0;
+    let timer = setInterval(function(){
+      width = width + 5;
+      bar.style.width = width + "%";
+      if(width >= 100){
+        clearInterval(timer);
+        totalEarning = totalEarning + 10;
+        document.getElementById("earning").innerText = totalEarning;
+        document.getElementById("totalEarning").innerText = totalEarning;
+        document.getElementById("adTimer").innerText = "Mubarak Ho! Ad Mukammal, 10 Rupay Mil Gaye";
+        alert("Mubarak Ho! Ad Dekh Liya, Aapki Earning Ab " + totalEarning + " Ho Gayi Hai");
+      }
+    }, 150);
   }
+
   function closeAd() {
+    document.getElementById("adBox").style.display = "none";
     alert("Ad Band Ho Gaya");
   }
+
   function goTo5000() {
+    document.getElementById("room3").style.display = "none";
+    document.getElementById("room5000").style.display = "block";
     alert("5000 Wala Room Khul Raha Hai");
+  }
+
+  function wapisRoom3() {
+    document.getElementById("room5000").style.display = "none";
+    document.getElementById("room3").style.display = "block";
   }
 </script>
