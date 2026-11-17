@@ -1,4 +1,27 @@
-<!DOCTYPE html>
+<!-- MAIN PAGE KE UPAR LAGAYEN - SAB BHAIYON KO NAZAR AAYEGA -->
+
+<div style="background:#111;color:#fff;padding:14px;border-radius:14px;text-align:center;margin:12px;">
+<h2 style="margin:0;">MASHALLAH - HAMARA PARIVAR BADH RAHA HAI</h2>
+<p style="color:#ffcc00;margin:6px 0;">Allah Ke Karam Se, Chand Ghanton Mein Itni Barkat</p>
+<div style="display:flex;justify-content:space-between;gap:8px;margin-top:10px;">
+<div style="background:#fff;color:#111;flex:1;padding:10px;border-radius:10px;"><b id="mainTotal">0</b><br>TOTAL BHAI</div>
+<div style="background:#2e7d32;color:#fff;flex:1;padding:10px;border-radius:10px;"><b id="mainOnline">0</b><br>ONLINE</div>
+<div style="background:#555;color:#fff;flex:1;padding:10px;border-radius:10px;"><b id="mainOffline">0</b><br>OFFLINE</div>
+<div style="background:#ff9800;color:#fff;flex:1;padding:10px;border-radius:10px;"><b id="mainKaam">0</b><br>KAAM KAR RAHE</div>
+</div>
+<p style="margin:8px 0 0 0;font-size:13px;">Aap Bhi Shamil Hon, Apne Bhaiyon Ka Sath Dein</p>
+</div>
+
+<script>
+// Ye Hisab Office Wale Hisab Se Hi Aayega
+let office = JSON.parse(localStorage.getItem('officeData') || '{"bhai":[]}');
+let total = office.bhai.length;
+document.getElementById('mainTotal').innerText = total;
+document.getElementById('mainOnline').innerText = total;
+document.getElementById('mainOffline').innerText = 0;
+document.getElementById('mainKaam').innerText = total;
+// Jab Naya Bhai Aaye, To Office Mein Add Ho Jayega, Aur Yahan Bhi Barh Jayega
+</script> html>
 <html lang="ur">
 <head>
 <meta charset="UTF-8">
