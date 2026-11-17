@@ -10,12 +10,13 @@
 body{background:#0b141a;color:#fff}
 .banner{background:linear-gradient(
 <!-- UPAR - BANNER --></style>
-</head>
-<div style="background:#202c33;width:100%;box-sizing:border-box;margin:0 auto;padding:14px;text-align:center;display:block"><b>MASHALLAH - HAMARA OFFICE</b><br><span id="officeBox">Loading...</span></div>
-<scripscript office = JSON.parse(localStorage.getItem('office') || '[]');
-document.getElementById('officeBox').innerText = 'Total Members: ' + office.length;
+</head><body>
+<div style="background:#202c33;width:100%;box-sizing:border-box;margin:0 auto;padding:14px;text-align:center;display:block;color:#fff"><b>MASHALLAH - HAMARA OFFICE</b><br><span id="officeBox">Loading...</span></div>
+<script>
+const office = JSON.parse(localStorage.getItem('office') || '{"members":[]}');
+document.getElementById('officeBox').innerText = 'Total Members: ' + office.members.length;
 </script>
-<div class="banner"><b>Tahaffuz Khatm-e-Nabuwwat</b><div>All World WhatsApp</div><small>Markaz Rehmatul Lil Alameen</small></div>
+div class="banner"><b>Tahaffuz Khatm-e-Nabuwwat</b><div>All World WhatsApp</div><small>Markaz Rehmatul Lil Alameen</small></div>
 
 <!-- APP NAAM -->
 <div class="appname"><h1>All World WhatsApp</h1><small>Salam Ghaazi Malik Zaheer Awan - Founder</small></div>
