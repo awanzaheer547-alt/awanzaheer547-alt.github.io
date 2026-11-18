@@ -110,7 +110,12 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 let myKey = "";
 let myName = "";
-
+if(localStorage.getItem("myName")){
+myName=localStorage.getItem("myName");
+myKey=localStorage.getItem("myKey");
+document.getElementById('loginBox').style.display='none';
+document.getElementById('main').style.display='block';
+}
 function doLogin(){
 let n=document.getElementById('name').value;
 let e=document.getElementById('email').value;
@@ -118,9 +123,10 @@ let p=document.getElementById('pass').value;
 let c=document.getElementById('city').value;
 let ph=document.getElementById('phone').value;
 if(n==''||e==''||p==''||c==''||ph==''){document.getElementById('err').innerText='Bhai Jan, 5 cheezain poori likhen - Naam, Email ID, Password, Shehar, Phone Number. Phone ke baghair WhatsApp nahi chalegi.';return;}
-myName=n;
+myName=n;localStorage.setItem("myName",n);
+localStorage.setItem("myEmail",e);
 let ref = db.ref('users').push();
-myKey = ref.key;
+myKey = ref.key;localStorage.setItem("myKey",myKey);
 ref.set({name:n,email:e,password:p,city:c,phone:ph,online:true,time:Date.now()});
 document.getElementById('loginBox').style.display='none';
 document.getElementById('main').style.display='block';
