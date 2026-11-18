@@ -1,76 +1,36 @@
-<!-- Room 7 - Admin + Security Room -->
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin + Security Room - Live</title>
+<style>
+body{font-family:Arial;text-align:center;background:#fffbe6;padding:20px;margin:0}
+h1{color:#0a5c2e}
+.btn{display:block;background:#0a5c2e;color:white;padding:18px;margin:15px;border-radius:12px;font-size:22px;font-weight:bold;text-decoration:none}
+.btn2{background:#ffcc00;color:black}
+.bigBtn{font-size:22px;padding:12px 20px;border-radius:10px;border:none;font-weight:bold;cursor:pointer;margin:5px}
+</style>
+</head>
+<body>
 
-<div id="room7">
-  <h2>Room 7 - Admin Room</h2>
-  <p>Yahan Sirf Admin Dekhega</p>
+<a class="btn btn2" href="index.html">← Wapas 7 Rooms par jayein</a>
+
+<!-- Room 7 - Admin + Security Room -->
+<div id="room7" style="background:#E8F5E9; padding:20px; font-family:Arial; text-align:center; border:4px solid green; border-radius:15px;">
+  <h1 style="font-size:32px; color:green; margin:0;">🛡️ ROOM 7 - ADMIN ROOM 🛡️</h1>
+  <p style="font-size:20px; font-weight:bold;">Yahan Sirf Admin Dekhega</p>
+  <p style="font-size:20px; font-weight:bold;">تاجدارِ ختمِ نبوت زندہ باد</p>
 
   <!-- BOX 1 - AD -->
-  <div style="border:2px solid green; padding:15px; text-align:center;">
-    <h3>Box 1 - Google Ad</h3>
-    <p>Google Ad Yahan Chalega</p>
-    <button onclick="adDekha()">Ad Dekh Liya</button>
+  <div style="border:2px solid green; padding:15px; text-align:center; background:white; border-radius:12px;">
+    <h3 style="font-size:26px; margin:5px;">Box 1 - Google Ad</h3>
+    <p style="font-size:20px;">Google Ad Yahan Chalega</p>
+    <button class="bigBtn" onclick="adDekha()" style="background:green; color:white;">▶️ Ad Dekh Liya</button>
   </div>
 
   <br>
 
   <!-- BOX 2 - MADAD -->
-  <div style="border:2px solid blue; padding:15px; text-align:center;">
-    <h3>Box 2 - Madad Wala</h3>
-    <p>Kisi Bhai Ko Madad Chahiye To Yahan Likhen</p>
-    <input type="text" id="madadMsg" placeholder="Mujhe Madad Chahiye...">
-    <button onclick="madadMango()">Madad Mango</button>
-    <p id="madadResult"></p>
-  </div>
-
-  <br>
-
-  <!-- BOX 3 - SAWAL JAWAB -->
-  <div style="border:2px solid orange; padding:15px; text-align:center;">
-    <h3>Box 3 - Sawal Jawab - Inaam Wala</h3>
-    <p><b>Sawal:</b> Pakistan Ka Capital Kya Hai?</p>
-    <input type="text" id="jawab" placeholder="Jawab Likhen">
-    <button onclick="checkJawab()">Jawab Bhejen</button>
-    <p id="inaam"></p>
-  </div>
-
-  <br>
-
-  <!-- SECURITY SYSTEM -->
-  <div style="border:3px solid red; padding:15px; text-align:center; background:#ffe6e6;">
-    <h3>Security System - Alarm</h3>
-    <p>Agar Koi Ganda Banda Aaye To Alarm Bajega</p>
-    <button onclick="alarmBajao()" style="background:red; color:white; padding:10px;">Alarm Check Karen</button>
-    <p id="alarmMsg"></p>
-    <button onclick="baharPhenko()" style="background:black; color:white; padding:10px;">Gande Bande Ko Bahar Phenken</button>
-    <p id="securityResult"></p>
-  </div>
-
-</div>
-
-<script>
-  function adDekha() {
-    alert("Ad Dekh Liya");
-  }
-  function madadMango() {
-    var m = document.getElementById("madadMsg").value;
-    document.getElementById("madadResult").innerText = "Aapki Madad Ki Arzi Admin Ko Chali Gayi: " + m;
-    alert("Madad Ki Arzi Bhej Di Gayi");
-  }
-  function checkJawab() {
-    var j = document.getElementById("jawab").value;
-    if (j.toLowerCase() == "islamabad") {
-      document.getElementById("inaam").innerText = "Mubarak Ho! Jawab Sahi Hai, Aapko Inaam Milega 20 Rs";
-      alert("Mubarak Ho! Inaam Mil Gaya");
-    } else {
-      document.getElementById("inaam").innerText = "Jawab Ghalat Hai, Dobara Koshish Karen";
-    }
-  }
-  function alarmBajao() {
-    document.getElementById("alarmMsg").innerText = "ALARM! ALARM! Ganda Banda App Mein Aa Gaya Hai!";
-    alert("ALARM! Ganda Banda Aa Gaya Hai, Admin Ko Khabar Ho Gayi");
-  }
-  function baharPhenko() {
-    document.getElementById("securityResult").innerText = "Ganda Banda Bahar Phenk Diya Gaya, App Saaf Ho Gaya";
-    alert("Ganda Banda Bahar Kar Diya Gaya");
-  }
-</script>
+  <div style="border:2px solid blue; padding:15px; text-align:center; background:white; border-radius:12px;">
+    <h3 style="font-size:26px; margin:5px;">Box 2 - Madad Wala</h3
