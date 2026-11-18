@@ -1,60 +1,40 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chat + Tehreek Room - Live</title>
+<style>
+body{font-family:Arial;text-align:center;background:#fffbe6;padding:20px;margin:0}
+h1{color:#0a5c2e}
+.btn{display:block;background:#0a5c2e;color:white;padding:18px;margin:15px;border-radius:12px;font-size:22px;font-weight:bold;text-decoration:none}
+.btn2{background:#ffcc00;color:black}
+.bigBtn{font-size:22px;padding:12px 20px;border-radius:10px;border:none;font-weight:bold;cursor:pointer;margin:5px}
+</style>
+</head>
+<body>
+
+<a class="btn btn2" href="index.html">← Wapas 7 Rooms par jayein</a>
+
 <!-- Room 5 - Chat + Tehreek Room -->
+<div id="room5" style="background:#E8F5E9; padding:20px; font-family:Arial; text-align:center; border:4px solid green; border-radius:15px;">
+  <h1 style="font-size:32px; color:green; margin:0;">💬 ROOM 5 - CHAT AUR TEHREEK ROOM 💬</h1>
+  <p style="font-size:20px; font-weight:bold;">تاجدارِ ختمِ نبوت زندہ باد</p>
 
-<div id="room5">
-  <h2>Room 5 - Chat Aur Tehreek Room</h2>
-
-  <div style="border:2px solid green; padding:20px; text-align:center;">
-    <p>Google Ad Yahan Chalega</p>
-    <p>Ad Dekhen, Phir Chat Shuru Hogi</p>
+  <div style="border:2px solid green; padding:20px; text-align:center; background:#000; color:white; border-radius:12px;">
+    <p style="font-size:24px; font-weight:bold; margin:5px;">📺 Google Ad Yahan Chalega</p>
+    <p style="font-size:20px; margin:5px;">Ad Dekhen, Phir Chat Shuru Hogi</p>
   </div>
 
   <br>
-  <button onclick="adDekha()">Ad Dekh Liya</button>
+  <button class="bigBtn" onclick="adDekha()" style="background:green; color:white;">▶️ Ad Dekh Liya</button>
 
   <hr>
 
-  <h3>Tehreek Ka Paigham</h3>
-  <p id="paigham">Yahan Tehreek Ka Paigham Aayega</p>
-  <button onclick="paighamDikhao()">Paigham Dekhen</button>
+  <h3 style="font-size:26px;">📢 Tehreek Ka Paigham</h3>
+  <p id="paigham" style="font-size:22px; font-weight:bold; background:white; padding:15px; border-radius:10px;">Yahan Tehreek Ka Paigham Aayega</p>
+  <button class="bigBtn" onclick="paighamDikhao()" style="background:#0a5c2e; color:white;">📖 Paigham Dekhen</button>
 
   <br><br>
-  <video controls width="100%">
-    <source src="tehreek-video.mp4" type="video/mp4">
-    Aapka Video Yahan Chalega
-  </video>
-
-  <br><br>
-  <img src="tehreek-photo.jpg" width="100%">
-  <p>Tehreek Ki Tasveer Yahan Aayegi</p>
-
-  <hr>
-
-  <h3>Do Doston Ki Chat</h3>
-  <div id="chatBox" style="border:1px solid black; height:150px; padding:10px;">
-    <p><b>Bhai 1:</b> Assalam-o-Alaikum</p>
-    <p><b>Bhai 2:</b> Walaikum Assalam</p>
-  </div>
-
-  <br>
-  <input type="text" id="msg" placeholder="Apna Paigham Likhen">
-  <button onclick="sendMsg()">Bhejen</button>
-
-  <p>Aapki Earning: <span id="earning5">0</span></p>
-</div>
-
-<script>
-  function adDekha() {
-    alert("Mubarak Ho! Ad Dekh Liya");
-  }
-  function paighamDikhao() {
-    document.getElementById("paigham").innerText = "Tehreek Ka Paigham: Mehnat Karo, Iman Mazboot Rakho";
-    alert("Paigham Aa Gaya");
-  }
-  function sendMsg() {
-    var m = document.getElementById("msg").value;
-    var box = document.getElementById("chatBox");
-    box.innerHTML += "<p><b>Aap:</b> " + m + "</p>";
-    document.getElementById("earning5").innerText = "10";
-    document.getElementById("msg").value = "";
-  }
-</script>
+  <video controls width="100%" style="border-radius:10px;">
+    <source src="tehreek-video.mp
