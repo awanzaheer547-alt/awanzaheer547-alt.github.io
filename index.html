@@ -3,170 +3,55 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All World App - Login</title>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-storage-compat.js"></script>
+<title>Tahafuz - 7 Rooms</title>
 <style>
-body{margin:0;font-family:Arial;background:#f5f0dc;text-align:center}
-.top{background:#0b5a2a;color:white;padding:10px;margin:8px;border-radius:8px;line-height:1.2}
-.top h1{font-size:19px;margin:1px}
-.top h2{font-size:14px;margin:1px;font-weight:normal}
-.box{background:white;margin:8px;padding:12px;border-radius:10px;border:2px solid #0b5a2a}
-input{width:90%;padding:11px;margin:5px;border:1px solid #ccc;border-radius:8px}
-button{width:92%;padding:12px;background:#0b5a2a;color:white;border:none;border-radius:10px;font-size:16px;font-weight:bold}
-.stats{display:flex;justify-content:space-around}
-.stats div{background:#f5f0dc;padding:8px;border-radius:8px;flex:1;margin:3px}
-.stats b{font-size:18px;display:block}
-.grid{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;padding:6px}
-.pic{width:31%;background:white;padding:4px;border-radius:6px}
-.pic img{width:100%;height:90px;object-fit:cover}
-}
-.pic span{font-size:11px;font-weight:bold;background:#e8d9a0;display:block;padding:6px 2px;border-radius:10px}pic.big{width:47%}
-.links{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:8px}
-.links a{background:white;padding:9px 10px;border-radius:20px;text-decoration:none;color:#000;font-weight:bold;font-size:12px}
-.room{background:white;margin:6px;padding:10px;border-radius:8px;border-right:5px solid #0b5a2a;text-align:left;font-size:13px}
-.wabtn{display:block;background:#075E54;color:white;padding:14px;margin:10px;border-radius:10px;text-decoration:none;font-weight:bold;font-size:17px}
-#main{display:none}
-.msgbox{background:#f9f9f9;padding:8px;margin:5px;border-radius:8px;text-align:left;font-size:13px}
-.msgbox img{width:100%;border-radius:8px}
+body{font-family:Arial;text-align:center;background:#fffbe6;padding:15px;margin:0}
+.top-box{background:white;border:2px solid #0a5c2e;border-radius:15px;padding:15px;margin-bottom:15px}
+.leaders{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:15px 0}
+.leader{background:white;border-radius:12px;padding:8px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+.leader img{width:100%;border-radius:10px;height:160px;object-fit:cover}
+.leader p{font-size:20px;font-weight:bold;margin:8px 0 2px 0}
+.leader.full{grid-column:1 / span 2;max-width:50%;margin:0 auto;width:100%}
+.social{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:15px 0}
+.social a{background:white;padding:10px 18px;border-radius:30px;text-decoration:none;color:black;font-weight:bold;font-size:18px;box-shadow:0 2px 5px rgba(0,0,0,0.1)}
+.rooms-box{background:white;border:3px solid #0a5c2e;border-radius:15px;padding:15px}
+.room{display:block;background:#fffbe6;border:2px solid #0a5c2e;border-right:8px solid #0a5c2e;padding:15px;margin:12px 0;border-radius:12px;text-decoration:none;color:black;font-size:20px;font-weight:bold;text-align:left}
+.room b{font-size:22px}
 </style>
 </head>
 <body>
 
-<div id="loginBox" class="box" style="margin-top:20px">
-<h2>🔐 All World App - LOGIN</h2>
-<p style="font-size:12px">Pehli dafa aane wale bhai pehle Login karen, phir App khulega. Sab kuch Firebase me save hoga.</p>
-<input id="name" placeholder="1 - Apna Naam Likhen">
-<input id="email" placeholder="2 - Apni ID - Gmail / Email Likhen">
-<input id="pass" type="password" placeholder="3 - Apna Password Likhen">
-<input id="city" placeholder="4 - Apna Address - Shehar Ka Naam">
-<input id="phone" placeholder="5 - Apna Phone Number - WhatsApp Ke Liye Zaroori Hai">
-<button onclick="doLogin()">LOGIN KAREN</button>
-<p id="err" style="color:red;font-size:12px;font-weight:bold"></p>
-<p style="font-size:11px;color:#666">Phone Number nahi likhenge to WhatsApp nahi chalegi.</p>
+<div class="top-box">
+<h1 style="color:#0a5c2e;margin:0;">🌹 TAHAFUZ 🌹</h1>
+<p style="font-size:20px;font-weight:bold;margin:5px;">تاجدارِ ختمِ نبوت زندہ باد</p>
 </div>
 
-<div id="main">
-<div class="top"><h1>Tahaffuz Khatm-e-Nabuwwat</h1><h2>All World App</h2><p>Markaz Rehmatul Lil Alameen | Salam Ghaazi Malik Zaheer Awan - Founder</p><p id="welcome" style="color:#ffe98a;font-weight:bold"></p></div>
-
-<div class="box">
-<h3 style="margin:2px">👥 Hamare Bhai - Total Participate - Firebase Se</h3>
-<div class="stats">
-<div><b id="total">0</b><span>TOTAL</span></div>
-<div><b id="online" style="color:green">0</b><span>ONLINE</span></div>
-<div><b id="offline" style="color:red">0</b><span>OFFLINE</span></div>
-</div>
-<button style="background:#25D366;margin-top:8px" onclick="setOnline(true)">🟢 Me Online Hun</button><br><br>
-<button style="background:#ff4444" onclick="setOnline(false)">🔴 Me Offline Hun</button>
+<div class="leaders">
+  <div class="leader"><img src="khadim.jpg"><p>Hafiz Khadim<br>Hussain Rizvi</p></div>
+  <div class="leader"><img src="zaheer.jpg"><p>Murshad<br>Zaheer ul<br>Hassan Shah</p></div>
+  <div class="leader"><img src="saad.jpg"><p>Hafiz Saad<br>Rizvi</p></div>
+  <div class="leader"><img src="ilyas.jpg"><p>Malik Ilyas<br>Awan</p></div>
+  <div class="leader full"><img src="ashiq-rasool.jpg"><p>Ashiq Rasool<br>Malik Muhammad<br>Ilyas Awan</p></div>
 </div>
 
-<div class="grid">
-<div class="pic big"><img src="pic1.jpg"><span>Hafiz Khadim Hussain Rizvi</span></div>
-<div class="pic"><img src="shah.jpg"><span>Murshad Zaheer ul Hassan Shah</span></div>
-
-<div class="pic"><img src="pic4.jpg"><span>Malik Ilyas Awan</span></div>
-<div class="pic"><img src="pic5.jpg"><span>Hafiz Saad Rizvi</span></div>
+<div class="social">
+  <a href="#">ⓕ Facebook</a>
+  <a href="#">🟢 WhatsApp</a>
+  <a href="#">🎵 TikTok</a>
+  <a href="#">💖 Likee</a>
+  <a href="#">▶️ YouTube</a>
 </div>
 
-<div class="links">
-<a href="#">ⓕ Facebook</a><a href="app.html">🟢 WhatsApp</a><a href="#">🎵 TikTok</a><a href="#">💖 Likee</a><a href="#">▶️ YouTube</a>
+<div class="rooms-box">
+  <h1 style="font-size:32px;margin:10px;">7 ROOMS</h1>
+  <a class="room" href="room1.html"><b>Room 1</b> - All World WhatsApp Room 1</a>
+  <a class="room" href="room2.html"><b>Room 2</b> - All World WhatsApp Room 2</a>
+  <a class="room" href="room3.html"><b>Room 3</b> - All World WhatsApp Room 3</a>
+  <a class="room" href="room4.html"><b>Room 4</b> - All World WhatsApp Room 4</a>
+  <a class="room" href="room5.html"><b>Room 5</b> - All World WhatsApp Room 5</a>
+  <a class="room" href="room6.html"><b>Room 6</b> - All World WhatsApp Room 6</a>
+  <a class="room" href="room7.html"><b>Room 7</b> - All World WhatsApp Room 7</a>
 </div>
 
-<div class="box"><h3>7 ROOMS</h3>
-<div class="room"><b>Room 1</b> - All World WhatsApp Room 1</div>
-<div class="room"><b>Room 2</b> - All World WhatsApp Room 2</div>
-<a href="room3.html">div class="room"><b>Room 3</b> - All World WhatsApp Room 3</div>Room 3</div></a><div class="room">Room 4s"room"><b>Room 4</b> - All World WhatsApp Room 4</div>
-<div class="room"><b>Room 5</b> - All World WhatsApp Room 5</div>
-<div class="room"><b>Room 6</b> - All World WhatsApp Room 6</div>
-<div class="room"><b>Room 7</b> - All World WhatsApp Room 7</div>
-</div>
-
-<div class="box">
-<h3>📤 Yahan Taqreer / Bayan / Tasveer / Naat Bhejen - Firebase Me Save Hoga</h3>
-<input type="file" id="fileInput">
-<input id="msgText" placeholder="Paigham likhen...">
-<button onclick="sendMsg()">BHEJEN - Sab Bhaiyon Ko Nazar Aayega</button>
-<div id="allMsgs"></div>
-<p style="font-size:11px">Download karenge to Gallery me jayega, warna yahin Page par rahega.</p>
-</div>
-
-<a class="wabtn" href="app.html">🟢 PURI WHATSAPP KHOLAIN - A to Z 👉</a>
-<div style="font-size:24px;font-weight:bold;color:#5a5a00;padding:5px">لبیک یا رسول اللہ ﷺ</div>
-</div>
-
-<script>
-const firebaseConfig = {
-  apiKey: "AIzaSyDobNyE4SKtNE2fG1FbIYVuBgrzcYXYIKg",
-  authDomain: "tlp-status-app.firebaseapp.com",
-  databaseURL: "https://tlp-status-app-default-rtdb.firebaseio.com",
-  projectId: "tlp-status-app",
-  storageBucket: "tlp-status-app.firebasestorage.app",
-  messagingSenderId: "794554999345",
-  appId: "1:794554999345:web:fce1fa19d8edae6519eb10"
-};
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
-let myKey = "";
-let myName = "";
-if(localStorage.getItem("myName")){
-myName=localStorage.getItem("myName");
-myKey=localStorage.getItem("myKey");
-document.getElementById('loginBox').style.display='none';
-document.getElementById('main').style.display='block';
-}
-function doLogin(){
-let n=document.getElementById('name').value;
-let e=document.getElementById('email').value;
-let p=document.getElementById('pass').value;
-let c=document.getElementById('city').value;
-let ph=document.getElementById('phone').value;
-if(n==''||e==''||p==''||c==''||ph==''){document.getElementById('err').innerText='Bhai Jan, 5 cheezain poori likhen - Naam, Email ID, Password, Shehar, Phone Number. Phone ke baghair WhatsApp nahi chalegi.';return;}
-myName=n;localStorage.setItem("myName",n);
-localStorage.setItem("myEmail",e);
-let ref = db.ref('users').push();
-myKey = ref.key;localStorage.setItem("myKey",myKey);
-ref.set({name:n,email:e,password:p,city:c,phone:ph,online:true,time:Date.now()});
-document.getElementById('loginBox').style.display='none';
-document.getElementById('main').style.display='block';
-document.getElementById('welcome').innerText='Assalam o Alaikum '+n+' Bhai - Aapka Shehar: '+c+' | Aapka Group: '+c+' Group | Phone: '+ph;
-}
-
-// Total / Online / Offline - Firebase se live
-db.ref('users').on('value', snap=>{
-let data = snap.val()||{};
-let keys = Object.keys(data);
-let on = keys.filter(k=>data[k].online==true).length;
-document.getElementById('total').innerText = keys.length;
-document.getElementById('online').innerText = on;
-document.getElementById('offline').innerText = keys.length - on;
-});
-function setOnline(st){
-if(myKey) db.ref('users/'+myKey+'/online').set(st);
-}
-
-function sendMsg(){
-let t=document.getElementById('msgText').value;
-let f=document.getElementById('fileInput').files[0];
-if(!t && !f){alert('Pehle kuch likhen ya file chunen');return;}
-if(f){
-let storageRef = firebase.storage().ref('uploads/'+Date.now()+'_'+f.name);
-storageRef.put(f).then(s=>s.ref.getDownloadURL()).then(url=>{
-db.ref('messages').push({name:myName||'Bhai',text:t,file:url,fileName:f.name,time:Date.now()});
-alert('Ho gaya - Firebase me save ho gaya, ab sab ko nazar aayega');
-});
-}else{
-db.ref('messages').push({name:myName||'Bhai',text:t,time:Date.now()});
-}
-}
-db.ref('messages').on('value', snap=>{
-let d=snap.val()||{};
-let html='';
-Object.values(d).reverse().forEach(m=>{
-html+='<div class="msgbox"><b>'+(m.name||'')+'</b>: '+(m.text||'')+(m.file?'<br><img src="'+m.file+'"><br><a href="'+m.file+'" download>⬇️ Download - Gallery me jayega</a>':'')+'</div>';
-});
-document.getElementById('allMsgs').innerHTML=html;
-});
-</script>
 </body>
 </html>
