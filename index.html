@@ -1,174 +1,103 @@
-<!DOCTYPE html>ok
-<html lang="ur">
+<!DOCTYPE html>
+<html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tahaffuz Khatm-e-Nabuwwat All World WhatsApp</title>
+<title>All World WhatsApp</title>
 <style>
-body{font-family:Arial;text-align:center;background:#fffbe6;padding:12px;margin:0}
-.top-box{background:linear-gradient(#0a8a3c,#075e54);border:3px solid #c9a227;border-radius:18px;padding:18px;margin-bottom:14px;color:white}
-.top-box h1{font-size:32px;margin:0;line-height:1.2;color:#ffd700}
-.top-box p{font-size:22px;font-weight:bold;margin:8px 0 0 0}
-.leaders{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:14px 0}
-.leader{background:white;border:2px solid #0a5c2e;border-radius:14px;padding:8px;box-shadow:0 3px 8px rgba(0,0,0,0.15)}
-.leader img{width:100%;border-radius:10px;height:190px;object-fit:cover}
-.leader p{font-size:20px;font-weight:bold;margin:8px 0 2px 0;color:#075e54}
-.leader.full{grid-column:1 / span 2;max-width:70%;margin:0 auto;width:100%}
-.leader.full img{height:170px}
-.social{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:16px 0}
-.social a{padding:11px 18px;border-radius:30px;text-decoration:none;color:white;font-weight:bold;font-size:18px;box-shadow:0 2px 5px rgba(0,0,0,0.2)}
-.whatsapp-main{display:block;background:#25D366;border:3px solid #075E54;padding:18px;margin:15px 0;border-radius:15px;text-decoration:none;color:white;font-size:24px;font-weight:bold}
-.rooms-box{background:white;border:3px solid #0a5c2e;border-radius:15px;padding:15px}
-.room{display:block;background:#fffbe6;border:2px solid #0a5c2e;border-right:10px solid #0a5c2e;padding:15px;margin:12px 0;border-radius:12px;text-decoration:none;color:black;font-size:20px;font-weight:bold;text-align:left}
-.room b{font-size:22px;color:#0a5c2e}
+body{margin:0;font-family:sans-serif;background:#fff}
+.top{background:#075E54;color:white;padding:12px;text-align:center}
+.earning{background:#25D366;color:white;padding:12px;text-align:center;font-weight:bold}
+.tabs{background:#075E54;color:white;display:flex;justify-content:space-around;padding:10px;font-weight:bold}
+.box{padding:15px}
+input{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:8px}
+button{width:100%;padding:12px;background:#075E54;color:white;border:none;border-radius:8px;font-size:16px}
+.adBox{background:#eee;text-align:center;padding:15px;margin:10px;border:1px dashed #888}
 </style>
 </head>
 <body>
 
-<div class="top-box">
-<h1>🌹 TAHAFFUZ KHATM-E-NABUWWAT 🌹<br>ALL WORLD WHATSAPP</h1>
-<p>تاجدارِ ختمِ نبوت زندہ باد</p>
+<!-- TOP -->
+<div class="top"><b>WhatsApp</b><br>🔍 📷 ⋮</div>
+<div class="tabs"><span>Chats</span><span>Status</span><span>Calls</span><span>Groups</span></div>
+
+<!-- 1. EARNING BOX - AD 1 -->
+<div class="earning">Earning Box - Total: 0 | Online: 0 | Offline: 0</div>
+<div class="adBox">
+<b>Ad 1 - Earning Box Wala Ad</b><br>
+<!-- Apni Ad 1 ki ID yahan lagayen -->
+<div id="ad1">Ad Yahan Aayega</div>
 </div>
 
-<div class="leaders">
-  <div class="leader"><img src="pic1.jpg"><p>Hafiz Khadim<br>Hussain Rizvi</p></div>
-  <div class="leader"><img src="shah.jpg"><p>Murshad<br>Zaheer ul<br>Hassan Shah</p></div>
-  <div class="leader"><img src="pic3.jpg"><p>Ashiq e Rasool Malik Muhammad ilyas <br>Awan</p></div>
-  <div class="leader"><img src="pic4.jpg"><p>Ameer e Muhtaram Hafiz Saad Hussain<br>Rizvi</p></div>
-  <div class="leader full"><img src="pic5.jpg"><p>Ashiq Rasool<br>Aks e Ameer ul Mujahideen Mufti Anas<br>Hussain Rizvi</p></div>
-</div>
-<!DOCTYPE html>
-<html><div id="wa-groups" style="display:none"></dix;border-radius:50%"><div style="margin-left:12px"><h3 style="margin:0">'+cities[i]+' Group</h3><p style="margin:0;color:#666">'+cities[i]+' والوں کا گروپ</p></div><div style="margin-left:auto">10:42 am</div></div>';
-}
-document.getElementById('wa-groups').innerHTML = g;
-</script>
-<head>
+<!-- 2. ENTRY - PEHLE AD, PHIR ENTRY -->
+<div class="box" id="entryBox">
+<h3>Entry - Pehle Ad Dekhen, Phir Entry Karen</h3>
+<button onclick="showEntryAd()">1 Ad Dekhen - Entry Ke Liye</button>
+<p id="adStatus" style="text-align:center;color:green"></p>
 
-*{margin:0;padding:0;box-sizing:border-box;font-family:sans-serif}
-.top{background:#00a884;color:#fff;padding:12px 12px 0;position:relative}
-.top1{display:flex;justify-content:space-between;align-items:center}
-.top1 h1{font-size:27px}
-.top1 span{font-size:22px;margin-left:14px;cursor:pointer}
-.tabs{display:flex;justify-content:space-between;margin-top:10px}
-.tabs div{padding:10px 4px;font-size:18px;cursor:pointer;flex:1;text-align:center}
-.tabs .on{border-bottom:4px solid #fff;font-weight:bold}
-/* DOT MENU */
-.dotmenu{display:none;position:absolute;top:50px;right:10px;background:#fff;color:#000;width:230px;border-radius:8px;box-shadow:0 4px 15px rgba(0,0,0,0.3);z-index:100}
-.dotmenu div{padding:14px 16px;font-size:18px;cursor:pointer;border-bottom:1px solid #f0f0f0}
-.dotmenu div:hover{background:#f5f5f5}
-.page{display:none}.page.show{display:block}
-.chat{display:flex;align-items:center;padding:12px;border-bottom:1px solid #eee;cursor:pointer}
-.chat img{width:58px;height:58px;border-radius:50%;object-fit:cover}
-.mid{flex:1;margin-left:12px}.mid h3{font-size:20px;font-weight:normal}.mid p{color:#666;font-size:15px}
-.right{color:#888;font-size:13px}
-.backbtn{background:#00a884;color:#fff;padding:14px;font-size:20px;cursor:pointer}
-.setrow{display:flex;align-items:center;padding:15px;border-bottom:1px solid #eee}
-.setrow span{font-size:24px;margin-right:14px}.setrow h3{font-size:19px;font-weight:normal}.setrow p{color:#888;font-size:14px}
-.msgbox{background:#ece5dd;min-height:75vh;padding:10px}
-.b1{background:#fff;padding:10px;border-radius:12px;max-width:80%;margin:8px 0}
-.b2{background:#dcf8c6;padding:10px;border-radius:12px;max-width:80%;margin:8px 0;margin-left:auto}
-.inputbox{position:fixed;bottom:0;left:0;right:0;display:flex;padding:8px;background:#eee}
-.inputbox input{flex:1;padding:12px;border:none;border-radius:25px;outline:none}
-.inputbox button{background:#00a884;color:#fff;border:none;padding:0 18px;border-radius:50%;font-size:20px;margin-left:6px}
-</style>
-</head>
-<body>
-
-<div id="mainPage">
-<div class="top">
-<div class="top1"><h1>WhatsApp</h1><div>📷 🔍 <span onclick="toggleDot()">⋮</span></div></div>
-
-<!-- YAHAN DOT MENU HAI -->
-<div id="dotMenu" class="dotmenu">
-<div onclick="alert('New Group')">New group</div>
-<div onclick="alert('New broadcast')">New broadcast</div>
-<div onclick="alert('Linked devices')">Linked devices</div>
-<div onclick="alert('Starred messages')">Starred messages</div>
-<div onclick="alert('Payments')">Payments</div>
-<div onclick="openSettings();toggleDot()">Settings</div>
-</div>
-
-<div class="tabs">
-<div id="t1" class="on" onclick="tab('chats')">Chats</div>
-<div id="t2" onclick="tab('status')">Status</div>
-<div id="t3" onclick="tab('calls')">Calls</div>
-<div id="t4" onclick="tab('groups')">Groups</div>
+<div id="formBox" style="display:none">
+<input id="name" placeholder="Poora Naam">
+<input id="cnic" placeholder="Shanakhti Card Number">
+<input id="address" placeholder="Poora Address">
+<input id="gmail" placeholder="Gmail ID">
+<label>DP Photo:</label> <input type="file"><br><br>
+<label>Cover Photo:</label> <input type="file"><br><br>
+<button onclick="enterRoom()">Room Me Entry Karen</button>
 </div>
 </div>
 
-<div id="p-chats" class="page show">
-<div class="chat" onclick="openChat('Baba Jan')"><img src="pic3.jpg"><div class="mid"><h3>Baba Jan</h3><p>جی بالکل، کل ملاقات ہوگی انشاءاللہ</p></div><div class="right">10:42 am</div></div>
-<div class="chat" onclick="openChat('Peer Murshid')"><img src="pic4.jpg"><div class="mid"><h3>Peer Murshid</h3><p>دعا میں یاد رکھنا</p></div><div class="right">08:30 am</div></div>
-<div class="chat" onclick="openChat('Saad Rizvi')"><img src="pic5.jpg"><div class="mid"><h3>Saad Rizvi</h3><p>ویڈیو بھیج دی ہے، دیکھ لیں</p></div><div class="right">07:12 am</div></div>
-<div class="chat" onclick="openChat('Anas Rizvi')"><img src="pic1.jpg"><div class="mid"><h3>Anas Rizvi</h3><p>جزاک اللہ بھائی</p></div><div class="right">Yesterday</div></div>
+<!-- 3. ACCOUNT PAGE - AD 2 -->
+<div class="box" id="accountBox" style="display:none">
+<h3>Mera Account</h3>
+<p id="userInfo"></p>
+<div class="adBox">
+<b>Ad 2 - Account Wala Ad</b><br>
+<!-- Apni Ad 2 ki ID yahan lagayen -->
+<div id="ad2">Ad Yahan Aayega</div>
+</div>
+<button onclick="goToGroups()">Groups Me Jayen</button>
 </div>
 
-<div id="p-status" class="page">
-<div class="chat"><img src="pic1.jpg"><div class="mid"><h3>My Status</h3><p>Tap to add status update</p></div></div>
-<div class="chat"><img src="pic3.jpg"><div class="mid"><h3>Baba Jan</h3><p>Today, 09:15 am</p></div></div>
-</div>
-
-<div id="p-calls" class="page">
-<div class="chat"><img src="pic3.jpg"><div class="mid"><h3>Baba Jan</h3><p>↙ Today, 10:00 am - Voice Call</p></div><div class="right" style="font-size:22px">📞</div></div>
-<div class="chat"><img src="pic4.jpg"><div class="mid"><h3>Peer Murshid</h3><p>↗ Yesterday - Video Call</p></div><div class="right" style="font-size:22px">📹</div></div>
-</div>
-
-<div id="p-groups" class="page">
-<div class="chat"><img src="pic1.jpg"><div class="mid"><h3>علماء کرام - گروپ</h3><p>مولانا احمد: درس ابھی شروع ہوگا</p></div></div>
-</div>
-</div>
-
-<div id="chatOpen" style="display:none">
-<div class="backbtn" onclick="backMain()">← <span id="chatName">Baba Jan</span> <span style="float:right">📹 📞 ⋮</span></div>
-<div class="msgbox"><div class="b1">السلام علیکم بھائی جان</div><div class="b2">وعلیکم السلام، الحمدللہ</div></div>
-<div class="inputbox"><input placeholder="Message"><button>➤</button></div>
-</div>
-
-<div id="settingsPage" style="display:none">
-<div class="backbtn" onclick="backMain2()">← Settings</div>
-<div class="setrow"><span>🔑</span><div><h3>Account</h3><p>Security notifications, change number</p></div></div>
-<div class="setrow"><span>🔒</span><div><h3>Privacy</h3><p>Block contacts, disappearing messages</p></div></div>
-<div class="setrow"><span>💬</span><div><h3>Chats</h3><p>Theme, wallpapers, chat history</p></div></div>
-<div class="setrow"><span>🔔</span><div><h3>Notifications</h3><p>Message, group & call tones</p></div></div>
-<div class="setrow"><span>📦</span><div><h3>Storage and data</h3><p>Network usage, auto-download</p></div></div>
-<div class="setrow"><span>❓</span><div><h3>Help</h3><p>Help center, contact us</p></div></div>
+<!-- 4. GROUPS - PAKISTAN KE SHEHAR -->
+<div class="box" id="groupBox" style="display:none">
+<h3>Groups - Pakistan Ke Shehar</h3>
+<div id="groups"></div>
 </div>
 
 <script>
-function toggleDot(){
-var m=document.getElementById('dotMenu');
-m.style.display = m.style.display=='block' ? 'none' : 'block';
+// ENTRY AD - HAR BANDA, HAR DAFA 1 AD DEKHEGA
+let adSeen = false;
+function showEntryAd(){
+  // Yahan Apna Interstitial Ad Lagayen - Ad 1 ya Ad 2
+  alert("Ad Chal Raha Hai... Ad Dekhen, Phir Entry Khulegi");
+  // Ad khatam hone ke baad:
+  adSeen = true;
+  document.getElementById("adStatus").innerText = "Shukriya, Ad Dekh Liya, Ab Entry Karen";
+  document.getElementById("formBox").style.display = "block";
 }
-function tab(t){
-['chats','status','calls','groups'].forEach(x=>{
-document.getElementById('p-'+x).classList.remove('show');
-document.getElementById('t'+(['chats','status','calls','groups'].indexOf(x)+1)).classList.remove('on');
-});
-document.getElementById('p-'+t).classList.add('show');
-document.getElementById('t'+(['chats','status','calls','groups'].indexOf(t)+1)).classList.add('on');
-document.getElementById('dotMenu').style.display='none';
-}
-function openChat(n){document.getElementById('mainPage').style.display='none';document.getElementById('chatOpen').style.display='block';document.getElementById('chatName').innerText=n;}
-function backMain(){document.getElementById('chatOpen').style.display='none';document.getElementById('mainPage').style.display='block';}
-function openSettings(){document.getElementById('mainPage').style.display='none';document.getElementById('settingsPage').style.display='
-<div class="social">
-  <a style="background:#1877F2" href="#">ⓕ Facebook</a>
-  <a style="background:#25D366" href="#">🟢 WhatsApp</a>
-  <a style="background:#000000" href="#">🎵 TikTok</a>
-  <a style="background:#FF2D55" href="#">💖 Likee</a>
-  <a style="background:#FF0000" href="#">▶️ YouTube</a>
-</div>
 
-<div class="rooms-box">
-  <h1 style="font-size:32px;margin:10px;color:#0a5c2e;">7 ROOMS</h1>
-  <a class="room" href="room1.html"><b>Room 1</b> - All World WhatsApp Room 1</a>
-  <a class="room" href="room2.html"><b>Room 2</b> - All World WhatsApp Room 2</a>
-  <a class="room" href="room3.html"><b>Room 3</b> - All World WhatsApp Room 3</a>
-  <a class="room" href="room4.html"><b>Room 4</b> - All World WhatsApp Room 4</a>
-  <a class="room" href="room5.html"><b>Room 5</b> - All World WhatsApp Room 5</a>
-  <a class="room" href="room6.html"><b>Room 6</b> - All World WhatsApp Room 6</a>
-  <a class="room" href="room7.html"><b>Room 7</b> - All World WhatsApp Room 7</a>
-</div>
+function enterRoom(){
+  if(!adSeen){
+    alert("Pehle 1 Ad Dekhna Lazmi Hai");
+    return;
+  }
+  let name = document.getElementById("name").value;
+  if(name==""){ alert("Naam Likhen"); return; }
+  document.getElementById("entryBox").style.display="none";
+  document.getElementById("accountBox").style.display="block";
+  document.getElementById("userInfo").innerText = "Mubarak Ho " + name + ", Aapki Entry Ho Gayi";
+}
+
+function goToGroups(){
+  document.getElementById("accountBox").style.display="none";
+  document.getElementById("groupBox").style.display="block";
+  let cities = ["Lahore","Karachi","Islamabad","Rawalpindi","Faisalabad","Multan","Hyderabad","Peshawar","Quetta","Bahawalpur","Sialkot","Gujranwala","Hafizabad"];
+  let box = document.getElementById("groups");
+  cities.forEach(city=>{
+    box.innerHTML += `<div style="padding:12px;border-bottom:1px solid #eee"><b>${city} Group</b><br><span>All World - ${city}</span> <button style="width:auto;float:right" onclick="alert('${city} Me Add Ho Gaye')">Join</button></div>`;
+  });
+}
+</script>
 
 </body>
 </html>
