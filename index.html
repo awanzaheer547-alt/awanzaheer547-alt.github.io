@@ -1,103 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="ur">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All World WhatsApp</title>
+<title>Tahaffuz Khatm-e-Nabuwwat</title>
 <style>
-body{margin:0;font-family:sans-serif;background:#fff}
-.top{background:#075E54;color:white;padding:12px;text-align:center}
-.earning{background:#25D366;color:white;padding:12px;text-align:center;font-weight:bold}
-.tabs{background:#075E54;color:white;display:flex;justify-content:space-around;padding:10px;font-weight:bold}
-.box{padding:15px}
-input{width:100%;padding:10px;margin:6px 0;border:1px solid #ccc;border-radius:8px}
-button{width:100%;padding:12px;background:#075E54;color:white;border:none;border-radius:8px;font-size:16px}
-.adBox{background:#eee;text-align:center;padding:15px;margin:10px;border:1px dashed #888}
+body{margin:0;font-family:Arial;background:#f0f2f5}
+.header{background:#0b6b3a;color:#fff;text-align:center;padding:18px 10px}
+.header h1{margin:0;font-size:22px}
+.header p{margin:5px 0 0;font-size:14px;color:#ffe27a}
+.stats{display:flex;gap:8px;padding:10px}
+.stat{flex:1;background:#fff;border-radius:12px;text-align:center;padding:12px 5px;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.stat b{display:block;font-size:20px;color:#0b6b3a}
+.stat span{font-size:12px;color:#555}
+.title{text-align:center;color:#0b6b3a;margin:10px 0 5px}
+.photos{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:10px}
+.card{background:#fff;border-radius:14px;overflow:hidden;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.12);border:2px solid #e8c85a}
+.card img{width:100%;height:130px;object-fit:cover;display:block;background:#ddd}
+.card p{margin:8px 5px;font-size:12px;font-weight:bold;color:#222}
+.form{background:#fff;margin:10px;border-radius:14px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.form h3{text-align:center;color:#0b6b3a;margin:0 0 12px}
+.form input{width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;box-sizing:border-box}
+.form label{font-size:13px;font-weight:bold}
+.btn{width:100%;background:#d4a017;color:#fff;border:0;padding:14px;border-radius:12px;font-size:18px;font-weight:bold;margin-top:10px}
+.labbaik{text-align:center;color:#0b6b3a;font-weight:bold;padding:10px;line-height:26px}
 </style>
 </head>
 <body>
 
-<!-- TOP -->
-<div class="top"><b>WhatsApp</b><br>🔍 📷 ⋮</div>
-<div class="tabs"><span>Chats</span><span>Status</span><span>Calls</span><span>Groups</span></div>
-
-<!-- 1. EARNING BOX - AD 1 -->
-<div class="earning">Earning Box - Total: 0 | Online: 0 | Offline: 0</div>
-<div class="adBox">
-<b>Ad 1 - Earning Box Wala Ad</b><br>
-<!-- Apni Ad 1 ki ID yahan lagayen -->
-<div id="ad1">Ad Yahan Aayega</div>
+<div class="header">
+<h1>تحفظ ختم نبوت آل ورلڈ واٹس ایپ مرکز</h1>
+<p>رحمت اللعالمین ﷺ</p>
 </div>
 
-<!-- 2. ENTRY - PEHLE AD, PHIR ENTRY -->
-<div class="box" id="entryBox">
-<h3>Entry - Pehle Ad Dekhen, Phir Entry Karen</h3>
-<button onclick="showEntryAd()">1 Ad Dekhen - Entry Ke Liye</button>
-<p id="adStatus" style="text-align:center;color:green"></p>
-
-<div id="formBox" style="display:none">
-<input id="name" placeholder="Poora Naam">
-<input id="cnic" placeholder="Shanakhti Card Number">
-<input id="address" placeholder="Poora Address">
-<input id="gmail" placeholder="Gmail ID">
-<label>DP Photo:</label> <input type="file"><br><br>
-<label>Cover Photo:</label> <input type="file"><br><br>
-<button onclick="enterRoom()">Room Me Entry Karen</button>
-</div>
+<div class="stats">
+<div class="stat"><b>0</b><span>Online</span></div>
+<div class="stat"><b>0</b><span>Offline</span></div>
+<div class="stat"><b>0</b><span>Total</span></div>
+<div class="stat"><b>0</b><span>Lifetime Entries</span></div>
 </div>
 
-<!-- 3. ACCOUNT PAGE - AD 2 -->
-<div class="box" id="accountBox" style="display:none">
-<h3>Mera Account</h3>
-<p id="userInfo"></p>
-<div class="adBox">
-<b>Ad 2 - Account Wala Ad</b><br>
-<!-- Apni Ad 2 ki ID yahan lagayen -->
-<div id="ad2">Ad Yahan Aayega</div>
-</div>
-<button onclick="goToGroups()">Groups Me Jayen</button>
+<h3 class="title">اوپر والی 3 تصویریں</h3>
+<div class="photos">
+<div class="card"><img src="photo1.jpg" alt="Photo 1"><p>بابا جی خادم حسین رضوی</p></div>
+<div class="card"><img src="photo2.jpg" alt="Photo 2"><p>سید ظہیر الحسن شاہ صاحب</p></div>
+<div class="card"><img src="photo3.jpg" alt="Photo 3"><p>سید شبیر حسین شاہ صاحب</p></div>
 </div>
 
-<!-- 4. GROUPS - PAKISTAN KE SHEHAR -->
-<div class="box" id="groupBox" style="display:none">
-<h3>Groups - Pakistan Ke Shehar</h3>
-<div id="groups"></div>
+<h3 class="title">نیچے والی 3 تصویریں</h3>
+<div class="photos">
+<div class="card"><img src="photo4.jpg" alt="Photo 4"><p>ملک محمد الیاس اعوان</p></div>
+<div class="card"><img src="photo5.jpg" alt="Photo 5"><p>حافظ سعد حسین رضوی</p></div>
+<div class="card"><img src="photo6.jpg" alt="Photo 6"><p>مفتی انس حسین رضوی</p></div>
 </div>
 
-<script>
-// ENTRY AD - HAR BANDA, HAR DAFA 1 AD DEKHEGA
-let adSeen = false;
-function showEntryAd(){
-  // Yahan Apna Interstitial Ad Lagayen - Ad 1 ya Ad 2
-  alert("Ad Chal Raha Hai... Ad Dekhen, Phir Entry Khulegi");
-  // Ad khatam hone ke baad:
-  adSeen = true;
-  document.getElementById("adStatus").innerText = "Shukriya, Ad Dekh Liya, Ab Entry Karen";
-  document.getElementById("formBox").style.display = "block";
-}
+<div class="form">
+<h3>Entry Form</h3>
+<label>Full Name</label>
+<input type="text" placeholder="Enter Full Name">
+<label>Address</label>
+<input type="text" placeholder="Enter Address">
+<label>Gmail</label>
+<input type="email" placeholder="Enter Gmail">
+<label>Cover Photo Upload</label>
+<input type="file">
+<label>DP Photo Upload</label>
+<input type="file">
+<button class="btn">Entry Karen</button>
+</div>
 
-function enterRoom(){
-  if(!adSeen){
-    alert("Pehle 1 Ad Dekhna Lazmi Hai");
-    return;
-  }
-  let name = document.getElementById("name").value;
-  if(name==""){ alert("Naam Likhen"); return; }
-  document.getElementById("entryBox").style.display="none";
-  document.getElementById("accountBox").style.display="block";
-  document.getElementById("userInfo").innerText = "Mubarak Ho " + name + ", Aapki Entry Ho Gayi";
-}
-
-function goToGroups(){
-  document.getElementById("accountBox").style.display="none";
-  document.getElementById("groupBox").style.display="block";
-  let cities = ["Lahore","Karachi","Islamabad","Rawalpindi","Faisalabad","Multan","Hyderabad","Peshawar","Quetta","Bahawalpur","Sialkot","Gujranwala","Hafizabad"];
-  let box = document.getElementById("groups");
-  cities.forEach(city=>{
-    box.innerHTML += `<div style="padding:12px;border-bottom:1px solid #eee"><b>${city} Group</b><br><span>All World - ${city}</span> <button style="width:auto;float:right" onclick="alert('${city} Me Add Ho Gaye')">Join</button></div>`;
-  });
-}
-</script>
+<div class="labbaik">
+لبیک یا رسول اللہ ﷺ<br>
+لبیک یا رسول اللہ ﷺ<br>
+لبیک یا رسول اللہ ﷺ
+</div>
 
 </body>
 </html>
