@@ -1,107 +1,224 @@
 <!DOCTYPE html>
-<html lang="ur">
+<html lang="ur" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tahafuz Khatm-e-Nubuwwat - Page 1</title>
+<title>Tahaffuz Khatm-e-Nabuwwat - Apni WhatsApp</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-  body{background:#eef2f5}
-  .header{background:#0a7a3d;color:#fff;text-align:center;padding:14px 10px}
-  .header h1{font-size:19px;line-height:1.4}
-  .header .markaz{font-size:15px;margin-top:4px}
-  .header .rehmat{font-size:14px;margin-top:2px}
-  .stats{display:flex;gap:8px;padding:10px}
-  .stat{flex:1;background:#fff;border-radius:10px;text-align:center;padding:12px 2px;box-shadow:0 1px 4px rgba(0,0,0,.1)}
-  .stat b{display:block;font-size:18px}
-  .stat span{font-size:12px;color:#333}
-  .box{background:#fff;margin:0 10px 10px;border-radius:10px;padding:10px;box-shadow:0 1px 4px rgba(0,0,0,.1)}
-  .box h3{text-align:center;font-size:14px;margin-bottom:10px}
-  .photos{display:flex;gap:8px}
-  .photos figure{flex:1;text-align:center}
-  .photos img{width:100%;height:95px;object-fit:cover;border-radius:8px;border:1px solid #ddd}
-  .photos figcaption{font-size:11px;margin-top:4px;line-height:1.3}
-  .form-box{background:#fff;margin:0 10px 10px;border-radius:10px;padding:12px}
-  .form-box h3{text-align:center;margin-bottom:10px}
-  .form-box label{font-size:13px;display:block;margin:8px 0 4px}
-  .form-box input,.form-box select{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;font-size:14px}
-  .btn{width:100%;background:#0a7a3d;color:#fff;border:0;padding:12px;border-radius:8px;font-size:15px;font-weight:bold;margin-top:12px}
-  .labbaik{text-align:center;background:#e8f5e9;margin:0 10px 10px;padding:10px;border-radius:10px;font-weight:bold}
-  .links{background:#fff;margin:0 10px 10px;border-radius:10px;padding:12px;text-align:center}
-  .links h3{margin-bottom:10px}
-  .links a{display:block;text-decoration:none;color:#fff;padding:11px;border-radius:8px;margin-bottom:8px;font-weight:bold;font-size:14px}
-  .yt{background:#c00} .tk{background:#000} .likee{background:#ff2d55} .fb{background:#1877f2} .wa{background:#25D366}
+body{margin:0;font-family:Arial;background:#f0f2f5}
+.header{background:#0b6b3a;color:#fff;text-align:center;padding:18px 10px}
+.header h1{margin:0;font-size:22px}
+.header p{margin:5px 0 0;font-size:14px;color:#ffe27a}
+.stats{display:flex;gap:8px;padding:10px}
+.stat{flex:1;background:#fff;border-radius:12px;text-align:center;padding:12px 5px;box-shadow:0 2px 6px rgba(0,0,0,.1)}
+.stat b{display:block;font-size:20px;color:#0b6b3a}
+.stat span{font-size:12px;color:#555}
+.title{text-align:center;color:#0b6b3a;margin:10px 0 5px}
+.photos{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;padding:10px}
+.card{background:#fff;border-radius:14px;overflow:hidden;text-align:center;box-shadow:0 2px 8px rgba(0,0,0,.12);border:2px solid #e8c85a}
+.card img{width:100%;height:130px;object-fit:cover;display:block;background:#ddd}
+.card p{margin:8px 5px;font-size:12px;font-weight:bold;color:#222}
+.form{background:#fff;margin:10px;border-radius:14px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.form h3{text-align:center;color:#0b6b3a;margin:0 0 12px}
+.form input{width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;box-sizing:border-box}
+.form label{font-size:13px;font-weight:bold}
+.btn{width:100%;background:#d4a017;color:#fff;border:0;padding:14px;border-radius:12px;font-size:18px;font-weight:bold;margin-top:10px}
+.labbaik{text-align:center;color:#0b6b3a;font-weight:bold;padding:10px;line-height:26px}
+
+/* WhatsApp Jaisi App */
+.wa{background:#fff;margin:10px;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1)}
+.wa-top{background:#075e54;color:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center}
+.wa-top b{font-size:18px}
+.wa-tabs{display:flex;background:#075e54;color:#fff}
+.wa-tabs div{flex:1;text-align:center;padding:12px 0;font-size:14px;font-weight:bold;cursor:pointer}
+.wa-tabs div.active{background:#128c7e}
+.wa-body{padding:10px}
+.room{display:flex;gap:10px;align-items:center;background:#f8f8f8;padding:10px;border-radius:12px;margin-bottom:8px;cursor:pointer;border:1px solid #eee}
+.room img{width:48px;height:48px;border-radius:50%;object-fit:cover;background:#ddd}
+.room b{display:block;font-size:14px}
+.room span{font-size:12px;color:#666}
+#chatBox{height:280px;overflow-y:auto;background:#ece5dd;padding:10px;border-radius:12px;display:none}
+.msg{background:#fff;padding:8px 12px;border-radius:10px;margin:6px 0;max-width:80%;font-size:14px}
+.msg.me{background:#dcf8c6;margin-left:auto}
+.chat-input{display:none;gap:6px;margin-top:10px}
+.chat-input input{flex:1;padding:12px;border:1px solid #ddd;border-radius:25px}
+.chat-input button{background:#25d366;color:#fff;border:0;padding:12px 18px;border-radius:50%;font-weight:bold}
+.status-box{background:#fff3cd;padding:10px;border-radius:10px;font-size:13px;margin-bottom:8px}
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>تحفظ ختم نبوت آل ورلڈ وائس ایپ</h1>
-  <div class="markaz">مرکز</div>
-  <div class="rehmat">رحمت اللعالمین ﷺ</div>
+<h1>تحفظ ختم نبوت آل ورلڈ واٹس ایپ مرکز</h1>
+<p>رحمت اللعالمین ﷺ</p>
 </div>
 
 <div class="stats">
-  <div class="stat"><b>0</b><span>Online</span></div>
-  <div class="stat"><b>0</b><span>Offline</span></div>
-  <div class="stat"><b>0</b><span>Total</span></div>
-  <div class="stat"><b>0</b><span>Lifetime Entries</span></div>
+<div class="stat"><b id="onlineCount">0</b><span>Online</span></div>
+<div class="stat"><b>0</b><span>Offline</span></div>
+<div class="stat"><b>0</b><span>Total</span></div>
+<div class="stat"><b>0</b><span>Lifetime Entries</span></div>
 </div>
 
-<!-- اوپر والی 3 تصویریں - چھوٹے p والا نام -->
-<div class="box">
-  <h3>اوپر والی 3 تصویریں</h3>
-  <div class="photos">
-    <figure><img src="photo1.jpg"><figcaption>بابا جی خادم حسین رضوی</figcaption></figure>
-    <figure><img src="photo2.jpg"><figcaption>سید ظہیر الحسن شاہ صاحب</figcaption></figure>
-    <figure><img src="photo3.jpg"><figcaption>سید شبیر حسین شاہ صاحب</figcaption></figure>
-  </div>
+<h3 class="title">اوپر والی 3 تصویریں</h3>
+<div class="photos">
+<div class="card"><img src="photo1.jpg"><p>بابا جی خادم حسین رضوی</p></div>
+<div class="card"><img src="photo2.jpg"><p>سید ظہیر الحسن شاہ صاحب</p></div>
+<div class="card"><img src="photo3.jpg"><p>سید شبیر حسین شاہ صاحب</p></div>
 </div>
 
-<!-- نیچے والی 3 تصویریں - چھوٹے p والا نام -->
-<div class="box">
-  <h3>نیچے والی 3 تصویریں</h3>
-  <div class="photos">
-    <figure><img src="photo4.jpg"><figcaption>تصویر 4</figcaption></figure>
-    <figure><img src="photo5.jpg"><figcaption>تصویر 5</figcaption></figure>
-    <figure><img src="photo6.jpg"><figcaption>تصویر 6</figcaption></figure>
-  </div>
+<h3 class="title">نیچے والی 3 تصویریں</h3>
+<div class="photos">
+<div class="card"><img src="photo4.jpg"><p>ملک محمد الیاس اعوان</p></div>
+<div class="card"><img src="photo5.jpg"><p>حافظ سعد حسین رضوی</p></div>
+<div class="card"><img src="photo6.jpg"><p>مفتی انس حسین رضوی</p></div>
 </div>
 
-<div class="form-box">
-  <h3>Entry Form</h3>
-  <label>Full Name</label>
-  <input placeholder="اپنا نام لکھیں">
-  <label>City</label>
-  <input placeholder="شہر">
-  <label>WhatsApp Number</label>
-  <input placeholder="03xx-xxxxxxx">
-  <label>Group</label>
-  <select>
-    <option>Lahore Group</option>
-    <option>Karachi Group</option>
-    <option>Islamabad Group</option>
-    <option>Rawalpindi Group</option>
-    <option>Peshawar Group</option>
-    <option>Quetta Group</option>
-  </select>
-  <button class="btn">Submit / جمع کریں</button>
+<div class="form">
+<h3>Entry Form</h3>
+<label>Full Name</label>
+<input id="myName" type="text" placeholder="Enter Full Name">
+<label>Address</label>
+<input type="text" placeholder="Enter Address">
+<label>Gmail</label>
+<input type="email" placeholder="Enter Gmail">
+<label>Cover Photo Upload</label>
+<input type="file">
+<label>DP Photo Upload</label>
+<input type="file">
+<button class="btn" onclick="joinWhatsApp()">Entry Karen - WhatsApp Join Karen</button>
 </div>
 
-<!-- آپ کے سارے لنک -->
-<div class="links">
-  <h3>ہمارے ساتھ جڑیں</h3>
-  <a class="yt" href="https://youtu.be/TkzQPVKAq28?si=ELFnwt1uJW-nlKQy">▶ YouTube دیکھیں</a>
-  <a class="tk" href="https://vm.tiktok.com/ZSpW6KGY4/">♪ TikTok دیکھیں</a>
-  <a class="likee" href="https://l.likee.video/v/CASyuF">♥ Likee دیکھیں</a>
-  <a class="fb" href="https://www.facebook.com/share/1coLeaYWhr/">f Facebook دیکھیں</a>
-  <a class="wa" href="https://whatsapp.com/channel/0029Vb9SXgn2UPB8BQi6l62x">WhatsApp Channel Join کریں</a>
+<!-- APNI WHATSAPP -->
+<div class="wa">
+<div class="wa-top"><b>اپنی WhatsApp</b><span>● Online</span></div>
+<div class="wa-tabs">
+<div class="active" onclick="showTab('chats',this)">Chats</div>
+<div onclick="showTab('status',this)">Status</div>
+<div onclick="showTab('calls',this)">Calls</div>
+<div onclick="showTab('rooms',this)">Rooms</div>
 </div>
 
-<div class="labbaik">لبیک لبیک لبیک یا رسول اللہ ﷺ</div>
+<div class="wa-body">
+<!-- CHATS -->
+<div id="tab-chats">
+<div id="chatBox"></div>
+<div class="chat-input" id="chatInput">
+<input id="msgInput" placeholder="Message likhein...">
+<button onclick="sendMsg()">➤</button>
 </div>
-<div style="text-align:center;padding:15px">
-<a href="page2.html" style="background:#0a7a3d;color:#fff;padding:12px 30px;border-radius:25px;text-decoration:none;font-weight:bold">اگلا صفحہ ➜ Page 2 پر جائیں</a>
+<p style="font-size:13px;color:#555">نیچے کسی Room پر کلک کریں، چیٹ کھل جائے گی۔</p>
 </div>
+
+<!-- STATUS -->
+<div id="tab-status" style="display:none">
+<div class="status-box"><b>میرا Status:</b> <span id="myStatusText">لبیک یا رسول اللہ ﷺ</span><br><br>
+<input id="statusInput" placeholder="Apna Status likhein" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd">
+<button onclick="setStatus()" style="margin-top:8px;background:#0b6b3a;color:#fff;padding:10px 18px;border:0;border-radius:10px">Status Lagayen</button>
+</div>
+<div id="statusList"></div>
+</div>
+
+<!-- CALLS -->
+<div id="tab-calls" style="display:none">
+<p style="font-size:14px">📞 Audio Call - جلد آرہی ہے</p>
+<button onclick="alert('Audio Call - Firebase se juregi')" style="background:#25d366;color:#fff;padding:12px 20px;border:0;border-radius:10px">Audio Call Karen</button>
+<br><br>
+<p style="font-size:14px">📹 Video Call - جلد آرہی ہے</p>
+<button onclick="alert('Video Call - Firebase se juregi')" style="background:#0b6b3a;color:#fff;padding:12px 20px;border:0;border-radius:10px">Video Call Karen</button>
+</div>
+
+<!-- ROOMS -->
+<div id="tab-rooms">
+<div id="roomList"></div>
+</div>
+
+</div>
+</div>
+
+<div class="labbaik">
+لبیک یا رسول اللہ ﷺ<br>
+لبیک یا رسول اللہ ﷺ<br>
+لبیک یا رسول اللہ ﷺ
+</div>
+
+<script>
+// ===== FIREBASE CONFIG - YAHAN APNI CONFIG LAGAYEN =====
+// Yahan sirf apiKey wali config lagani hai, private_key wali NAHI
+const firebaseConfig = {
+  apiKey: "APKI_APIKEY_YAHAN",
+  authDomain: "APKA_PROJECT.firebaseapp.com",
+  projectId: "APKA_PROJECT_ID",
+  storageBucket: "APKA_PROJECT.appspot.com",
+  messagingSenderId: "XXXX",
+  appId: "XXXX"
+};
+// =========================================
+
+let myName = "Mehman";
+let currentRoom = "Room 1 - Markazi Room";
+
+const rooms = [
+  {name:"Room 1 - Markazi Room", desc:"Sab dost yahan baat karenge", img:"photo1.jpg"},
+  {name:"Room 2 - Naat Room", desc:"Naat aur Bayan", img:"photo2.jpg"},
+  {name:"Room 3 - Taleem Room", desc:"Deeni Taleem", img:"photo3.jpg"},
+  {name:"Room 4 - Khidmat Room", desc:"Khidmat-e-Khalq", img:"photo4.jpg"},
+  {name:"Room 5 - Dosto Ka Room", desc:"Doston ki gupshup", img:"photo5.jpg"},
+  {name:"Room 6 - Family Room", desc:"Family ke liye", img:"photo6.jpg"},
+  {name:"Room 7 - Admin Room", desc:"Sirf Admin", img:"photo1.jpg"},
+];
+
+function showTab(id, el){
+  document.querySelectorAll('.wa-tabs div').forEach(d=>d.classList.remove('active'));
+  el.classList.add('active');
+  ['chats','status','calls','rooms'].forEach(t=>{
+    document.getElementById('tab-'+t).style.display = (t===id?'block':'none');
+  });
+}
+
+function renderRooms(){
+  document.getElementById('roomList').innerHTML = rooms.map((r,i)=>`
+    <div class="room" onclick="openRoom('${r.name}')">
+      <img src="${r.img}"><div><b>${r.name}</b><span>${r.desc}</span></div>
+    </div>`).join('');
+}
+renderRooms();
+
+function joinWhatsApp(){
+  let n = document.getElementById('myName').value;
+  if(n) myName = n;
+  alert('Assalam-o-Alaikum '+myName+'! Aap apni WhatsApp me aa gaye. Neeche Room par click karen.');
+  showTab('rooms', document.querySelectorAll('.wa-tabs div')[3]);
+}
+
+function openRoom(name){
+  currentRoom = name;
+  document.getElementById('chatBox').style.display='block';
+  document.getElementById('chatInput').style.display='flex';
+  document.getElementById('chatBox').innerHTML = `<div class="msg"><b>${name}</b><br>Assalam-o-Alaikum! ${myName} ne join kiya.</div>`;
+  showTab('chats', document.querySelectorAll('.wa-tabs div')[0]);
+}
+
+function sendMsg(){
+  let inp = document.getElementById('msgInput');
+  if(!inp.value) return;
+  let div = document.createElement('div');
+  div.className='msg me';
+  div.innerHTML = `<b>${myName}</b><br>${inp.value}`;
+  document.getElementById('chatBox').appendChild(div);
+  // Yahan Firebase me save hoga - jab config lagayenge to sab ko nazar aayega
+  inp.value='';
+  document.getElementById('chatBox').scrollTop = 99999;
+}
+
+function setStatus(){
+  let s = document.getElementById('statusInput').value;
+  if(s){
+    document.getElementById('myStatusText').innerText = s;
+    document.getElementById('statusList').innerHTML = `<div class="status-box"><b>${myName}:</b> ${s}</div>` + document.getElementById('statusList').innerHTML;
+    alert('Status lag gaya!');
+  }
+}
+</script>
 </body>
-</html> 
+</html>
