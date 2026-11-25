@@ -3,79 +3,66 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>WhatsApp - Page 2</title>
+<title>Page 2</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f0f2f5;padding-bottom:70px}
-.phone{max-width:480px;margin:0 auto;background:#fff;min-height:100vh;position:relative}
-.top-tabs{display:flex;background:#fff;padding-top:10px}
-.top-tabs div{flex:1;text-align:center;padding:10px;font-size:19px;color:#777}
-.top-tabs .active{color:#111;border-bottom:3px solid #25D366;font-weight:bold}
-.header{background:#25D366;color:#fff;text-align:center;padding:10px;font-size:20px;font-weight:bold}
-.search{padding:12px}
-.search-box{background:#eee;border-radius:25px;padding:11px 15px;font-size:16px;color:#555}
-.chat{display:flex;padding:11px 12px;border-bottom:1px solid #eee;align-items:flex-start}
-.dp{width:52px;height:52px;border-radius:50%;object-fit:cover;flex-shrink:0}
-.info{flex:1;margin-left:11px;min-width:0}
-.info b{font-size:17px;display:block}
-.info p{font-size:14px;color:#222;line-height:1.4}
-.right{text-align:right;flex-shrink:0;margin-left:6px}
-.right small{font-size:13px;color:#555;display:block}
-.badge{background:#25D366;color:#fff;font-size:14px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:6px 0 0 auto}
-.tick{color:#25D366;font-size:14px}
-.rooms-title{padding:14px 12px 8px;color:#666;font-size:15px}
-.rooms{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;padding:0 12px 20px}
-.room{border:1.5px solid #25D366;background:#f2fbf5;border-radius:10px;padding:12px 4px;text-align:center;font-size:14px;color:#222}
-.back{text-align:center;padding:10px}
-.back a{color:#25D366;font-weight:bold;text-decoration:none}
-.fab{position:fixed;bottom:80px;right:18px;background:#25D366;color:#fff;width:60px;height:60px;border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:30px;box-shadow:0 4px 12px rgba(0,0,0,0.3);z-index:10}
-.bottom{position:fixed;bottom:0;left:0;right:0;max-width:480px;margin:0 auto;display:flex;background:#fff;border-top:1px solid #ddd;padding:8px 0}
-.bottom div{flex:1;text-align:center;color:#777;font-size:14px}
-.bottom .active{color:#25D366}
-.bottom .icon{font-size:26px;display:block}
+body{background:#f0f2f5}
+.phone{max-width:480px;margin:0 auto;background:#fff;min-height:100vh;padding-bottom:20px}
+/* ROOMS - ALAG */
+.rooms-top{padding:14px 12px 6px;font-weight:bold;font-size:18px}
+.rooms{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;padding:0 12px 14px}
+.rooms div{border:1.5px solid #25D366;background:#e8f8ef;padding:10px 4px;border-radius:10px;text-align:center;font-size:13px;font-weight:bold}
+/* WHATSAPP - ALAG DABBA */
+.whatsapp{border-top:4px solid #25D366;margin:0 8px;border:1px solid #ddd;border-radius:12px;overflow:hidden}
+.top-tabs{display:flex;background:#fff}
+.top-tabs div{flex:1;text-align:center;padding:12px 0;font-size:15px;color:#666;font-weight:bold}
+.top-tabs .active{color:#111;border-bottom:3px solid #25D366}
+.header{background:#25D366;color:#fff;padding:12px;font-size:22px;font-weight:bold}
+.search{padding:10px}
+.search-box{background:#eee;border-radius:20px;padding:9px 14px;color:#666;font-size:14px}
+.chat{display:flex;padding:10px;align-items:center;border-bottom:1px solid #f0f0f0}
+.dp{width:50px;height:50px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:bold;flex-shrink:0}
+.info{flex:1;margin-left:10px}
+.info b{font-size:16px}
+.info p{font-size:13px;color:#333;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.right{text-align:right;font-size:12px}
+.badge{background:#25D366;color:#fff;font-size:11px;padding:2px 7px;border-radius:12px;display:inline-block;margin-top:4px}
+.group-title{padding:12px;font-weight:bold;font-size:16px;background:#f6fff8}
+.pak-groups{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 10px 14px;background:#f6fff8}
+.pak-groups div{background:#fff;border:1px solid #25D366;border-radius:10px;padding:10px;text-align:center;font-size:13px;font-weight:bold}
+.bottom{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;text-align:center;padding:10px 0;border-top:1px solid #eee}
+.bottom div{font-size:12px;color:#777}
+.bottom .active{color:#25D366;font-weight:bold}
 </style>
 </head>
 <body>
 <div class="phone">
-<div class="top-tabs"><div>Chat</div><div>Status</div><div>Call</div><div>Group</div></div>
-<div class="top-tabs"><div <div>Status</div>
+
+<!-- ROOMS UPAR - ALAG -->
+<div class="rooms-top">Rooms</div>
+<div class="rooms"><div>Room 1</div><div>Room 2</div><div>Room 3</div><div>Room 4</div><div>Room 5</div><div>Room 6</div><div>Room 7</div><div>Room 8</div></div>
+
+<!-- WHATSAPP SHURU - IS KE ANDAR HI GROUP HAI -->
+<div class="whatsapp">
+
+<div class="top-tabs"><div>Chat</div><div>Status</div><div>Call</div><div class="active">Group</div></div>
 <div class="header">WhatsApp</div>
-<div class="search"><div class="search-box">🔍 &nbsp; Search / تلاش...</div></div>
+<div class="search"><div class="search-box">🔍 Search...</div></div>
 
-<div class="chat"><img class="dp" src="https://randomuser.me/api/portraits/men/52.jpg"><div class="info"><b>Baba Jan</b><p>InshaAllah, we will meet tomorrow بابا جان نے <span class="tick">✔✔</span><br>انشاء اللہ، کل ملیں گے</p></div><div class="right"><small>09:41</small><div class="badge">2</div></div></div>
+<div class="chat"><div class="dp">B</div><div class="info"><b>Baba Jan</b><p>Beta kahan ho?</p></div><div class="right">10:42 AM<br><span class="badge">2</span></div></div>
+<div class="chat"><div class="dp">M</div><div class="info"><b>Mama Jan</b><p>Khana kha liya?</p></div><div class="right">Yesterday</div></div>
 
-<div class="chat"><img class="dp" src="https://randomuser.me/api/portraits/men/32.jpg"><div class="info"><b>Peer Murshid</b><p>JazakAllah, thank you for the guidance<br>جزاک اللہ، شکریہ رہنمائی کا</p></div><div class="right"><small>08:22</small><div class="badge">5</div></div></div>
-
-<div class="chat"><img class="dp" src="https://randomuser.me/api/portraits/men/75.jpg"><div class="info"><b>Saad Rizvi</b><p>Bro are you coming today?<br>بھائی آج آ رہے ہو؟</p></div><div class="right"><small>سعد رضوی</small><div class="badge">1</div></div></div>
-
-<div class="chat"><img class="dp" src="https://randomuser.me/api/portraits/men/22.jpg"><div class="info"><b>Anas Rizvi</b><p>Got it, I'll send the files now<br>ٹھیک ہے، ابھی فائل بھیجتا ہوں 😊</p></div><div class="right"><small>Yesterday کل</small><div class="badge" style="background:#fff;color:#25D366;font-size:20px">✔</div></div></div>
-
-<div class="chat"><img class="dp" src="https://randomuser.me/api/portraits/women/44.jpg"><div class="info"><b>Aisha Khan</b><p>The pic is beautiful<br>تصویر بہت خوبصورت ہے 🙂</p></div><div class="right"><small>Yesterday کل</small><div class="badge">3</div></div></div>
-
-<div class="chat"><img class="dp" src="https://randomuser.me/api/portraits/women/68.jpg"><div class="info"><b>Fatima Noor</b><p>Meeting is at 5pm, don't be late<br>میٹنگ شام 5 بجے ہے، دیر نہ کرنا</p></div><div class="right"><small>19/10</small></div></div>
-
-<div class="chat"><img class="dp" src="https://randomuser.me/api/portraits/men/45.jpg"><div class="info"><b>Usman Ali</b><p>Okay noted, thanks! ٹھیک ہے، شکریہ!</p></div><div class="right"><small>19/10</small></div></div>
-
-<div class="chat"><img class="dp" src="https://randomuser.me/api/portraits/women/17.jpg"><div class="info"><b>Zara Ahmed</b><p>Voice message • 0:12 • وائس میسج 🎙️</p></div><div class="right"><small>18/10 18/10</small><div class="badge">1</div></div></div>
-
-<div class="rooms-title">Rooms</div>
-<div class="rooms">
-<div class="room">Room 1</div><div class="room">Room 2</div><div class="room">Room 1</div><div class="room">Room 2</div>
-<div class="room">Room 3</div><div class="room">Room 4</div><div class="room">Room 3</div><div class="room">Room 4</div>
-<div class="room">Room 5</div><div class="room">Room 6</div><div class="room">Room 5</div><div class="room">Room 6</div>
+<!-- GROUP WHATSAPP KE ANDAR -->
+<div class="group-title">🇵🇰 WhatsApp Groups - پورے پاکستان کے شہر</div>
+<div class="pak-groups">
+<div>Karachi Group</div><div>Lahore Group</div><div>Islamabad Group</div><div>Rawalpindi Group</div><div>Faisalabad Group</div><div>Multan Group</div><div>Hyderabad Group</div><div>Peshawar Group</div><div>Quetta Group</div><div>Hafizabad Group</div><div>Gujranwala Group</div><div>Sialkot Group</div><div>Bahawalpur Group</div><div>Sargodha Group</div><div>Sahiwal Group</div><div>Okara Group</div><div>Kasur Group</div><div>Sheikhupura Group</div><div>Jhang Group</div><div>Jhelum Group</div><div>Chakwal Group</div><div>Attock Group</div><div>Mandi Bahauddin Group</div><div>Narowal Group</div><div>Gujrat Group</div><div>Khushab Group</div><div>Mianwali Group</div><div>Bhakkar Group</div><div>Layyah Group</div><div>Muzaffarabad Group</div><div>Mirpur Group</div><div>Gilgit Group</div><div>Skardu Group</div><div>Hunza Group</div><div>Swat Group</div><div>Mardan Group</div><div>Kohat Group</div><div>Bannu Group</div><div>Dera Ismail Khan Group</div><div>Abbottabad Group</div><div>Mansehra Group</div><div>Haripur Group</div><div>Swabi Group</div><div>Nowshera Group</div><div>Charsadda Group</div><div>Chitral Group</div><div>Sukkur Group</div><div>Larkana Group</div><div>Nawabshah Group</div><div>Mirpur Khas Group</div><div>Jacobabad Group</div><div>Shikarpur Group</div><div>Khairpur Group</div><div>Ghotki Group</div><div>Badin Group</div><div>Thatta Group</div><div>Dadu Group</div><div>Umerkot Group</div><div>Chaman Group</div><div>Gwadar Group</div><div>Turbat Group</div><div>Khuzdar Group</div><div>Zhob Group</div><div>Ziarat Group</div><div>Sibi Group</div><div>Loralai Group</div><div>Murree Group</div><div>Pakpattan Group</div><div>Vehari Group</div><div>Lodhran Group</div><div>Khanewal Group</div><div>Chiniot Group</div><div>Toba Tek Singh Group</div><div>Rahim Yar Khan Group</div><div>Rajanpur Group</div><div>Dera Ghazi Khan Group</div><div>Bahawalnagar Group</div><div>Nankana Sahib Group</div><div>Wazirabad Group</div><div>Wah Cantt Group</div><div>Talagang Group</div><div>Kamalia Group</div><div>Khanpur Group</div><div>Sadiqabad Group</div>
 </div>
 
-<div class="back"><a href="index.html">⬅️ واپس پہلے Page پر</a></div>
+<div class="bottom"><div>🏠<br>Chat</div><div>⭕<br>Status</div><div>📞<br>Call</div><div class="active">👥<br>Group</div></div>
 
 </div>
+<!-- WHATSAPP KHATAM -->
 
-<div class="fab">✎</div>
-
-<div class="bottom">
-<div class="active"><span class="icon">🏠</span>Chat</div>
-<div><span class="icon">📞</span>Call</div>
-<div><span class="icon">⚙️</span>Group</div>
 </div>
-
 </body>
 </html>
