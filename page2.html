@@ -1,1 +1,102 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tahaffuz Khatm-e-Nabuwwat - Apni WhatsApp</title>
+<style>
+body{margin:0;font-family:Arial;background:#f0f2f5}
+.header{background:#0b6b3a;color:#fff;text-align:center;padding:18px 10px}
+.header h1{margin:0;font-size:22px}
+.header p{margin:5px 0 0;font-size:14px;color:#ffe27a}
+.wa{background:#fff;margin:10px;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1);border:2px solid #e8c85a}
+.wa-top{background:#075e54;color:#fff;padding:14px;display:flex;justify-content:space-between;align-items:center}
+.wa-top b{font-size:20px}
+.wa-tabs{display:flex;background:#075e54;color:#fff}
+.wa-tabs div{flex:1;text-align:center;padding:14px 0;font-size:15px;font-weight:bold;cursor:pointer}
+.wa-tabs div.active{background:#128c7e;border-bottom:3px solid #ffe27a}
+.wa-body{padding:10px}
+.wa-main{min-height:520px}
+.room{display:flex;gap:10px;align-items:center;background:#f8f8f8;padding:12px;border-radius:12px;margin-bottom:8px;cursor:pointer;border:1px solid #eee}
+.room img{width:52px;height:52px;border-radius:50%;object-fit:cover;background:#ddd}
+.room b{display:block;font-size:15px}
+.room span{font-size:12px;color:#666}
+#chatBox{height:460px;overflow-y:auto;background:#ece5dd;padding:10px;border-radius:12px;display:none}
+.msg{background:#fff;padding:10px 12px;border-radius:10px;margin:6px 0;max-width:85%;font-size:15px}
+.msg.me{background:#dcf8c6;margin-left:auto}
+.chat-input{display:none;gap:6px;margin-top:10px}
+.chat-input input{flex:1;padding:14px;border:1px solid #ddd;border-radius:25px}
+.chat-input button{background:#25d366;color:#fff;border:0;padding:14px 20px;border-radius:50%;font-weight:bold;font-size:18px}
+.status-box{background:#fff3cd;padding:12px;border-radius:10px;font-size:14px;margin-bottom:8px}
+#groupList{max-height:500px;overflow-y:auto}
+.bigroom{background:#fff;margin:10px;border-radius:14px;padding:15px;box-shadow:0 2px 8px rgba(0,0,0,.1);border:2px solid #e8c85a}
+.bigroom h3{color:#0b6b3a;margin:0 0 8px}
+.btn{padding:12px 18px;border:0;border-radius:10px;color:#fff;font-weight:bold;margin-top:8px}
+.green{background:#25d366}.gold{background:#d4a017}.dark{background:#0b6b3a}
+.title{text-align:center;color:#0b6b3a;margin:10px 0 5px}
+.labbaik{text-align:center;color:#0b6b3a;font-weight:bold;padding:10px;line-height:26px}
+</style>
+</head>
+<body>
 
+<div class="header">
+<h1>تحفظ ختم نبوت آل ورلڈ واٹس ایپ مرکز</h1>
+<p>رحمت اللعالمین ﷺ</p>
+<a href="index.html" style="color:#ffe27a">⬅ Page 1 - Wapis Jayen</a>
+</div>
+
+<div class="wa">
+<div class="wa-top"><b>اپنی WhatsApp</b><span>● Online</span></div>
+<div class="wa-tabs">
+<div class="active" onclick="showTab('chats',this)">Chats</div>
+<div onclick="showTab('status',this)">Status</div>
+<div onclick="showTab('calls',this)">Calls</div>
+<div onclick="showTab('groups',this)">Groups</div>
+</div>
+<div class="wa-body wa-main">
+<div id="tab-chats">
+<div id="chatBox"></div>
+<div class="chat-input" id="chatInput"><input id="msgInput" placeholder="Message likhein..."><button onclick="sendMsg()">➤</button></div>
+<p style="font-size:14px;color:#555">👇 نیچے کسی Group پر کلک کریں، چیٹ اوپر بڑی سکرین میں کھل جائے گی۔</p>
+<div class="room" onclick="openRoom('Baba Jan')"><img src="photo1.jpg"><div><b>Baba Jan</b><span>InshaAllah, we will meet tomorrow</span></div></div>
+<div class="room" onclick="openRoom('Peer Murshid')"><img src="photo2.jpg"><div><b>Peer Murshid</b><span>JazakAllah, thank you for the guidance</span></div></div>
+<div class="room" onclick="openRoom('Saad Rizvi')"><img src="photo3.jpg"><div><b>Saad Rizvi</b><span>Bro are you coming today?</span></div></div>
+<div class="room" onclick="openRoom('Anas Rizvi')"><img src="photo4.jpg"><div><b>Anas Rizvi</b><span>Got it, I'll send the files now 😊</span></div></div>
+</div>
+<div id="tab-status" style="display:none">
+<div class="status-box"><b>میرا Status:</b> <span id="myStatusText">لبیک یا رسول اللہ ﷺ</span><br><br>
+<input id="statusInput" placeholder="Apna Status likhein" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ddd">
+<button onclick="setStatus()" style="margin-top:8px;background:#0b6b3a;color:#fff;padding:12px 20px;border:0;border-radius:10px">Status Lagayen</button></div>
+<div id="statusList"></div>
+</div>
+<div id="tab-calls" style="display:none">
+<p>📞 Audio Call - جلد آرہی ہے</p><button onclick="alert('Audio Call - Firebase se juregi')" class="btn green">Audio Call Karen</button><br><br>
+<p>📹 Video Call - جلد آرہی ہے</p><button onclick="alert('Video Call - Firebase se juregi')" class="btn dark">Video Call Karen</button>
+</div>
+<div id="tab-groups" style="display:none"><h3>🇵🇰 Pakistan Ke Shehron Wale Group</h3><div id="groupList"></div></div>
+</div>
+</div>
+
+<h3 class="title">ہمارے 7 Room - Neeche Alag</h3>
+<div class="bigroom"><h3>1۔ DJ Room 🎤 - Sirf Aap Chalayenge</h3><p>Aap apne mobile se Naat / Bayan chalayenge</p><button class="btn green">▶ DJ Live Shuru Karen</button> <button class="btn gold">⏸ Band Karen</button></div>
+<div class="bigroom"><h3>2۔ Chat Room 💬</h3><p>Saare members aapas me yahan baat karenge</p><button class="btn green" onclick="openRoom('Chat Room')">Chat Room Me Jayen</button></div>
+<div class="bigroom"><h3>3۔ Earning Room 💰</h3><p>Google Ads dekh kar Earning karen</p><div class="status-box">Yahan aap ki Google ki 2 Ads lagengi. [AD KI JAGAH]</div><button class="btn gold">Ad Dekhen - Earning Karen</button></div>
+<div class="bigroom"><h3>4۔ Sawal-Jawab Room ❓</h3><p>1400 Saal Ki Tareekh - Sahi Jawab = Inaam</p><p><b>Aaj ka Sawal:</b> Pehli Hijrat kis taraf hui thi?</p><input placeholder="Apna Jawab likhein" style="width:100%;padding:10px"><button class="btn dark">Jawab Bhejen</button></div>
+<div class="bigroom"><h3>5۔ Madad Room 🤲</h3><p>Majboor doston ki madad - Allah ki raza ke liye</p><button class="btn green">Madad Ki Darkhwast Karen</button></div>
+<div class="bigroom"><h3>6۔ Office Room 🏢 - Sirf Aap Ka Daftar - CCTV</h3><p><b>📹 CCTV:</b> Online: 0 | Offline: 0 | Total: 0 | Lifetime: 0</p><div style="display:flex;gap:8px"><div style="flex:1;background:#e8f5e9;padding:10px;border-radius:10px"><b>Box 1 - Earning</b><br>Bank Account<br>Rs: 0</div><div style="flex:1;background:#fff3cd;padding:10px;border-radius:10px"><b>Box 2 - Sawal-Jawab</b><br>Inaam Wala<br>Rs: 0</div><div style="flex:1;background:#e3f2fd;padding:10px;border-radius:10px"><b>Box 3 - Madad</b><br>JazzCash<br>Rs: 0</div></div></div>
+<div class="bigroom"><h3>7۔ Mushawarat Room 🤝 - Admin Meeting</h3><p>Aap aur aap ke Admin - App ke baare me Mushawarat</p><input placeholder="Mushawarat ka point likhein" style="width:100%;padding:10px"><button class="btn dark">Meeting Shuru Karen</button></div>
+
+<div class="labbaik">لبیک یا رسول اللہ ﷺ<br>لبیک یا رسول اللہ ﷺ<br>لبیک یا رسول اللہ ﷺ</div>
+
+<script>
+let myName = localStorage.getItem('myName') || "Mehman";
+let cities = ["Lahore","Faisalabad","Rawalpindi","Multan","Gujranwala","Hafizabad","Sialkot","Bahawalpur","Sargodha","Sheikhupura","Gujrat","Jhang","Kasur","Sahiwal","Okara","Chiniot","Narowal","Mandi Bahauddin","Rahim Yar Khan","Karachi","Hyderabad","Sukkur","Larkana","Nawabshah","Mirpur Khas","Peshawar","Abbottabad","Mardan","Swat","Dera Ismail Khan","Kohat","Quetta","Gwadar","Khuzdar","Turbat","Zhob","Muzaffarabad","Mirpur","Gilgit","Skardu","Islamabad"];
+function showTab(id, el){ document.querySelectorAll('.wa-tabs div').forEach(d=>d.classList.remove('active')); el.classList.add('active'); ['chats','status','calls','groups'].forEach(t=>{ document.getElementById('tab-'+t).style.display = (t===id?'block':'none'); }); }
+function renderGroups(){ document.getElementById('groupList').innerHTML = cities.map(c=>`<div class="room" onclick="openRoom('${c} Group')"><img src="photo1.jpg"><div><b>${c} Group</b><span>Assalam-o-Alaikum ${c} walo!</span></div></div>`).join(''); }
+renderGroups();
+function openRoom(name){ document.getElementById('chatBox').style.display='block'; document.getElementById('chatInput').style.display='flex'; document.getElementById('chatBox').innerHTML = `<div class="msg"><b>${name}</b><br>Assalam-o-Alaikum! ${myName} ne join kiya.</div>`; showTab('chats', document.querySelectorAll('.wa-tabs div')[0]); window.scrollTo(0,0); }
+function sendMsg(){ let inp=document.getElementById('msgInput'); if(!inp.value) return; let div=document.createElement('div'); div.className='msg me'; div.innerHTML=`<b>${myName}</b><br>${inp.value}`; document.getElementById('chatBox').appendChild(div); inp.value=''; }
+function setStatus(){ let s=document.getElementById('statusInput').value; if(s){ document.getElementById('myStatusText').innerText=s; document.getElementById('statusList').innerHTML=`<div class="status-box"><b>${myName}:</b> ${s}</div>`+document.getElementById('statusList').innerHTML; alert('Status lag gaya!'); } }
+</script>
+</body>
+</html>
