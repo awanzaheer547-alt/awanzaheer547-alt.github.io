@@ -23,27 +23,8 @@ body{margin:0;font-family:Arial;background:#f0f2f5}
 .form input{width:100%;padding:12px;margin:6px 0;border:1px solid #ddd;border-radius:10px;box-sizing:border-box}
 .form label{font-size:13px;font-weight:bold}
 .btn{width:100%;background:#d4a017;color:#fff;border:0;padding:14px;border-radius:12px;font-size:18px;font-weight:bold;margin-top:10px}
+.btn2{background:#25d366}
 .labbaik{text-align:center;color:#0b6b3a;font-weight:bold;padding:10px;line-height:26px}
-
-/* WhatsApp Jaisi App */
-.wa{background:#fff;margin:10px;border-radius:14px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.1)}
-.wa-top{background:#075e54;color:#fff;padding:12px;display:flex;justify-content:space-between;align-items:center}
-.wa-top b{font-size:18px}
-.wa-tabs{display:flex;background:#075e54;color:#fff}
-.wa-tabs div{flex:1;text-align:center;padding:12px 0;font-size:14px;font-weight:bold;cursor:pointer}
-.wa-tabs div.active{background:#128c7e}
-.wa-body{padding:10px}
-.room{display:flex;gap:10px;align-items:center;background:#f8f8f8;padding:10px;border-radius:12px;margin-bottom:8px;cursor:pointer;border:1px solid #eee}
-.room img{width:48px;height:48px;border-radius:50%;object-fit:cover;background:#ddd}
-.room b{display:block;font-size:14px}
-.room span{font-size:12px;color:#666}
-#chatBox{height:280px;overflow-y:auto;background:#ece5dd;padding:10px;border-radius:12px;display:none}
-.msg{background:#fff;padding:8px 12px;border-radius:10px;margin:6px 0;max-width:80%;font-size:14px}
-.msg.me{background:#dcf8c6;margin-left:auto}
-.chat-input{display:none;gap:6px;margin-top:10px}
-.chat-input input{flex:1;padding:12px;border:1px solid #ddd;border-radius:25px}
-.chat-input button{background:#25d366;color:#fff;border:0;padding:12px 18px;border-radius:50%;font-weight:bold}
-.status-box{background:#fff3cd;padding:10px;border-radius:10px;font-size:13px;margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -86,54 +67,8 @@ body{margin:0;font-family:Arial;background:#f0f2f5}
 <input type="file">
 <label>DP Photo Upload</label>
 <input type="file">
-<button class="btn" onclick="joinWhatsApp()">Entry Karen - WhatsApp Join Karen</button>
-</div>
-
-<!-- APNI WHATSAPP -->
-<div class="wa">
-<div class="wa-top"><b>اپنی WhatsApp</b><span>● Online</span></div>
-<div class="wa-tabs">
-<div class="active" onclick="showTab('chats',this)">Chats</div>
-<div onclick="showTab('status',this)">Status</div>
-<div onclick="showTab('calls',this)">Calls</div>
-<div onclick="showTab('rooms',this)">Rooms</div>
-</div>
-
-<div class="wa-body">
-<!-- CHATS -->
-<div id="tab-chats">
-<div id="chatBox"></div>
-<div class="chat-input" id="chatInput">
-<input id="msgInput" placeholder="Message likhein...">
-<button onclick="sendMsg()">➤</button>
-</div>
-<p style="font-size:13px;color:#555">نیچے کسی Room پر کلک کریں، چیٹ کھل جائے گی۔</p>
-</div>
-
-<!-- STATUS -->
-<div id="tab-status" style="display:none">
-<div class="status-box"><b>میرا Status:</b> <span id="myStatusText">لبیک یا رسول اللہ ﷺ</span><br><br>
-<input id="statusInput" placeholder="Apna Status likhein" style="width:100%;padding:10px;border-radius:10px;border:1px solid #ddd">
-<button onclick="setStatus()" style="margin-top:8px;background:#0b6b3a;color:#fff;padding:10px 18px;border:0;border-radius:10px">Status Lagayen</button>
-</div>
-<div id="statusList"></div>
-</div>
-
-<!-- CALLS -->
-<div id="tab-calls" style="display:none">
-<p style="font-size:14px">📞 Audio Call - جلد آرہی ہے</p>
-<button onclick="alert('Audio Call - Firebase se juregi')" style="background:#25d366;color:#fff;padding:12px 20px;border:0;border-radius:10px">Audio Call Karen</button>
-<br><br>
-<p style="font-size:14px">📹 Video Call - جلد آرہی ہے</p>
-<button onclick="alert('Video Call - Firebase se juregi')" style="background:#0b6b3a;color:#fff;padding:12px 20px;border:0;border-radius:10px">Video Call Karen</button>
-</div>
-
-<!-- ROOMS -->
-<div id="tab-rooms">
-<div id="roomList"></div>
-</div>
-
-</div>
+<button class="btn" onclick="goPage2()">Entry Karen - WhatsApp Join Karen</button>
+<a href="whatsapp.html"><button class="btn btn2">Page 2 - Apni WhatsApp Par Jayen ➤</button></a>
 </div>
 
 <div class="labbaik">
@@ -143,81 +78,10 @@ body{margin:0;font-family:Arial;background:#f0f2f5}
 </div>
 
 <script>
-// ===== FIREBASE CONFIG - YAHAN APNI CONFIG LAGAYEN =====
-// Yahan sirf apiKey wali config lagani hai, private_key wali NAHI
-const firebaseConfig = {
-  apiKey: "APKI_APIKEY_YAHAN",
-  authDomain: "APKA_PROJECT.firebaseapp.com",
-  projectId: "APKA_PROJECT_ID",
-  storageBucket: "APKA_PROJECT.appspot.com",
-  messagingSenderId: "XXXX",
-  appId: "XXXX"
-};
-// =========================================
-
-let myName = "Mehman";
-let currentRoom = "Room 1 - Markazi Room";
-
-const rooms = [
-  {name:"Room 1 - Markazi Room", desc:"Sab dost yahan baat karenge", img:"photo1.jpg"},
-  {name:"Room 2 - Naat Room", desc:"Naat aur Bayan", img:"photo2.jpg"},
-  {name:"Room 3 - Taleem Room", desc:"Deeni Taleem", img:"photo3.jpg"},
-  {name:"Room 4 - Khidmat Room", desc:"Khidmat-e-Khalq", img:"photo4.jpg"},
-  {name:"Room 5 - Dosto Ka Room", desc:"Doston ki gupshup", img:"photo5.jpg"},
-  {name:"Room 6 - Family Room", desc:"Family ke liye", img:"photo6.jpg"},
-  {name:"Room 7 - Admin Room", desc:"Sirf Admin", img:"photo1.jpg"},
-];
-
-function showTab(id, el){
-  document.querySelectorAll('.wa-tabs div').forEach(d=>d.classList.remove('active'));
-  el.classList.add('active');
-  ['chats','status','calls','rooms'].forEach(t=>{
-    document.getElementById('tab-'+t).style.display = (t===id?'block':'none');
-  });
-}
-
-function renderRooms(){
-  document.getElementById('roomList').innerHTML = rooms.map((r,i)=>`
-    <div class="room" onclick="openRoom('${r.name}')">
-      <img src="${r.img}"><div><b>${r.name}</b><span>${r.desc}</span></div>
-    </div>`).join('');
-}
-renderRooms();
-
-function joinWhatsApp(){
+function goPage2(){
   let n = document.getElementById('myName').value;
-  if(n) myName = n;
-  alert('Assalam-o-Alaikum '+myName+'! Aap apni WhatsApp me aa gaye. Neeche Room par click karen.');
-  showTab('rooms', document.querySelectorAll('.wa-tabs div')[3]);
-}
-
-function openRoom(name){
-  currentRoom = name;
-  document.getElementById('chatBox').style.display='block';
-  document.getElementById('chatInput').style.display='flex';
-  document.getElementById('chatBox').innerHTML = `<div class="msg"><b>${name}</b><br>Assalam-o-Alaikum! ${myName} ne join kiya.</div>`;
-  showTab('chats', document.querySelectorAll('.wa-tabs div')[0]);
-}
-
-function sendMsg(){
-  let inp = document.getElementById('msgInput');
-  if(!inp.value) return;
-  let div = document.createElement('div');
-  div.className='msg me';
-  div.innerHTML = `<b>${myName}</b><br>${inp.value}`;
-  document.getElementById('chatBox').appendChild(div);
-  // Yahan Firebase me save hoga - jab config lagayenge to sab ko nazar aayega
-  inp.value='';
-  document.getElementById('chatBox').scrollTop = 99999;
-}
-
-function setStatus(){
-  let s = document.getElementById('statusInput').value;
-  if(s){
-    document.getElementById('myStatusText').innerText = s;
-    document.getElementById('statusList').innerHTML = `<div class="status-box"><b>${myName}:</b> ${s}</div>` + document.getElementById('statusList').innerHTML;
-    alert('Status lag gaya!');
-  }
+  if(n) localStorage.setItem('myName', n);
+  window.location.href = 'whatsapp.html';
 }
 </script>
 </body>
