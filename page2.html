@@ -58,11 +58,104 @@ body{margin:0;font-family:Arial;background:#f0f2f5}
 <div id="chatBox"></div>
 <div class="chat-input" id="chatInput"><input id="msgInput" placeholder="Message likhein..."><button onclick="sendMsg()">➤</button></div>
 <p style="font-size:14px;color:#555">👇 نیچے کسی Group پر کلک کریں، چیٹ اوپر بڑی سکرین میں کھل جائے گی۔</p>
-<div class="room" onclick="openRoom('Baba Jan')"><img src="photo1.jpg"><div><b>Baba Jan</b><span>InshaAllah, we will meet tomorrow</span></div></div>
-<div class="room" onclick="openRoom('Peer Murshid')"><img src="photo2.jpg"><div><b>Peer Murshid</b><span>JazakAllah, thank you for the guidance</span></div></div>
-<div class="room" onclick="openRoom('Saad Rizvi')"><img src="photo3.jpg"><div><b>Saad Rizvi</b><span>Bro are you coming today?</span></div></div>
-<div class="room" onclick="openRoom('Anas Rizvi')"><img src="photo4.jpg"><div><b>Anas Rizvi</b><span>Got it, I'll send the files now 😊</span></div></div>
+<!-- ===== SARE 7 ROOM - EK SATH ===== -->
+
+<!-- ROOM 1 - MEHFIL -->
+<div style="background:linear-gradient(135deg,#0a7a3a,#00b894);color:white;margin:12px 10px;padding:15px;border-radius:15px;text-align:center">
+<h2>🌹 Room 1 - Mehfil-e-Naat</h2>
+<p style="font-size:12px;opacity:.9">Nabi ﷺ Ki Mehfil - Sab Mil Kar Naat Sunte Hain</p>
+<div style="display:flex;gap:8px;margin-top:10px">
+<div style="flex:1;background:rgba(255,255,255,.2);padding:10px;border-radius:10px"><b>0</b><br><small>Online</small></div>
+<div style="flex:1;background:rgba(255,255,255,.2);padding:10px;border-radius:10px"><b>0</b><br><small>Total</small></div>
 </div>
+<button style="width:100%;background:white;color:#0a7a3a;border:none;padding:11px;border-radius:8px;margin-top:10px;font-weight:bold">Mehfil Me Shamil Hon 🌹</button>
+</div>
+
+<!-- ROOM 2 - DARS -->
+<div style="background:linear-gradient(135deg,#6a1b9a,#ab47bc);color:white;margin:12px 10px;padding:15px;border-radius:15px;text-align:center">
+<h2>📖 Room 2 - Dars-e-Quran</h2>
+<p style="font-size:12px;opacity:.9">Rozana Quran Ka Dars - Seekhna Aur Sikhana</p>
+<div style="background:rgba(255,255,255,.2);padding:10px;border-radius:10px;margin-top:10px;font-size:13px">📖 Aaj Ka Sabaq: Surah Yaseen - Aayat 1-10</div>
+<button style="width:100%;background:white;color:#6a1b9a;border:none;padding:11px;border-radius:8px;margin-top:10px;font-weight:bold">Dars Sunen 📖</button>
+</div>
+
+<!-- ROOM 3 - SAWAL JAWAB -->
+<div style="background:linear-gradient(135deg,#ef6c00,#ff9800);color:white;margin:12px 10px;padding:15px;border-radius:15px;text-align:center">
+<h2>❓ Room 3 - Sawal-Jawab</h2>
+<p style="font-size:12px;opacity:.9">Deen Ka Sawal Poochain - Inaam Payein</p>
+<input placeholder="Apna Sawal Yahan Likhein..." style="width:100%;padding:11px;border:none;border-radius:8px;margin-top:10px">
+<button style="width:100%;background:white;color:#ef6c00;border:none;padding:11px;border-radius:8px;margin-top:8px;font-weight:bold">Sawal Bhejein ❓</button>
+</div>
+
+<!-- ROOM 4 - MADAD -->
+<div style="background:linear-gradient(135deg,#00838f,#00bcd4);color:white;margin:12px 10px;padding:15px;border-radius:15px;text-align:center">
+<h2>🤲 Room 4 - Madad Room</h2>
+<p style="font-size:12px;opacity:.9">Ghareeb Bhaiyon Ki Madad - JazzCash Se</p>
+<div style="display:flex;gap:8px;margin-top:10px">
+<div style="flex:1;background:rgba(255,255,255,.2);padding:10px;border-radius:10px"><b>Rs: 0</b><br><small>Jama Madad</small></div>
+<div style="flex:1;background:rgba(255,255,255,.2);padding:10px;border-radius:10px"><b>0</b><br><small>Logon Ki Madad</small></div>
+</div>
+<button style="width:100%;background:white;color:#00838f;border:none;padding:11px;border-radius:8px;margin-top:10px;font-weight:bold">Madad Karen 🤲</button>
+</div>
+
+<!-- ROOM 5 - LANGAR / KHIDMAT -->
+<div style="background:linear-gradient(135deg,#c62828,#ef5350);color:white;margin:12px 10px;padding:15px;border-radius:15px;text-align:center">
+<h2>🍲 Room 5 - Langar Room</h2>
+<p style="font-size:12px;opacity:.9">Mehman Nawazi - Sab Ke Liye Khana</p>
+<p style="background:rgba(255,255,255,.2);padding:10px;border-radius:10px;margin-top:10px">🍲 Aaj Langar: Biryani + Raita</p>
+<button style="width:100%;background:white;color:#c62828;border:none;padding:11px;border-radius:8px;margin-top:10px;font-weight:bold">Langar Me Hissa Len 🍲</button>
+</div>
+
+<!-- ROOM 6 - OFFICE - PRIVATE -->
+<div style="background:#111;color:white;margin:12px 10px;padding:15px;border-radius:15px;text-align:center;border:2px solid gold">
+<h2>🏢 Room 6 - Office Room</h2>
+<p style="font-size:12px;color:#aaa">🔒 Personal Office - Sirf Admin Ke Liye</p>
+<div id="officeLocked" style="padding:10px">
+<p style="font-size:35px">🔒</p>
+<p style="font-weight:bold">Private Office</p>
+<input id="officePass" type="password" placeholder="Password Likhein" style="width:100%;padding:12px;border:none;border-radius:8px;margin-top:10px;text-align:center;font-size:16px">
+<button onclick="openOffice()" style="width:100%;background:#0a7a3a;color:white;border:none;padding:12px;border-radius:8px;margin-top:10px;font-weight:bold">Daftar Kholein 🔓</button>
+<p id="wrongPass" style="color:#ff5252;font-size:12px;display:none;margin-top:5px">Galat Password!</p>
+</div>
+<div id="officeOpen" style="display:none;text-align:left">
+<p style="text-align:center;background:#0a7a3a;padding:8px;border-radius:8px;font-weight:bold">✅ Assalam-o-Alaikum Admin!</p>
+<div style="background:#000;padding:10px;border-radius:10px;margin-top:10px">📹 LIVE CCTV<br><small>📷 Camera 1 - Main Gate: <b style="color:#25d366">● LIVE</b><br>📷 Camera 2 - Office: <b style="color:#25d366">● LIVE</b></small></div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:10px;text-align:center">
+<div style="background:#333;padding:10px;border-radius:8px"><b>💰 Earning</b><br>Rs: 0</div>
+<div style="background:#333;padding:10px;border-radius:8px"><b>❓ Sawal</b><br>Rs: 0</div>
+<div style="background:#333;padding:10px;border-radius:8px"><b>🤲 Madad</b><br>Rs: 0</div>
+</div>
+<button onclick="closeOffice()" style="width:100%;background:#d32f2f;color:white;border:none;padding:10px;border-radius:8px;margin-top:10px;font-weight:bold">Daftar Band Karen 🔒</button>
+</div>
+</div>
+
+<!-- ROOM 7 - MUSHAWARAT -->
+<div style="background:linear-gradient(135deg,#283593,#5c6bc0);color:white;margin:12px 10px;padding:15px;border-radius:15px;text-align:center">
+<h2>🤝 Room 7 - Mushawarat Room</h2>
+<p style="font-size:12px;opacity:.9">Admin Meeting - App Ke Baare Me Mushawarat</p>
+<input placeholder="Mushawarat Ka Point Likhein..." style="width:100%;padding:11px;border:none;border-radius:8px;margin-top:10px">
+<button style="width:100%;background:white;color:#283593;border:none;padding:11px;border-radius:8px;margin-top:8px;font-weight:bold">Meeting Shuru Karen 🤝</button>
+</div>
+
+<div style="text-align:center;padding:15px;font-weight:bold;color:#0a7a3a;line-height:1.8">
+لبیک یا رسول اللہ ﷺ<br>لبیک یا رسول اللہ ﷺ<br>لبیک یا رسول اللہ ﷺ
+</div>
+
+<script>
+function openOffice(){
+var p=document.getElementById("officePass").value;
+if(p=="4455"){
+document.getElementById("officeLocked").style.display="none";
+document.getElementById("officeOpen").style.display="block";
+}else{document.getElementById("wrongPass").style.display="block";}
+}
+function closeOffice(){
+document.getElementById("officeOpen").style.display="none";
+document.getElementById("officeLocked").style.display="block";
+document.getElementById("officePass").value="";
+}
+</script>
+<!-- ===== 7 ROOM KHATAM ===== -->
 <div id="tab-status" style="display:none">
 <div class="status-box"><b>میرا Status:</b> <span id="myStatusText">لبیک یا رسول اللہ ﷺ</span><br><br>
 <input id="statusInput" placeholder="Apna Status likhein" style="width:100%;padding:12px;border-radius:10px;border:1px solid #ddd">
